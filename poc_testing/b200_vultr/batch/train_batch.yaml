@@ -1,0 +1,33 @@
+# Training batch for B200 / Vultr POC
+# 23 jobs total: 8 (Llama 8B) + 6 (Nemotron4) + 3 (Qwen3) + 6 (Llama70B finetune)
+# Submit with: llmb-run submit -f train_batch.yaml
+# Preview first: llmb-run submit -f train_batch.yaml --dry-run
+
+pretrain_llama3.1_8b:
+  tasks:
+    # Smoke run first - 1 repeat at single precision
+    - dtypes: 'fp8'
+      scales: [8]
+      repeats: 1
+    # Main matrix
+    - dtypes: ['fp8', 'nvfp4']
+      scales: [8]
+      repeats: 3
+
+pretrain_nemotron4_15b:
+  tasks:
+    - dtypes: ['fp8', 'bf16']
+      scales: [16]
+      repeats: 3
+
+pretrain_qwen3_30b:
+  tasks:
+    - dtypes: 'bf16'
+      scales: [16]
+      repeats: 3
+
+finetune_llama3_70b:
+  tasks:
+    - dtypes: ['fp8', 'bf16']
+      scales: [16]
+      repeats: 3

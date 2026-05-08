@@ -1,0 +1,24 @@
+# Inference batch for B200 / Vultr POC
+# Submit with: llmb-run submit -f inference_batch.yaml
+# Preview first: llmb-run submit -f inference_batch.yaml --dry-run
+#
+# NOTE: Inference YAML batch syntax is not documented in the bulk examples.
+# If --dry-run errors, fall back to per-workload explicit invocations:
+#   llmb-run submit -w inference_llama3.3 -s 70b --scale 1 -r 3
+#   etc.
+# Verify slugs first with: llmb-run list
+
+inference_llama3.3_70b:
+  tasks:
+    - scales: [1]
+      repeats: 3
+
+inference_gpt_oss_120b:
+  tasks:
+    - scales: [4]
+      repeats: 3
+
+inference_deepseek_r1_671b:
+  tasks:
+    - scales: [4, 8]   # TRT-LLM @4, SGLang @8 (verify slug differentiation - may need two separate stanzas)
+      repeats: 3

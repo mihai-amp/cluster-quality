@@ -1,0 +1,44 @@
+# Output from runs - regenerated each cluster (keep .gitkeep so dirs survive clone)
+poc_testing/*/acceptance/results/*
+!poc_testing/*/acceptance/results/.gitkeep
+poc_testing/*/monitor/results/*
+!poc_testing/*/monitor/results/.gitkeep
+poc_testing/*/analysis/results/*
+!poc_testing/*/analysis/results/.gitkeep
+
+# Slurm
+slurm-*.out
+*.sqsh
+
+# Logs / temp
+*.log
+*.tmp
+*.swp
+*.swo
+.~lock.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# Local env / secrets
+.env
+.env.local
+*.pem
+*.key
+hf_token*
+
+# Build artifacts (e.g. compiled gpu-burn)
+poc_testing/*/tools/
+gpu-burn/

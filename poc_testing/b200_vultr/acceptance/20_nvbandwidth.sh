@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-#SBATCH --job-name=nvbandwidth
+#SBATCH --job-name=phase0_nvbw
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=8

@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-#SBATCH --job-name=gpu_burn
+#SBATCH --job-name=phase0_gpuburn
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=8

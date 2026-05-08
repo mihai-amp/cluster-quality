@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-#SBATCH --job-name=dcgm_diag
+#SBATCH --job-name=phase0_dcgm
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=8

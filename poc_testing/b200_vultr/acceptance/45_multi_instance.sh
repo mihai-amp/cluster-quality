@@ -21,13 +21,13 @@ LOG_B="$HERE/results/multi_instance_B_$(date -u +%Y%m%dT%H%M%SZ).log"
 # Pick a workload that runs fast: cpu_overhead microbenchmark (~5 min).
 echo "Submitting two concurrent 4-GPU jobs on $NODE..."
 
-JOB_A=$(sbatch --parsable -w "$NODE" --gpus=4 --output="$LOG_A" --wrap="
+JOB_A=$(sbatch --parsable -J phase0_multi_A -w "$NODE" --gpus=4 --output="$LOG_A" --wrap="
   echo \"=== JOB A on \$(hostname) GPUs=\$CUDA_VISIBLE_DEVICES ===\"
   llmb-run submit -w microbenchmark_cpu_overhead --scale 4 || true
   nvidia-smi --query-gpu=index --format=csv
 ")
 
-JOB_B=$(sbatch --parsable -w "$NODE" --gpus=4 --output="$LOG_B" --wrap="
+JOB_B=$(sbatch --parsable -J phase0_multi_B -w "$NODE" --gpus=4 --output="$LOG_B" --wrap="
   echo \"=== JOB B on \$(hostname) GPUs=\$CUDA_VISIBLE_DEVICES ===\"
   llmb-run submit -w microbenchmark_cpu_overhead --scale 4 || true
   nvidia-smi --query-gpu=index --format=csv

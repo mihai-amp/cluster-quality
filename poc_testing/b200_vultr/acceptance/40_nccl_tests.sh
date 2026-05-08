@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-#SBATCH --job-name=nccl_tests
+#SBATCH --job-name=phase0_nccl
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=8
 #SBATCH --gpus-per-node=8

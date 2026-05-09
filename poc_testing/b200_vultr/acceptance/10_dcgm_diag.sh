@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #SBATCH --job-name=phase0_dcgm
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1

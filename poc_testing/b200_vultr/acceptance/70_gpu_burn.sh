@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #SBATCH --job-name=phase0_gpuburn
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1

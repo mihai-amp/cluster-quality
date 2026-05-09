@@ -27,7 +27,7 @@ environment:
   NCCL_IB_HCA: "$NCCL_IB_HCA"
 
 slurm:
-  account: ""
+  account: "${SLURM_ACCOUNT:-default}"
   gpu:
     partition: batch
     gres: 8

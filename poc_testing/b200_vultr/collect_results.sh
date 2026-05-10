@@ -149,6 +149,16 @@ if [[ "$DO_ARCHIVE" == "1" ]]; then
     ls -lh "$OUT_DIR"/llmb-archive-*.tar.zst
 fi
 
+# ---- Aggregate across repeats ----
+AGG="$(dirname "$0")/aggregate_results.py"
+if [[ -x "$AGG" || -f "$AGG" ]]; then
+    echo
+    echo "==== Aggregating across repeats ===="
+    python3 "$AGG" "$OUT_DIR" >"$OUT_DIR/aggregated.md" 2>"$OUT_DIR/aggregated.log" || \
+        echo "  aggregator exited non-zero — see $OUT_DIR/aggregated.log"
+    cat "$OUT_DIR/aggregated.md"
+fi
+
 echo
 echo "Done. Results at $OUT_DIR"
-echo "Next: review parsed.csv files, fill in execution.md result tables."
+echo "Next: review aggregated.md, paste into execution.md result tables."

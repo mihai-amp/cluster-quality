@@ -111,18 +111,30 @@ done
     echo
     printf "| Workload | Logs collected | Parser | Notes |\n"
     printf "|---|---:|---|---|\n"
+    set +e   # the per-workload introspection has lots of "file may not exist" checks
     for wl in "${!PARSER[@]}" "${INFERENCE[@]}" "${MICROBENCH[@]}"; do
         dst="$OUT_DIR/$wl"
         [[ ! -d "$dst" ]] && continue
         n=$(find "$dst/logs" -name '*.out' 2>/dev/null | wc -l)
         parser="-"
-        [[ -f "$dst/parsed.csv" ]] && parser="parsed.csv"
-        [[ -f "$dst/performance_blocks.txt" ]] && parser="performance_blocks.txt"
+        if [[ -f "$dst/parsed.csv" ]]; then
+            parser="parsed.csv"
+        elif [[ -f "$dst/performance_blocks.txt" ]]; then
+            parser="performance_blocks.txt"
+        fi
         # Quick fail/ok scan
-        fails=$(grep -lE 'Traceback|CANCELLED|ERROR' "$dst/logs/"*.out 2>/dev/null | wc -l)
+        shopt -s nullglob
+        outs=("$dst/logs/"*.out)
+        shopt -u nullglob
+        if (( ${#outs[@]} > 0 )); then
+            fails=$(grep -lE 'Traceback|CANCELLED|ERROR' "${outs[@]}" 2>/dev/null | wc -l)
+        else
+            fails=0
+        fi
         notes="$n logs, $fails failures"
         printf "| %s | %d | %s | %s |\n" "$wl" "$n" "$parser" "$notes"
     done
+    set -e
 } >"$OUT_DIR/summary.md"
 
 echo

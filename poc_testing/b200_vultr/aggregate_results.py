@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Generate the Phase 1 summary.md from collected results.
 
-Sections produced:
+Sections produced (summaries first, then per-run detail):
   1. Runs per workload   — counts of logs, total runs, OK, Failed
-  2. Training full       — every successful run, per-run row
-  3. Finetune full       — every successful run, per-run row
-  4. Inference full      — every successful run / use case, per-run row
-  5. Training summary    — one row per (workload, size, dtype, scale)
-  6. Finetune summary    — one row per (workload, size, dtype, scale)
-  7. Inference summary   — one row per (workload, size, dtype, scale)
+  2. Training summary    — one row per (workload, size, dtype, scale)
+  3. Finetune summary    — one row per (workload, size, dtype, scale)
+  4. Inference summary   — one row per (workload, size, dtype, scale)
+  5. Training full       — every successful run, per-run row
+  6. Finetune full       — every successful run, per-run row
+  7. Inference full      — every parsed log, per-run row
 
 Reads:
   $MY/results/phase1/<workload>/parsed.csv          (training/finetune, from dgxc parsers)
@@ -26,19 +26,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-# B200 dense peak TFLOPS per dtype (plan.md §2)
+# B200 dense peak TFLOPS per dtype (used to compute MFU%, not for verdicts)
 PEAK_TFLOPS = {"bf16": 2250, "fp8": 4500, "nvfp4": 9000, "mxfp4": 9000}
-
-# Plan-expected MFU% by (workload, dtype) — from plan.md §4.1
-EXPECTED_MFU = {
-    ("pretrain_llama3.1", "fp8"): (45, 55),
-    ("pretrain_llama3.1", "nvfp4"): (35, 50),
-    ("pretrain_nemotron4-15b", "fp8"): (40, 50),
-    ("pretrain_nemotron4-15b", "bf16"): (35, 45),
-    ("pretrain_qwen3", "bf16"): (25, 40),
-    ("finetune_llama3", "fp8"): (30, 45),
-    ("finetune_llama3", "bf16"): (25, 40),
-}
 
 FILENAME_RE = re.compile(r"(?P<dtype>fp8|bf16|nvfp4|mxfp4)(?:_cs)?_gpus(?P<scale>\d+)")
 SIZE_RE = re.compile(r"_(?P<size>\d+[bm])(?:_a\d+b)?_(?:fp8|bf16|nvfp4|mxfp4)")
@@ -71,19 +60,6 @@ def mean_std(values):
     if len(values) < 2:
         return m, 0.0
     return m, (sum((v - m) ** 2 for v in values) / len(values)) ** 0.5
-
-
-def mfu_verdict(mfu, expected):
-    if not expected:
-        return ""
-    low, high = expected
-    if low <= mfu <= high:
-        return f"in range [{low}-{high}%]"
-    if mfu < low * 0.6:
-        return f"RED (expected {low}-{high}%)"
-    if mfu < low:
-        return f"low (expected {low}-{high}%)"
-    return f"high (expected {low}-{high}%)"
 
 
 def collect_counts(results_dir: Path):
@@ -261,55 +237,6 @@ def main():
         elif wt == "inference":
             inference_rows.extend(collect_inference(wl_dir))
 
-    # -------- Section 2: Training full --------
-    print("## 2. Training — full results (every successful run)")
-    print()
-    print("| Workload | Size | Dtype | Scale | Step mean (ms) | Step σ (ms) | TFLOPS/GPU |")
-    print("|---|---|---|---:|---:|---:|---:|")
-    for r in sorted(training_rows, key=lambda x: (x["workload"], x["dtype"], x["scale"])):
-        if r["status"] != "Success":
-            continue
-        print(
-            f"| {r['workload']} | {r['size']} | {r['dtype']} | {r['scale']} | "
-            f"{fmt(r['step_ms'])} | {fmt(r['step_std_ms'])} | {fmt(r['tflops'])} |"
-        )
-    if not any(r for r in training_rows if r["status"] == "Success"):
-        print("| _no successful runs yet_ | | | | | | |")
-    print()
-
-    # -------- Section 3: Finetune full --------
-    print("## 3. Finetune — full results (every successful run)")
-    print()
-    print("| Workload | Size | Dtype | Scale | Step mean (ms) | Step σ (ms) | TFLOPS/GPU |")
-    print("|---|---|---|---:|---:|---:|---:|")
-    for r in sorted(finetune_rows, key=lambda x: (x["workload"], x["dtype"], x["scale"])):
-        if r["status"] != "Success":
-            continue
-        print(
-            f"| {r['workload']} | {r['size']} | {r['dtype']} | {r['scale']} | "
-            f"{fmt(r['step_ms'])} | {fmt(r['step_std_ms'])} | {fmt(r['tflops'])} |"
-        )
-    if not any(r for r in finetune_rows if r["status"] == "Success"):
-        print("| _no successful runs yet_ | | | | | | |")
-    print()
-
-    # -------- Section 4: Inference full --------
-    print("## 4. Inference — full results (every parsed log)")
-    print()
-    print("| Workload | Size | Dtype | Scale | Use case | Throughput (tok/s) | TTFT p50 (ms) | TPOT mean (ms) |")
-    print("|---|---|---|---:|---|---:|---:|---:|")
-    for r in sorted(inference_rows, key=lambda x: (x["workload"], x.get("use_case", ""))):
-        print(
-            f"| {r['workload']} | {fmt(r.get('size'))} | {fmt(r.get('dtype'))} | "
-            f"{fmt(r.get('scale'))} | {fmt(r.get('use_case'))} | "
-            f"{fmt(r.get('throughput'), '.1f')} | "
-            f"{fmt(r.get('ttft_p50'), '.1f')} | "
-            f"{fmt(r.get('tpot_mean'), '.2f')} |"
-        )
-    if not inference_rows:
-        print("| _no parsed inference results yet_ | | | | | | | |")
-    print()
-
     # -------- summarize helper for training/finetune --------
     def summarize_training(rows):
         by_config = defaultdict(list)
@@ -327,10 +254,10 @@ def main():
     def print_training_summary(header, by_config):
         print(header)
         print()
-        print("| Workload | Size | Dtype | Scale | n | Step mean (ms) | σ across runs (ms) | Mean TFLOPS | MFU% | vs plan |")
-        print("|---|---|---|---:|---:|---:|---:|---:|---:|---|")
+        print("| Workload | Size | Dtype | Scale | n | Step mean (ms) | σ across runs (ms) | Mean TFLOPS | MFU% |")
+        print("|---|---|---|---:|---:|---:|---:|---:|---:|")
         if not by_config:
-            print("| _no successful runs yet_ | | | | | | | | | |")
+            print("| _no successful runs yet_ | | | | | | | | |")
         for key, runs in sorted(by_config.items()):
             wl, size, dtype, scale = key
             times = [r[0] for r in runs]
@@ -339,19 +266,18 @@ def main():
             fm, _ = mean_std(tfs)
             peak = PEAK_TFLOPS.get(dtype, 0)
             mfu = fm / peak * 100 if peak else 0
-            v = mfu_verdict(mfu, EXPECTED_MFU.get((wl, dtype)))
             print(
                 f"| {wl} | {size} | {dtype} | {scale} | {len(runs)} | "
-                f"{tm:.1f} | {ts:.1f} | {fm:.0f} | {mfu:.1f}% | {v} |"
+                f"{tm:.1f} | {ts:.1f} | {fm:.0f} | {mfu:.1f}% |"
             )
         print()
 
-    # -------- Section 5/6: training & finetune summaries --------
-    print_training_summary("## 5. Training — summary per model", summarize_training(training_rows))
-    print_training_summary("## 6. Finetune — summary per model", summarize_training(finetune_rows))
+    # -------- Section 2/3: training & finetune summaries --------
+    print_training_summary("## 2. Training — summary per model", summarize_training(training_rows))
+    print_training_summary("## 3. Finetune — summary per model", summarize_training(finetune_rows))
 
-    # -------- Section 7: Inference summary --------
-    print("## 7. Inference — summary per model")
+    # -------- Section 4: Inference summary --------
+    print("## 4. Inference — summary per model")
     print()
     print("| Workload | Size | Dtype | Scale | n use cases | Best throughput (tok/s) | Mean TTFT p50 (ms) | Mean TPOT (ms) |")
     print("|---|---|---|---:|---:|---:|---:|---:|")
@@ -374,8 +300,56 @@ def main():
         )
     print()
 
+    # -------- Section 5: Training full --------
+    print("## 5. Training — full results (every successful run)")
+    print()
+    print("| Workload | Size | Dtype | Scale | Step mean (ms) | Step σ (ms) | TFLOPS/GPU |")
+    print("|---|---|---|---:|---:|---:|---:|")
+    for r in sorted(training_rows, key=lambda x: (x["workload"], x["dtype"], x["scale"])):
+        if r["status"] != "Success":
+            continue
+        print(
+            f"| {r['workload']} | {r['size']} | {r['dtype']} | {r['scale']} | "
+            f"{fmt(r['step_ms'])} | {fmt(r['step_std_ms'])} | {fmt(r['tflops'])} |"
+        )
+    if not any(r for r in training_rows if r["status"] == "Success"):
+        print("| _no successful runs yet_ | | | | | | |")
+    print()
+
+    # -------- Section 6: Finetune full --------
+    print("## 6. Finetune — full results (every successful run)")
+    print()
+    print("| Workload | Size | Dtype | Scale | Step mean (ms) | Step σ (ms) | TFLOPS/GPU |")
+    print("|---|---|---|---:|---:|---:|---:|")
+    for r in sorted(finetune_rows, key=lambda x: (x["workload"], x["dtype"], x["scale"])):
+        if r["status"] != "Success":
+            continue
+        print(
+            f"| {r['workload']} | {r['size']} | {r['dtype']} | {r['scale']} | "
+            f"{fmt(r['step_ms'])} | {fmt(r['step_std_ms'])} | {fmt(r['tflops'])} |"
+        )
+    if not any(r for r in finetune_rows if r["status"] == "Success"):
+        print("| _no successful runs yet_ | | | | | | |")
+    print()
+
+    # -------- Section 7: Inference full --------
+    print("## 7. Inference — full results (every parsed log)")
+    print()
+    print("| Workload | Size | Dtype | Scale | Use case | Throughput (tok/s) | TTFT p50 (ms) | TPOT mean (ms) |")
+    print("|---|---|---|---:|---|---:|---:|---:|")
+    for r in sorted(inference_rows, key=lambda x: (x["workload"], x.get("use_case", ""))):
+        print(
+            f"| {r['workload']} | {fmt(r.get('size'))} | {fmt(r.get('dtype'))} | "
+            f"{fmt(r.get('scale'))} | {fmt(r.get('use_case'))} | "
+            f"{fmt(r.get('throughput'), '.1f')} | "
+            f"{fmt(r.get('ttft_p50'), '.1f')} | "
+            f"{fmt(r.get('tpot_mean'), '.2f')} |"
+        )
+    if not inference_rows:
+        print("| _no parsed inference results yet_ | | | | | | | |")
+    print()
+
     print(f"**Peak TFLOPS used (dense B200):** " + ", ".join(f"{k}: {v}" for k, v in PEAK_TFLOPS.items()))
-    print(f"**MFU verdict thresholds:** in-range = within plan §4.1; low/high = within 40% of plan; RED = >40% below plan")
 
 
 if __name__ == "__main__":

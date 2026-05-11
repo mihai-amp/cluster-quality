@@ -101,45 +101,18 @@ for wl in "${MICROBENCH[@]}"; do
     done
 done
 
-# ---- Status summary ----
-{
-    echo "# Phase 1 collection summary"
-    echo "Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-    echo "Source:    $LLMB_INSTALL/workloads/"
+# ---- Generate summary.md ----
+AGG="$(dirname "$0")/aggregate_results.py"
+if [[ -x "$AGG" || -f "$AGG" ]]; then
     echo
-    echo "## Per-workload status"
-    echo
-    printf "| Workload | Logs collected | Parser | Notes |\n"
-    printf "|---|---:|---|---|\n"
-    set +e   # the per-workload introspection has lots of "file may not exist" checks
-    for wl in "${!PARSER[@]}" "${INFERENCE[@]}" "${MICROBENCH[@]}"; do
-        dst="$OUT_DIR/$wl"
-        [[ ! -d "$dst" ]] && continue
-        n=$(find "$dst/logs" -name '*.out' 2>/dev/null | wc -l)
-        parser="-"
-        if [[ -f "$dst/parsed.csv" ]]; then
-            parser="parsed.csv"
-        elif [[ -f "$dst/performance_blocks.txt" ]]; then
-            parser="performance_blocks.txt"
-        fi
-        # Quick fail/ok scan
-        shopt -s nullglob
-        outs=("$dst/logs/"*.out)
-        shopt -u nullglob
-        if (( ${#outs[@]} > 0 )); then
-            fails=$(grep -lE 'Traceback|CANCELLED|ERROR' "${outs[@]}" 2>/dev/null | wc -l)
-        else
-            fails=0
-        fi
-        notes="$n logs, $fails failures"
-        printf "| %s | %d | %s | %s |\n" "$wl" "$n" "$parser" "$notes"
-    done
-    set -e
-} >"$OUT_DIR/summary.md"
-
-echo
-echo "==== Summary ===="
-cat "$OUT_DIR/summary.md"
+    echo "==== Generating summary.md ===="
+    if python3 "$AGG" "$OUT_DIR" >"$OUT_DIR/summary.md" 2>"$OUT_DIR/summary.log"; then
+        cat "$OUT_DIR/summary.md"
+    else
+        echo "  aggregator failed — see $OUT_DIR/summary.log"
+        cat "$OUT_DIR/summary.log"
+    fi
+fi
 
 # ---- Optional: NVIDIA submission archive ----
 if [[ "$DO_ARCHIVE" == "1" ]]; then
@@ -149,16 +122,6 @@ if [[ "$DO_ARCHIVE" == "1" ]]; then
     ls -lh "$OUT_DIR"/llmb-archive-*.tar.zst
 fi
 
-# ---- Aggregate across repeats ----
-AGG="$(dirname "$0")/aggregate_results.py"
-if [[ -x "$AGG" || -f "$AGG" ]]; then
-    echo
-    echo "==== Aggregating across repeats ===="
-    python3 "$AGG" "$OUT_DIR" >"$OUT_DIR/aggregated.md" 2>"$OUT_DIR/aggregated.log" || \
-        echo "  aggregator exited non-zero — see $OUT_DIR/aggregated.log"
-    cat "$OUT_DIR/aggregated.md"
-fi
-
 echo
 echo "Done. Results at $OUT_DIR"
-echo "Next: review aggregated.md, paste into execution.md result tables."
+echo "Next: review summary.md, paste relevant tables into execution.md."

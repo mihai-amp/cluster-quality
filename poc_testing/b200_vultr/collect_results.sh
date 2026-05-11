@@ -51,7 +51,7 @@ for wl in "${!PARSER[@]}"; do
 
     mkdir -p "$dst/logs"
     # Mirror per-experiment .out files (rename to include workload+config so they're scannable)
-    find "$src" -name 'slurm-*.out' -o -name '*.out' | while read -r f; do
+    find "$src" \( -name 'log-*.out' -o -name 'slurm-*.out' \) -not -name 'sbatch_*' | while read -r f; do
         cp "$f" "$dst/logs/$(basename "$(dirname "$(dirname "$f")")")_$(basename "$f")"
     done
 
@@ -74,14 +74,14 @@ for wl in "${INFERENCE[@]}"; do
     [[ ! -d "$src" ]] && { echo "skip $wl (no experiments dir)"; continue; }
 
     mkdir -p "$dst/logs"
-    find "$src" -name '*.out' | while read -r f; do
+    find "$src" \( -name 'log-*.out' -o -name 'slurm-*.out' \) -not -name 'sbatch_*' | while read -r f; do
         cp "$f" "$dst/logs/$(basename "$(dirname "$(dirname "$f")")")_$(basename "$f")"
     done
 
     # Extract throughput / latency blocks
     {
         echo "==== $wl performance blocks ===="
-        for f in $(find "$src" -name '*.out'); do
+        for f in $(find "$src" \( -name 'log-*.out' -o -name 'slurm-*.out' \) -not -name 'sbatch_*'); do
             echo "--- $(basename "$(dirname "$(dirname "$f")")") ---"
             awk '/PERFORMANCE OVERVIEW|Serving Benchmark Result|Throughput/,/^={5,}|^$/' "$f"
             echo
@@ -96,7 +96,7 @@ for wl in "${MICROBENCH[@]}"; do
     [[ ! -d "$src" ]] && continue
 
     mkdir -p "$dst/logs"
-    find "$src" -name '*.out' | while read -r f; do
+    find "$src" \( -name 'log-*.out' -o -name 'slurm-*.out' \) -not -name 'sbatch_*' | while read -r f; do
         cp "$f" "$dst/logs/$(basename "$(dirname "$(dirname "$f")")")_$(basename "$f")"
     done
 done

@@ -62,4 +62,5 @@ Output summary section shows `[1] Ethernet PASS`, `[2] SM PASS`, `[3] IB UD ping
 
 ## Updates (append as we hear back)
 
-_(none yet)_
+- **2026-05-11** — Vultr reports a fix applied. Re-ran `ib_write_bw -d mlx5_0` between gpu01 and gpu02: **PASS at 46150 MB/s** (≈46.15 GB/s, matches NDR expected). Inter-node IB is now functional. Workloads resumed. _Closed._
+- **2026-05-11** — Follow-on finding (unrelated to Vultr fix): NCCL bootstrap was binding to the public NIC (`enp193s0f0np0`) instead of the internal 10.6.96.x interface (`enp193s0f1np1`), causing multi-node jobs to hang at NCCL init. Workaround: set `NCCL_SOCKET_IFNAME=enp193s0f1np1` in each compute node's enroot environ.d. Not a Vultr bug, but worth flagging in their B200 onboarding docs since the dual-port NIC naming (`np0`=public / `np1`=internal) is non-obvious.

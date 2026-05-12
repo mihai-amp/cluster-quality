@@ -131,13 +131,26 @@ def read_training_csv(wl_dir: Path):
             meta = parse_filename(row.get("filename", ""))
             if not meta:
                 continue
+            # mbridge writes time_mean_ms, NeMo writes time_mean_seconds — accept either, normalize to ms
+            step_ms = row.get("time_mean_ms", "").strip()
+            step_std_ms = row.get("time_std_dev_ms", "").strip()
+            if not step_ms and row.get("time_mean_seconds", "").strip():
+                try:
+                    step_ms = f"{float(row['time_mean_seconds']) * 1000:.3f}"
+                except (ValueError, TypeError):
+                    pass
+            if not step_std_ms and row.get("time_std_dev_seconds", "").strip():
+                try:
+                    step_std_ms = f"{float(row['time_std_dev_seconds']) * 1000:.3f}"
+                except (ValueError, TypeError):
+                    pass
             rows.append(
                 {
                     "workload": wl_dir.name,
                     **meta,
                     "status": (row.get("status") or "").strip(),
-                    "step_ms": row.get("time_mean_ms", "").strip(),
-                    "step_std_ms": row.get("time_std_dev_ms", "").strip(),
+                    "step_ms": step_ms,
+                    "step_std_ms": step_std_ms,
                     "tflops": row.get("tflops_per_gpu_mean", "").strip(),
                 }
             )

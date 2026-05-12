@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the Phase 1 summary.md from collected results.
 
-Sections produced (summaries first, then per-run detail):
+Sections produced (summaries first, then per-run detail, then raw parser output):
   1. Runs per workload   — counts of logs, total runs, OK, Failed
   2. Training summary    — one row per (workload, size, dtype, scale)
   3. Finetune summary    — one row per (workload, size, dtype, scale)
@@ -9,6 +9,7 @@ Sections produced (summaries first, then per-run detail):
   5. Training full       — every successful run, per-run row
   6. Finetune full       — every successful run, per-run row
   7. Inference full      — every parsed log, per-run row
+  8. Raw parser output   — verbatim dgxc parser tables + inference performance blocks
 
 Reads:
   $MY/results/phase1/<workload>/parsed.csv          (training/finetune, from dgxc parsers)
@@ -350,6 +351,41 @@ def main():
     print()
 
     print(f"**Peak TFLOPS used (dense B200):** " + ", ".join(f"{k}: {v}" for k, v in PEAK_TFLOPS.items()))
+    print()
+
+    # -------- Section 8: Raw parser output --------
+    print("## 8. Raw parser output")
+    print()
+    print("Verbatim output of the dgxc training parser (`parse_train_timing*.sh --format=table`)")
+    print("and the inference performance blocks extracted from each workload's logs.")
+    print()
+
+    raw_emitted = False
+    for wl_dir in sorted(results_dir.iterdir()):
+        if not wl_dir.is_dir():
+            continue
+        wl = wl_dir.name
+        parsed_txt = wl_dir / "parsed.txt"
+        perf_blocks = wl_dir / "performance_blocks.txt"
+        if parsed_txt.exists() and parsed_txt.stat().st_size > 0:
+            print(f"### {wl} (training parser)")
+            print()
+            print("```")
+            print(parsed_txt.read_text().rstrip())
+            print("```")
+            print()
+            raw_emitted = True
+        elif perf_blocks.exists() and perf_blocks.stat().st_size > 0:
+            print(f"### {wl} (inference performance blocks)")
+            print()
+            print("```")
+            print(perf_blocks.read_text().rstrip())
+            print("```")
+            print()
+            raw_emitted = True
+
+    if not raw_emitted:
+        print("_No raw parser output captured yet — re-run `collect_results.sh` after experiments complete._")
 
 
 if __name__ == "__main__":

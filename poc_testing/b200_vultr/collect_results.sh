@@ -135,13 +135,18 @@ for wl in "${MICROBENCH[@]}"; do
     done
 done
 
-# ---- Generate summary.md ----
+# ---- Generate summary.md and summary.html ----
 AGG="$(dirname "$0")/aggregate_results.py"
+HTML="$(dirname "$0")/summary_to_html.py"
 if [[ -x "$AGG" || -f "$AGG" ]]; then
     echo
     echo "==== Generating summary.md ===="
     if python3 "$AGG" "$OUT_DIR" >"$OUT_DIR/summary.md" 2>"$OUT_DIR/summary.log"; then
         cat "$OUT_DIR/summary.md"
+        if [[ -f "$HTML" ]]; then
+            python3 "$HTML" "$OUT_DIR/summary.md" "$OUT_DIR/summary.html" \
+                && echo "  also wrote $OUT_DIR/summary.html"
+        fi
     else
         echo "  aggregator failed — see $OUT_DIR/summary.log"
         cat "$OUT_DIR/summary.log"

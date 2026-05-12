@@ -67,24 +67,45 @@ for wl in "${!PARSER[@]}"; do
     fi
 done
 
-# ---- Inference: copy logs + extract performance blocks ----
+# ---- Inference: per-anatomy harvest (see quirks.md "dgxc workload anatomy") ----
+# Anatomy B (TRT-LLM trtllm-bench, e.g. inference_llama3.3, inference_deepseek-r1):
+#   experiments/<MODEL>_..._<USECASE>/<MODEL>_..._<USECASE>_streaming-on_<JOBID>.out
+#   plus slurm-<JOBID>.out at workload root (same content, captured by outer Slurm).
+# Anatomy C (Dynamo + AI Perf, e.g. inference_gpt-oss-dynamo, inference_deepseek-r1-dynamo):
+#   experiments/<CONFIG>_<JOBID>/benchmark_logs/profile_export_aiperf.csv  <- METRICS
+#   slurm-*.out at workload root contains NO metrics for Dynamo runs.
 for wl in "${INFERENCE[@]}"; do
     src="$LLMB_INSTALL/workloads/$wl/experiments"
+    root="$LLMB_INSTALL/workloads/$wl"
     dst="$OUT_DIR/$wl"
     [[ ! -d "$src" ]] && { echo "skip $wl (no experiments dir)"; continue; }
 
-    mkdir -p "$dst/logs"
-    find "$src" \( -name 'log-*.out' -o -name 'slurm-*.out' \) -not -name 'sbatch_*' | while read -r f; do
-        cp "$f" "$dst/logs/$(basename "$(dirname "$(dirname "$f")")")_$(basename "$f")"
+    mkdir -p "$dst/logs" "$dst/csv"
+
+    # Anatomy B: per-use-case logs from inside experiment dirs + slurm wrappers at root
+    find "$src" -name '*_streaming-*.out' 2>/dev/null | while read -r f; do
+        cp "$f" "$dst/logs/$(basename "$(dirname "$f")")_$(basename "$f")"
+    done
+    find "$root" -maxdepth 1 -name 'slurm-*.out' 2>/dev/null | while read -r f; do
+        cp "$f" "$dst/logs/$(basename "$f")"
     done
 
-    # Extract throughput / latency blocks
+    # Anatomy C: AI Perf CSV output for Dynamo workloads
+    find "$src" -name 'profile_export_aiperf.csv' 2>/dev/null | while read -r f; do
+        # name as <experiment_dir>.csv so workload + jobid are recoverable
+        cp "$f" "$dst/csv/$(basename "$(dirname "$(dirname "$f")")").csv"
+    done
+    # Also keep the JSON sibling — easier to programmatically parse than the CSV
+    find "$src" -name 'profile_export_aiperf.json' 2>/dev/null | while read -r f; do
+        cp "$f" "$dst/csv/$(basename "$(dirname "$(dirname "$f")")").json"
+    done
+
+    # Human-readable performance blocks extracted from TRT-LLM logs
     {
         echo "==== $wl performance blocks ===="
-        for f in $(find "$src" \( -name 'log-*.out' -o -name 'slurm-*.out' \) -not -name 'sbatch_*'); do
-            echo "--- $(basename "$(dirname "$(dirname "$f")")") ---"
-            # Capture from "= PERFORMANCE OVERVIEW" header through the last
-            # known TRT-LLM metric line; if not present, try SGLang's block
+        for f in $(find "$src" -name '*_streaming-*.out' 2>/dev/null; find "$root" -maxdepth 1 -name 'slurm-*.out' 2>/dev/null); do
+            [ -f "$f" ] || continue
+            echo "--- $(basename "$f") ---"
             sed -n '/= PERFORMANCE OVERVIEW/,/Per User Output Speed/p' "$f"
             sed -n '/Serving Benchmark Result/,/^={5,}/p' "$f"
             echo

@@ -66,10 +66,11 @@ mkdir -p $TRITON_CACHE_DIR $TORCHINDUCTOR_CACHE_DIR
 export PLAN=$MY/workspace/cluster-quality/poc_testing/b200_vultr
 export DGXC=$MY/workspace/dgxc-benchmarking
 
-# Tail the live logs of a specific Slurm job by numeric ID.
-# Walks $LLMB_INSTALL/workloads looking for files modified recently whose
-# path or name contains the job ID — covers Slurm stdout, dgxc nested
-# training logs, and inference bench.log / output_workers.log alike.
+# List the live log files for a Slurm job by numeric ID, and recommend one
+# to tail. Doesn't tail automatically — for Dynamo jobs with many workers,
+# auto-tailing every matched file exhausts the shell's open-fd limit.
+# Walks $LLMB_INSTALL/workloads for files modified recently whose path
+# or name contains the job ID. Recommended file (Slurm stdout) is in magenta.
 # Usage: tail_job 256
 tail_job() {
     local job="${1:?usage: tail_job <jobid>}"
@@ -83,22 +84,25 @@ tail_job() {
         return 1
     fi
     # ANSI colors (only if stderr is a tty)
-    local Y='' G='' R=''
-    if [ -t 2 ]; then Y=$'\e[1;33m'; G=$'\e[1;32m'; R=$'\e[0m'; fi
+    local Y='' G='' M='' R=''
+    if [ -t 2 ]; then Y=$'\e[1;33m'; G=$'\e[1;32m'; M=$'\e[1;35m'; R=$'\e[0m'; fi
     local bar="${Y}==================================================================${R}"
     echo "$bar" >&2
-    echo "${Y}Tailing job $job:${R}" >&2
-    local files=()
-    [ -n "$stdout" ] && [ -f "$stdout" ] && { echo "  ${Y}[stdout]${R} ${G}$stdout${R}" >&2; files+=("$stdout"); }
+    echo "${Y}Job $job log files:${R}" >&2
+    local recommended=""
+    if [ -n "$stdout" ] && [ -f "$stdout" ]; then
+        echo "  ${M}[recommend]${R} ${M}$stdout${R}" >&2
+        recommended="$stdout"
+    fi
     while IFS= read -r f; do
         [ -z "$f" ] && continue
-        [ "$f" = "$stdout" ] && continue
-        echo "  ${Y}[extra ]${R} ${G}$f${R}" >&2
-        files+=("$f")
+        [ "$f" = "$recommended" ] && continue
+        echo "  ${Y}[also     ]${R} ${G}$f${R}" >&2
     done <<< "$extras"
     echo "$bar" >&2
-    [ ${#files[@]} -eq 0 ] && { echo "  (no matching files yet — try again in a few seconds)" >&2; return 1; }
-    tail -f "${files[@]}"
+    if [ -n "$recommended" ]; then
+        echo "${Y}tail -f $recommended${R}" >&2
+    fi
 }
 EOF
 

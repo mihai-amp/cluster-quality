@@ -74,7 +74,6 @@ export DGXC=$MY/workspace/dgxc-benchmarking
 tail_job() {
     local job="${1:?usage: tail_job <jobid>}"
     local stdout=$(scontrol show job "$job" -o 2>/dev/null | grep -oP 'StdOut=\K\S+')
-    # Find any log file recently touched whose name/path contains the job id
     local extras
     extras=$(find "$LLMB_INSTALL/workloads" -mmin -120 -type f \
         \( -name "*${job}*.out" -o -name "*${job}*.log" -o -path "*_${job}/server_logs/*" -o -path "*_${job}_*/server_logs/*" \) \
@@ -83,15 +82,21 @@ tail_job() {
         echo "Job $job: no log file found (job may have just started, or is complete and out of MinJobAge)" >&2
         return 1
     fi
-    echo "Tailing job $job:" >&2
+    # ANSI colors (only if stderr is a tty)
+    local Y='' G='' R=''
+    if [ -t 2 ]; then Y=$'\e[1;33m'; G=$'\e[1;32m'; R=$'\e[0m'; fi
+    local bar="${Y}==================================================================${R}"
+    echo "$bar" >&2
+    echo "${Y}Tailing job $job:${R}" >&2
     local files=()
-    [ -n "$stdout" ] && [ -f "$stdout" ] && { echo "  [stdout] $stdout" >&2; files+=("$stdout"); }
+    [ -n "$stdout" ] && [ -f "$stdout" ] && { echo "  ${Y}[stdout]${R} ${G}$stdout${R}" >&2; files+=("$stdout"); }
     while IFS= read -r f; do
         [ -z "$f" ] && continue
         [ "$f" = "$stdout" ] && continue
-        echo "  [extra ] $f" >&2
+        echo "  ${Y}[extra ]${R} ${G}$f${R}" >&2
         files+=("$f")
     done <<< "$extras"
+    echo "$bar" >&2
     [ ${#files[@]} -eq 0 ] && { echo "  (no matching files yet — try again in a few seconds)" >&2; return 1; }
     tail -f "${files[@]}"
 }

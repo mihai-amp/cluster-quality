@@ -81,6 +81,9 @@ def collect_counts(results_dir: Path):
         if not wl_dir.is_dir():
             continue
         wl = wl_dir.name
+        # Skip legacy empty bucket dirs left over from setup_workspace.sh
+        if workload_type(wl) == "other":
+            continue
         logs_dir = wl_dir / "logs"
         logs = list(logs_dir.glob("*.out")) if logs_dir.exists() else []
         n_logs = len(logs)

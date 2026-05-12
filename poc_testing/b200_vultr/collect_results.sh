@@ -83,7 +83,10 @@ for wl in "${INFERENCE[@]}"; do
         echo "==== $wl performance blocks ===="
         for f in $(find "$src" \( -name 'log-*.out' -o -name 'slurm-*.out' \) -not -name 'sbatch_*'); do
             echo "--- $(basename "$(dirname "$(dirname "$f")")") ---"
-            awk '/PERFORMANCE OVERVIEW|Serving Benchmark Result|Throughput/,/^={5,}|^$/' "$f"
+            # Capture from "= PERFORMANCE OVERVIEW" header through the last
+            # known TRT-LLM metric line; if not present, try SGLang's block
+            sed -n '/= PERFORMANCE OVERVIEW/,/Per User Output Speed/p' "$f"
+            sed -n '/Serving Benchmark Result/,/^={5,}/p' "$f"
             echo
         done
     } >"$dst/performance_blocks.txt"

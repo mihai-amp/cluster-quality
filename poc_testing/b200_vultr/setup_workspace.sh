@@ -30,11 +30,6 @@ if [ ! -d cluster-quality ]; then
     fi
 fi
 
-# ---------- Claude Code ----------
-if ! [ -x "$HOME/.local/bin/claude" ]; then
-    curl -fsSL https://claude.ai/install.sh | bash
-fi
-
 # ---------- Sourceable env file ----------
 cat > $MY/env.sh <<'EOF'
 # Source in any shell that drives benchmarks:  source /mnt/vfs/mihai/env.sh
@@ -51,9 +46,6 @@ mkdir -p $TRITON_CACHE_DIR $TORCHINDUCTOR_CACHE_DIR
 
 export PLAN=$MY/workspace/cluster-quality/poc_testing/b200_vultr
 export DGXC=$MY/workspace/dgxc-benchmarking
-
-# Claude Code installs to ~/.local/bin; root's PATH usually omits it.
-case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
 
 # Tail the live logs of a specific Slurm job by numeric ID.
 # Usage: tail_job 256

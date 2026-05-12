@@ -219,10 +219,10 @@ def main():
     counts = collect_counts(results_dir)
     print("## 1. Runs per workload")
     print()
-    print("| Workload | Logs collected | Runs (CSV rows or logs) | OK | Failed |")
-    print("|---|---:|---:|---:|---:|")
-    for wl, (logs, runs, ok, fail) in sorted(counts.items()):
-        print(f"| {wl} | {logs} | {runs} | {ok} | {fail} |")
+    print("| Workload | Logs collected | Runs (CSV rows or logs) | OK |")
+    print("|---|---:|---:|---:|")
+    for wl, (logs, runs, ok, _fail) in sorted(counts.items()):
+        print(f"| {wl} | {logs} | {runs} | {ok} |")
     print()
 
     # -------- gather rows by type --------------
@@ -247,9 +247,10 @@ def main():
             try:
                 t = float(r["step_ms"])
                 f = float(r["tflops"])
+                wr_std = float(r["step_std_ms"]) if r.get("step_std_ms") else 0.0
             except (ValueError, TypeError):
                 continue
-            by_config[(r["workload"], r["size"], r["dtype"], r["scale"])].append((t, f))
+            by_config[(r["workload"], r["size"], r["dtype"], r["scale"])].append((t, f, wr_std))
         return by_config
 
     def print_training_summary(header, by_config):
@@ -257,25 +258,29 @@ def main():
         print()
         print(
             "| Workload | Size | Dtype | Scale | n | "
-            "Step mean (ms) | Step min (ms) | Step max (ms) | σ across runs (ms) | "
+            "Step mean (ms) | Step min (ms) | Step max (ms) | "
+            "Within-run σ mean (ms) | σ across runs (ms) | "
             "TFLOPS mean | TFLOPS min | TFLOPS max | MFU% |"
         )
-        print("|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
+        print("|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
         if not by_config:
-            print("| _no successful runs yet_ | | | | | | | | | | | | |")
+            print("| _no successful runs yet_ | | | | | | | | | | | | | |")
         for key, runs in sorted(by_config.items()):
             wl, size, dtype, scale = key
             times = [r[0] for r in runs]
             tfs = [r[1] for r in runs]
+            wr_stds = [r[2] for r in runs]
             tm, ts = mean_std(times)
             fm, _ = mean_std(tfs)
             t_min, t_max = min(times), max(times)
             f_min, f_max = min(tfs), max(tfs)
+            wr_mean = sum(wr_stds) / len(wr_stds) if wr_stds else 0.0
             peak = PEAK_TFLOPS.get(dtype, 0)
             mfu = fm / peak * 100 if peak else 0
             print(
                 f"| {wl} | {size} | {dtype} | {scale} | {len(runs)} | "
-                f"{tm:.1f} | {t_min:.1f} | {t_max:.1f} | {ts:.1f} | "
+                f"{tm:.1f} | {t_min:.1f} | {t_max:.1f} | "
+                f"{wr_mean:.1f} | {ts:.1f} | "
                 f"{fm:.0f} | {f_min:.0f} | {f_max:.0f} | {mfu:.1f}% |"
             )
         print()

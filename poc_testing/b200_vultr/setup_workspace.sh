@@ -67,13 +67,33 @@ export PLAN=$MY/workspace/cluster-quality/poc_testing/b200_vultr
 export DGXC=$MY/workspace/dgxc-benchmarking
 
 # Tail the live logs of a specific Slurm job by numeric ID.
+# Walks $LLMB_INSTALL/workloads looking for files modified recently whose
+# path or name contains the job ID — covers Slurm stdout, dgxc nested
+# training logs, and inference bench.log / output_workers.log alike.
 # Usage: tail_job 256
 tail_job() {
     local job="${1:?usage: tail_job <jobid>}"
-    local logdir=$(scontrol show job "$job" -o 2>/dev/null | grep -oP 'StdOut=\K\S+' | xargs dirname 2>/dev/null)
-    if [ -z "$logdir" ]; then echo "Job $job: no log dir found (job complete or unknown)" >&2; return 1; fi
-    echo "Job $job log dir: $logdir" >&2
-    tail -f "$logdir"/output_workers.log "$logdir"/log*.out 2>/dev/null
+    local stdout=$(scontrol show job "$job" -o 2>/dev/null | grep -oP 'StdOut=\K\S+')
+    # Find any log file recently touched whose name/path contains the job id
+    local extras
+    extras=$(find "$LLMB_INSTALL/workloads" -mmin -120 -type f \
+        \( -name "*${job}*.out" -o -name "*${job}*.log" -o -path "*_${job}/server_logs/*" -o -path "*_${job}_*/server_logs/*" \) \
+        2>/dev/null | sort -u)
+    if [ -z "$stdout" ] && [ -z "$extras" ]; then
+        echo "Job $job: no log file found (job may have just started, or is complete and out of MinJobAge)" >&2
+        return 1
+    fi
+    echo "Tailing job $job:" >&2
+    local files=()
+    [ -n "$stdout" ] && [ -f "$stdout" ] && { echo "  [stdout] $stdout" >&2; files+=("$stdout"); }
+    while IFS= read -r f; do
+        [ -z "$f" ] && continue
+        [ "$f" = "$stdout" ] && continue
+        echo "  [extra ] $f" >&2
+        files+=("$f")
+    done <<< "$extras"
+    [ ${#files[@]} -eq 0 ] && { echo "  (no matching files yet — try again in a few seconds)" >&2; return 1; }
+    tail -f "${files[@]}"
 }
 EOF
 

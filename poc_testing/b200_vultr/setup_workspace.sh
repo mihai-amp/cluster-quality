@@ -19,9 +19,9 @@ mkdir -p $LLMB_INSTALL
 mkdir -p $MY/results/phase0/{00_discovery,10_dcgm_diag,20_nvbandwidth,30_pairwise_ib,40_nccl_tests,50_iperf3_external,60_fio_storage,70_gpu_burn,monitor,analysis}
 mkdir -p $MY/results/phase1/{pretrain,finetune,inference,microbench}
 
-log "       Setting permissions (755 on $MY, 700 on scratch)"
-chmod -R 755 $MY
-chmod 700 $MY/scratch
+log "       Setting permissions on top-level dirs (non-recursive)"
+chmod 755 $MY $MY/workspace $MY/logs $MY/batch $MY/tools $MY/hf-cache $LLMB_INSTALL 2>/dev/null || true
+chmod 700 $MY/scratch 2>/dev/null || true
 log "       Layout done"
 
 # ---------- Repos ----------

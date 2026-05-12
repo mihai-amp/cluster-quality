@@ -217,12 +217,12 @@ def main():
 
     # -------- Section 1: counts ----------------
     counts = collect_counts(results_dir)
-    print("## 1. Runs per workload")
+    print("## 1. Successful runs per workload")
     print()
-    print("| Workload | Logs collected | Runs (CSV rows or logs) | OK |")
-    print("|---|---:|---:|---:|")
-    for wl, (logs, runs, ok, _fail) in sorted(counts.items()):
-        print(f"| {wl} | {logs} | {runs} | {ok} |")
+    print("| Workload | Successful runs |")
+    print("|---|---:|")
+    for wl, (_logs, _runs, ok, _fail) in sorted(counts.items()):
+        print(f"| {wl} | {ok} |")
     print()
 
     # -------- gather rows by type --------------
@@ -387,13 +387,24 @@ def main():
         parsed_txt = wl_dir / "parsed.txt"
         perf_blocks = wl_dir / "performance_blocks.txt"
         if parsed_txt.exists() and parsed_txt.stat().st_size > 0:
-            print(f"### {wl} (training parser)")
-            print()
-            print("```")
-            print(parsed_txt.read_text().rstrip())
-            print("```")
-            print()
-            raw_emitted = True
+            # Filter raw parser output to successful runs only — drop Failed rows
+            # and the Summary footer lines that mention failure
+            kept = []
+            for line in parsed_txt.read_text().splitlines():
+                if "Failed" in line:
+                    continue
+                if line.lstrip().startswith(("Failed experiments:", "Success rate:")):
+                    continue
+                kept.append(line)
+            content = "\n".join(kept).rstrip()
+            if content:
+                print(f"### {wl} (training parser, successful runs only)")
+                print()
+                print("```")
+                print(content)
+                print("```")
+                print()
+                raw_emitted = True
         elif perf_blocks.exists() and perf_blocks.stat().st_size > 0:
             print(f"### {wl} (inference performance blocks)")
             print()

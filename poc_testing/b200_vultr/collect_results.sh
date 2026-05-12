@@ -100,17 +100,27 @@ for wl in "${INFERENCE[@]}"; do
         cp "$f" "$dst/csv/$(basename "$(dirname "$(dirname "$f")")").json"
     done
 
-    # Human-readable performance blocks extracted from TRT-LLM logs
-    {
-        echo "==== $wl performance blocks ===="
-        for f in $(find "$src" -name '*_streaming-*.out' 2>/dev/null; find "$root" -maxdepth 1 -name 'slurm-*.out' 2>/dev/null); do
-            [ -f "$f" ] || continue
-            echo "--- $(basename "$f") ---"
-            sed -n '/= PERFORMANCE OVERVIEW/,/Per User Output Speed/p' "$f"
-            sed -n '/Serving Benchmark Result/,/^={5,}/p' "$f"
-            echo
-        done
-    } >"$dst/performance_blocks.txt"
+    # Human-readable performance blocks extracted from TRT-LLM logs.
+    # Skip logs that contain no metrics (failed/incomplete runs, or Dynamo's
+    # slurm wrappers that never carry TRT-LLM output) so we don't emit empty
+    # "--- filename ---" headers. Only write performance_blocks.txt if at
+    # least one log produced content.
+    content=""
+    for f in $(find "$src" -name '*_streaming-*.out' 2>/dev/null; find "$root" -maxdepth 1 -name 'slurm-*.out' 2>/dev/null); do
+        [ -f "$f" ] || continue
+        block=$({ sed -n '/= PERFORMANCE OVERVIEW/,/Per User Output Speed/p' "$f"; sed -n '/Serving Benchmark Result/,/^={5,}/p' "$f"; })
+        [ -z "$block" ] && continue
+        content+="--- $(basename "$f") ---"$'\n'"$block"$'\n\n'
+    done
+    if [ -n "$content" ]; then
+        {
+            echo "==== $wl performance blocks ===="
+            printf '%s' "$content"
+        } >"$dst/performance_blocks.txt"
+    else
+        # Clean up any stale file from a previous run so the aggregator skips this workload
+        rm -f "$dst/performance_blocks.txt"
+    fi
 done
 
 # ---- Microbenchmarks: just copy logs ----

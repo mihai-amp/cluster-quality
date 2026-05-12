@@ -30,6 +30,17 @@ from pathlib import Path
 # B200 dense peak TFLOPS per dtype (used to compute MFU%, not for verdicts)
 PEAK_TFLOPS = {"bf16": 2250, "fp8": 4500, "nvfp4": 9000, "mxfp4": 9000}
 
+# Inference workload metadata — size / dtype / scale are properties of the workload,
+# not encoded in per-experiment filenames. Sourced from `llmb-run list` and the
+# dgxc README's per-workload config.
+INFERENCE_META = {
+    "inference_llama3.3":          {"size": "70b",  "dtype": "nvfp4", "scale": 1},
+    "inference_deepseek-r1":       {"size": "671b", "dtype": "nvfp4", "scale": 4},
+    "inference_deepseek-r1-dynamo": {"size": "671b", "dtype": "nvfp4", "scale": 32},
+    "inference_deepseek-r1-sglang": {"size": "671b", "dtype": "nvfp4", "scale": 8},
+    "inference_gpt-oss-dynamo":    {"size": "120b", "dtype": "mxfp4", "scale": 4},
+}
+
 FILENAME_RE = re.compile(r"(?P<dtype>fp8|bf16|nvfp4|mxfp4)(?:_cs)?_gpus(?P<scale>\d+)")
 SIZE_RE = re.compile(r"_(?P<size>\d+[bm])(?:_a\d+b)?_(?:fp8|bf16|nvfp4|mxfp4)")
 
@@ -185,12 +196,17 @@ def collect_inference(wl_dir: Path):
     if not logs_dir.exists():
         return []
     rows = []
+    inf_meta = INFERENCE_META.get(wl_dir.name, {})
     for log in sorted(logs_dir.glob("*.out")):
         m = parse_inference_log(log)
         if m is None:
             continue
+        # Require at least one perf metric — skip logs that parsed use_case but no
+        # PERFORMANCE OVERVIEW (incomplete or failed runs)
+        if not (set(m.keys()) - {"use_case"}):
+            continue
         meta = parse_filename(log.name) or {}
-        rows.append({"workload": wl_dir.name, "log": log.name, **meta, **m})
+        rows.append({"workload": wl_dir.name, "log": log.name, **inf_meta, **meta, **m})
     return rows
 
 

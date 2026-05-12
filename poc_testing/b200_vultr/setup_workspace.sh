@@ -55,13 +55,12 @@ export DGXC=$MY/workspace/dgxc-benchmarking
 # Claude Code installs to ~/.local/bin; root's PATH usually omits it.
 case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
 
-# Tail the live log of the most recent running job matching a name pattern.
-# Usage: tail_job gpt-oss | tail_job deepseek-r1 | tail_job llama3.3
+# Tail the live logs of a specific Slurm job by numeric ID.
+# Usage: tail_job 256
 tail_job() {
-    local pat="${1:-.}"
-    local job=$(squeue -h -u "$USER" -o '%i %j' | awk -v p="$pat" '$2 ~ p {print $1; exit}')
-    if [ -z "$job" ]; then echo "No running job matches /$pat/" >&2; return 1; fi
-    local logdir=$(scontrol show job $job -o 2>/dev/null | grep -oP 'StdOut=\K\S+' | xargs dirname)
+    local job="${1:?usage: tail_job <jobid>}"
+    local logdir=$(scontrol show job "$job" -o 2>/dev/null | grep -oP 'StdOut=\K\S+' | xargs dirname 2>/dev/null)
+    if [ -z "$logdir" ]; then echo "Job $job: no log dir found (job complete or unknown)" >&2; return 1; fi
     echo "Job $job log dir: $logdir" >&2
     tail -f "$logdir"/output_workers.log "$logdir"/log*.out 2>/dev/null
 }

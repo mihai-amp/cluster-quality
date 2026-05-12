@@ -254,6 +254,8 @@ def main():
     counts = collect_counts(results_dir)
     print("## 1. Successful runs per workload")
     print()
+    print("Per-workload count of successful runs (workloads with zero successes are omitted).")
+    print()
     print("| Workload | Successful runs |")
     print("|---|---:|")
     # Drop workloads with no successful runs — they'd be noise in the summary
@@ -294,6 +296,8 @@ def main():
     def print_training_summary(header, by_config):
         print(header)
         print()
+        print("Each row aggregates all successful runs grouped by (workload, size, dtype, scale).")
+        print()
         print(
             "| Workload | Size | Dtype | Scale | n | "
             "Step mean (ms) | Step min (ms) | Step max (ms) | "
@@ -322,14 +326,13 @@ def main():
                 f"{fm:.0f} | {f_min:.0f} | {f_max:.0f} | {peak} | {mfu:.1f}% |"
             )
         print()
-        print(
-            "**Legend.** **Step mean/min/max** = per-step training time across runs in this config. "
-            "**Within-run σ mean** = mean of per-run step-time std-dev (variance inside one run). "
-            "**σ across runs** = std-dev of the per-run mean step time (variance between runs). "
-            "**TFLOPS** = effective TFLOPS/GPU reported by the dgxc parser. "
-            "**Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000). "
-            "**MFU%** = TFLOPS mean / Peak TFLOPS × 100."
-        )
+        print("**Legend:**")
+        print("- **Step mean/min/max** = per-step training time across runs in this config.")
+        print("- **Within-run σ mean** = mean of per-run step-time std-dev (variance inside one run).")
+        print("- **σ across runs** = std-dev of the per-run mean step time (variance between runs).")
+        print("- **TFLOPS** = effective TFLOPS/GPU reported by the dgxc parser.")
+        print("- **Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000).")
+        print("- **MFU%** = TFLOPS mean / Peak TFLOPS × 100.")
         print()
 
     # -------- Section 2/3: training & finetune summaries --------
@@ -338,6 +341,8 @@ def main():
 
     # -------- Section 4: Inference summary --------
     print("## 4. Inference — summary per model (across use cases)")
+    print()
+    print("Each row aggregates all parsed use cases of an inference workload.")
     print()
     print(
         "| Workload | Size | Dtype | Scale | n use cases | "
@@ -366,15 +371,16 @@ def main():
             f"{fmt(tpot_mean, '.2f')} | {fmt(min(tpots) if tpots else None, '.2f')} | {fmt(max(tpots) if tpots else None, '.2f')} |"
         )
     print()
-    print(
-        "**Legend.** **TPS/GPU** = output tokens/sec per GPU (per-device throughput). "
-        "**TTFT** = Time-to-First-Token, ms — latency from request submission to first streamed token. "
-        "**TPOT** = Time-Per-Output-Token, ms — steady-state per-token latency after TTFT."
-    )
+    print("**Legend:**")
+    print("- **TPS/GPU** = output tokens/sec per GPU (per-device throughput).")
+    print("- **TTFT** = Time-to-First-Token, ms — latency from request submission to first streamed token.")
+    print("- **TPOT** = Time-Per-Output-Token, ms — steady-state per-token latency after TTFT.")
     print()
 
     # -------- Section 5: Training full --------
     print("## 5. Training — full results (every successful run)")
+    print()
+    print("One row per successful training run, no aggregation.")
     print()
     print("| Workload | Size | Dtype | Scale | Step mean (ms) | Step σ (ms) | TFLOPS/GPU | Peak TFLOPS |")
     print("|---|---|---|---:|---:|---:|---:|---:|")
@@ -389,16 +395,17 @@ def main():
     if not any(r for r in training_rows if r["status"] == "Success"):
         print("| _no successful runs yet_ | | | | | | | |")
     print()
-    print(
-        "**Legend.** **Step mean** = mean per-step training time within this run. "
-        "**Step σ** = std-dev of step time within this run. "
-        "**TFLOPS/GPU** = effective TFLOPS per GPU. "
-        "**Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000)."
-    )
+    print("**Legend:**")
+    print("- **Step mean** = mean per-step training time within this run.")
+    print("- **Step σ** = std-dev of step time within this run.")
+    print("- **TFLOPS/GPU** = effective TFLOPS per GPU.")
+    print("- **Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000).")
     print()
 
     # -------- Section 6: Finetune full --------
     print("## 6. Finetune — full results (every successful run)")
+    print()
+    print("One row per successful finetune run, no aggregation.")
     print()
     print("| Workload | Size | Dtype | Scale | Step mean (ms) | Step σ (ms) | TFLOPS/GPU | Peak TFLOPS |")
     print("|---|---|---|---:|---:|---:|---:|---:|")
@@ -413,16 +420,17 @@ def main():
     if not any(r for r in finetune_rows if r["status"] == "Success"):
         print("| _no successful runs yet_ | | | | | | | |")
     print()
-    print(
-        "**Legend.** **Step mean** = mean per-step training time within this run. "
-        "**Step σ** = std-dev of step time within this run. "
-        "**TFLOPS/GPU** = effective TFLOPS per GPU. "
-        "**Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000)."
-    )
+    print("**Legend:**")
+    print("- **Step mean** = mean per-step training time within this run.")
+    print("- **Step σ** = std-dev of step time within this run.")
+    print("- **TFLOPS/GPU** = effective TFLOPS per GPU.")
+    print("- **Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000).")
     print()
 
     # -------- Section 7: Inference full --------
     print("## 7. Inference — full results (every use case)")
+    print()
+    print("One row per parsed inference use case, no aggregation.")
     print()
     print(
         "| Workload | Size | Dtype | Scale | Use case | "
@@ -445,15 +453,14 @@ def main():
     if not inference_rows:
         print("| _no parsed inference results yet_ | | | | | | | | | | | | |")
     print()
-    print(
-        "**Legend.** **Req/s** = requests/sec served. "
-        "**Total output tok/s** = aggregate output tokens/sec across all concurrent users. "
-        "**TPS/GPU** = output tokens/sec per GPU (per-device throughput). "
-        "**TPS/User** = output tokens/sec per concurrent user. "
-        "**Avg req latency** = mean end-to-end request latency, ms. "
-        "**TTFT** = Time-to-First-Token, ms. "
-        "**TPOT** = Time-Per-Output-Token, ms (steady-state per-token latency)."
-    )
+    print("**Legend:**")
+    print("- **Req/s** = requests/sec served.")
+    print("- **Total output tok/s** = aggregate output tokens/sec across all concurrent users.")
+    print("- **TPS/GPU** = output tokens/sec per GPU (per-device throughput).")
+    print("- **TPS/User** = output tokens/sec per concurrent user.")
+    print("- **Avg req latency** = mean end-to-end request latency, ms.")
+    print("- **TTFT** = Time-to-First-Token, ms.")
+    print("- **TPOT** = Time-Per-Output-Token, ms (steady-state per-token latency).")
     print()
 
     # -------- Section 8: Raw parser output --------

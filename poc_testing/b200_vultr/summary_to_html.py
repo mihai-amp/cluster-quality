@@ -25,6 +25,8 @@ th, td { border: 1px solid #ccc; padding: 4px 8px; }
 th { background: #f4f4f4; text-align: left; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
 tr:nth-child(even) td { background: #fafafa; }
+ul { margin: 0.5em 0 1em 0; padding-left: 1.5em; }
+li { margin: 0.15em 0; }
 code { background: #f0f0f0; padding: 1px 4px; border-radius: 3px;
        font-family: ui-monospace, Menlo, monospace; font-size: 0.9em; }
 pre { background: #f6f8fa; padding: 1em; overflow-x: auto;
@@ -146,6 +148,16 @@ def main():
                 ) + "</tr>")
                 i += 1
             out.append("</tbody></table>")
+            continue
+
+        # Bullet list: consecutive lines starting with "- " or "* "
+        if re.match(r"^\s*[-*]\s+", line):
+            out.append("<ul>")
+            while i < len(lines) and re.match(r"^\s*[-*]\s+", lines[i]):
+                item = re.sub(r"^\s*[-*]\s+", "", lines[i])
+                out.append(f"<li>{inline(item)}</li>")
+                i += 1
+            out.append("</ul>")
             continue
 
         # Blank line: paragraph break (ignore — paragraph wrapping below handles it)

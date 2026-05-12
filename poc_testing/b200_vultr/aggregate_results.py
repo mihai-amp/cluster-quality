@@ -255,21 +255,28 @@ def main():
     def print_training_summary(header, by_config):
         print(header)
         print()
-        print("| Workload | Size | Dtype | Scale | n | Step mean (ms) | σ across runs (ms) | Mean TFLOPS | MFU% |")
-        print("|---|---|---|---:|---:|---:|---:|---:|---:|")
+        print(
+            "| Workload | Size | Dtype | Scale | n | "
+            "Step mean (ms) | Step min (ms) | Step max (ms) | σ across runs (ms) | "
+            "TFLOPS mean | TFLOPS min | TFLOPS max | MFU% |"
+        )
+        print("|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
         if not by_config:
-            print("| _no successful runs yet_ | | | | | | | | |")
+            print("| _no successful runs yet_ | | | | | | | | | | | | |")
         for key, runs in sorted(by_config.items()):
             wl, size, dtype, scale = key
             times = [r[0] for r in runs]
             tfs = [r[1] for r in runs]
             tm, ts = mean_std(times)
             fm, _ = mean_std(tfs)
+            t_min, t_max = min(times), max(times)
+            f_min, f_max = min(tfs), max(tfs)
             peak = PEAK_TFLOPS.get(dtype, 0)
             mfu = fm / peak * 100 if peak else 0
             print(
                 f"| {wl} | {size} | {dtype} | {scale} | {len(runs)} | "
-                f"{tm:.1f} | {ts:.1f} | {fm:.0f} | {mfu:.1f}% |"
+                f"{tm:.1f} | {t_min:.1f} | {t_max:.1f} | {ts:.1f} | "
+                f"{fm:.0f} | {f_min:.0f} | {f_max:.0f} | {mfu:.1f}% |"
             )
         print()
 
@@ -280,24 +287,31 @@ def main():
     # -------- Section 4: Inference summary --------
     print("## 4. Inference — summary per model")
     print()
-    print("| Workload | Size | Dtype | Scale | n use cases | Best throughput (tok/s) | Mean TTFT p50 (ms) | Mean TPOT (ms) |")
-    print("|---|---|---|---:|---:|---:|---:|---:|")
+    print(
+        "| Workload | Size | Dtype | Scale | n use cases | "
+        "Throughput mean (tok/s) | Throughput min | Throughput max | "
+        "TTFT p50 mean (ms) | TTFT p50 min | TTFT p50 max | "
+        "TPOT mean (ms) | TPOT min | TPOT max |"
+    )
+    print("|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
     by_inf = defaultdict(list)
     for r in inference_rows:
         by_inf[(r["workload"], r.get("size", ""), r.get("dtype", ""), r.get("scale", ""))].append(r)
     if not by_inf:
-        print("| _no parsed inference results yet_ | | | | | | | |")
+        print("| _no parsed inference results yet_ | | | | | | | | | | | | | |")
     for key, runs in sorted(by_inf.items()):
         wl, size, dtype, scale = key
         ths = [r.get("throughput") for r in runs if r.get("throughput") is not None]
         ttfts = [r.get("ttft_p50") for r in runs if r.get("ttft_p50") is not None]
         tpots = [r.get("tpot_mean") for r in runs if r.get("tpot_mean") is not None]
-        best = max(ths) if ths else None
-        mean_ttft = sum(ttfts) / len(ttfts) if ttfts else None
-        mean_tpot = sum(tpots) / len(tpots) if tpots else None
+        th_mean = sum(ths) / len(ths) if ths else None
+        ttft_mean = sum(ttfts) / len(ttfts) if ttfts else None
+        tpot_mean = sum(tpots) / len(tpots) if tpots else None
         print(
             f"| {wl} | {fmt(size)} | {fmt(dtype)} | {fmt(scale)} | {len(runs)} | "
-            f"{fmt(best, '.1f')} | {fmt(mean_ttft, '.1f')} | {fmt(mean_tpot, '.2f')} |"
+            f"{fmt(th_mean, '.1f')} | {fmt(min(ths) if ths else None, '.1f')} | {fmt(max(ths) if ths else None, '.1f')} | "
+            f"{fmt(ttft_mean, '.1f')} | {fmt(min(ttfts) if ttfts else None, '.1f')} | {fmt(max(ttfts) if ttfts else None, '.1f')} | "
+            f"{fmt(tpot_mean, '.2f')} | {fmt(min(tpots) if tpots else None, '.2f')} | {fmt(max(tpots) if tpots else None, '.2f')} |"
         )
     print()
 

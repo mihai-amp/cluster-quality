@@ -376,6 +376,16 @@ def main():
     print("- **TTFT** = Time-to-First-Token, ms — latency from request submission to first streamed token.")
     print("- **TPOT** = Time-Per-Output-Token, ms — steady-state per-token latency after TTFT.")
     print()
+    print(
+        "**Note on high TTFT.** Some rows show very high TTFT (e.g. summarization ≈260s, "
+        "reasoning ≈29s) — these are CON640 runs that use the dgxc default "
+        "`max_num_tokens=2048`. At high concurrency on long inputs (summarization "
+        "`max_seq_len=8513`), the prefill scheduler can only consume 2048 tokens/step, "
+        "so queued requests wait thousands of steps before their first token is emitted. "
+        "Re-running the same workload at CON128/256 with `max_num_tokens=8192` yields "
+        "the same per-GPU throughput at 15–24× lower TTFT (see Section 7 for the breakdown)."
+    )
+    print()
 
     # -------- Section 5: Training full --------
     print("## 5. Training — full results (every successful run)")

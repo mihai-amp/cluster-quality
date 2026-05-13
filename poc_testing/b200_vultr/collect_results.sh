@@ -135,6 +135,16 @@ for wl in "${MICROBENCH[@]}"; do
     done
 done
 
+# ---- NCCL bus BW (phase 0 collective sweep): copy the most recent test log ----
+# 40_nccl_tests.sh writes to $PLAN/acceptance/results/nccl_tests_<jobid>.log
+NCCL_SRC="$(dirname "$0")/acceptance/results"
+if compgen -G "$NCCL_SRC/nccl_tests_*.log" >/dev/null 2>&1; then
+    mkdir -p "$OUT_DIR/nccl_bus_bw"
+    latest=$(ls -t "$NCCL_SRC"/nccl_tests_*.log | head -1)
+    cp "$latest" "$OUT_DIR/nccl_bus_bw/$(basename "$latest")"
+    echo "  copied NCCL bus BW log: $(basename "$latest")"
+fi
+
 # ---- Generate summary.md and summary.html ----
 AGG="$(dirname "$0")/aggregate_results.py"
 HTML="$(dirname "$0")/summary_to_html.py"

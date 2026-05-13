@@ -6,10 +6,11 @@ Sections produced (summaries first, then per-run detail, then raw parser output)
   2. Training summary    — one row per (workload, size, dtype, scale)
   3. Finetune summary    — one row per (workload, size, dtype, scale)
   4. Inference summary   — one row per (workload, size, dtype, scale)
-  5. Training full       — every successful run, per-run row
-  6. Finetune full       — every successful run, per-run row
-  7. Inference full      — every parsed log, per-run row
-  8. Raw parser output   — verbatim dgxc parser tables + inference performance blocks
+  5. NCCL bus bandwidth  — peak/avg busbw per collective (phase 0 NCCL sweep)
+  6. Training full       — every successful run, per-run row
+  7. Finetune full       — every successful run, per-run row
+  8. Inference full      — every parsed log, per-run row
+  9. Raw parser output   — verbatim dgxc parser tables + inference performance blocks
 
 Reads:
   $MY/results/phase1/<workload>/parsed.csv          (training/finetune, from dgxc parsers)
@@ -226,6 +227,88 @@ def collect_inference(wl_dir: Path):
     return rows
 
 
+NCCL_HEADER_RE = re.compile(r"^====\s*(\S+)\s+ranks=(\d+)\s+\((.+?)\)\s*====")
+
+
+def parse_nccl_log(log_path: Path):
+    """Parse NCCL tests output into per-section busbw summaries.
+
+    Each `==== <op> ranks=<n> (<scope>) ====` header starts a section.
+    Within a section, locate the `# size ... busbw ...` header to find the
+    out-of-place busbw column, then read numeric data rows for that column.
+    The `# Avg bus bandwidth : X` footer is captured if present.
+    """
+    sections = []
+    current = None
+    busbw_col = None
+
+    for raw in log_path.read_text().splitlines():
+        m = NCCL_HEADER_RE.match(raw.strip())
+        if m:
+            if current is not None:
+                sections.append(current)
+            current = {
+                "op": m.group(1),
+                "ranks": int(m.group(2)),
+                "scope": m.group(3),
+                "peak_busbw": None,
+                "peak_size": None,
+                "avg_busbw": None,
+                "rows": [],
+            }
+            busbw_col = None
+            continue
+
+        if current is None:
+            continue
+
+        # Column header — the first occurrence of `busbw` is the out-of-place column
+        if raw.lstrip().startswith("#") and "size" in raw and "busbw" in raw:
+            fields = raw.lstrip("#").split()
+            try:
+                busbw_col = fields.index("busbw")
+            except ValueError:
+                busbw_col = None
+            continue
+
+        # Avg footer
+        if "Avg bus bandwidth" in raw:
+            try:
+                current["avg_busbw"] = float(raw.split(":")[-1].strip())
+            except ValueError:
+                pass
+            continue
+
+        # Data row: starts with whitespace + digit
+        if busbw_col is not None and re.match(r"^\s*\d", raw):
+            fields = raw.split()
+            try:
+                size = int(fields[0])
+                busbw = float(fields[busbw_col])
+            except (ValueError, IndexError):
+                continue
+            current["rows"].append((size, busbw))
+            if current["peak_busbw"] is None or busbw > current["peak_busbw"]:
+                current["peak_busbw"] = busbw
+                current["peak_size"] = size
+
+    if current is not None:
+        sections.append(current)
+    return sections
+
+
+def collect_nccl(results_dir: Path):
+    """Return parsed NCCL sections from the most recent log in nccl_bus_bw/."""
+    nccl_dir = results_dir / "nccl_bus_bw"
+    if not nccl_dir.is_dir():
+        return [], None
+    logs = sorted(nccl_dir.glob("nccl_tests_*.log"))
+    if not logs:
+        return [], None
+    log = logs[-1]
+    return parse_nccl_log(log), log.name
+
+
 def fmt(v, spec=""):
     if v in ("", None):
         return "-"
@@ -383,12 +466,54 @@ def main():
         "`max_seq_len=8513`), the prefill scheduler can only consume 2048 tokens/step, "
         "so queued requests wait thousands of steps before their first token is emitted. "
         "Re-running the same workload at CON128/256 with `max_num_tokens=8192` yields "
-        "the same per-GPU throughput at 15–24× lower TTFT (see Section 7 for the breakdown)."
+        "the same per-GPU throughput at 15–24× lower TTFT (see Section 8 for the breakdown)."
     )
     print()
 
-    # -------- Section 5: Training full --------
-    print("## 5. Training — full results (every successful run)")
+    # -------- Section 5: NCCL bus bandwidth --------
+    nccl_sections, nccl_logname = collect_nccl(results_dir)
+    print("## 5. NCCL bus bandwidth")
+    print()
+    if nccl_sections:
+        print(f"Per-collective busbw from `acceptance/40_nccl_tests.sh` (source: `{nccl_logname}`).")
+        print("Sweep range: 16 MiB → 8 GiB. Peak is the maximum out-of-place busbw observed; ")
+        print("Avg is NCCL's own `# Avg bus bandwidth` footer.")
+        print()
+        print("| Collective | Ranks | Scope | Peak busbw (GB/s) | At size | Avg busbw (GB/s) |")
+        print("|---|---:|---|---:|---:|---:|")
+        for s in nccl_sections:
+            peak = s["peak_busbw"]
+            peak_size = s["peak_size"]
+            avg = s["avg_busbw"]
+            if peak_size is not None:
+                size_label = f"{peak_size / (1024 ** 3):.2f} GiB" if peak_size >= 1024 ** 3 else f"{peak_size // (1024 ** 2)} MiB"
+            else:
+                size_label = "-"
+            print(
+                f"| {s['op']} | {s['ranks']} | {s['scope']} | "
+                f"{fmt(peak, '.2f')} | {size_label} | {fmt(avg, '.2f')} |"
+            )
+        print()
+        print("**Legend:**")
+        print("- **Collective** = NCCL op (`all_reduce`, `all_gather`, `reduce_scatter`, `alltoall`).")
+        print("- **Ranks** = total GPUs in the test (8 = 1 node intra-node; 16 = 2 nodes inter-node).")
+        print("- **Peak busbw** = max out-of-place busbw across the sweep, at the listed message size.")
+        print("- **Avg busbw** = NCCL's per-run `# Avg bus bandwidth` footer (mean across the sweep).")
+        print()
+        print(
+            "**Sanity envelope.** B200 NVLink5 intra-node `all_reduce`/`alltoall` ≳ 350 GB/s at large sizes; "
+            "inter-node 2-node `all_reduce` on 8× NDR ≳ 60–80 GB/s; "
+            "inter-node `alltoall` is scaling-limited, typically ~40–60 GB/s."
+        )
+    else:
+        print(
+            "_No NCCL bus BW log captured. Run `sbatch $PLAN/acceptance/40_nccl_tests.sh`, "
+            "then re-run `collect_results.sh`._"
+        )
+    print()
+
+    # -------- Section 6: Training full --------
+    print("## 6. Training — full results (every successful run)")
     print()
     print("One row per successful training run, no aggregation.")
     print()
@@ -412,8 +537,8 @@ def main():
     print("- **Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000).")
     print()
 
-    # -------- Section 6: Finetune full --------
-    print("## 6. Finetune — full results (every successful run)")
+    # -------- Section 7: Finetune full --------
+    print("## 7. Finetune — full results (every successful run)")
     print()
     print("One row per successful finetune run, no aggregation.")
     print()
@@ -437,8 +562,8 @@ def main():
     print("- **Peak TFLOPS** = B200 dense peak for this dtype (bf16: 2250, fp8: 4500, nvfp4/mxfp4: 9000).")
     print()
 
-    # -------- Section 7: Inference full --------
-    print("## 7. Inference — full results (every use case)")
+    # -------- Section 8: Inference full --------
+    print("## 8. Inference — full results (every use case)")
     print()
     print("One row per parsed inference use case, no aggregation.")
     print()
@@ -473,8 +598,8 @@ def main():
     print("- **TPOT** = Time-Per-Output-Token, ms (steady-state per-token latency).")
     print()
 
-    # -------- Section 8: Raw parser output --------
-    print("## 8. Raw parser output")
+    # -------- Section 9: Raw parser output --------
+    print("## 9. Raw parser output")
     print()
     print("Verbatim output of the dgxc training parser (`parse_train_timing*.sh --format=table`)")
     print("and the inference performance blocks extracted from each workload's logs.")

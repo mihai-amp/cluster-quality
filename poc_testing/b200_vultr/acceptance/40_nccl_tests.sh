@@ -42,20 +42,27 @@ run_collective() {
 echo "==== NCCL tests on $(scontrol show hostname "$SLURM_NODELIST" | tr '\n' ' ') at $(date -u) ===="
 nvidia-smi -L
 
-# Intra-node (single node, 8 GPUs)
+# Intra-node (single node, 8 GPUs) — all_reduce + alltoall for bus BW baseline
 echo
 echo "######## INTRA-NODE (8 GPUs, 1 node) ########"
-SLURM_NNODES_OVERRIDE=1 \
-  $MPIRUN -np 8 -H "$(hostname):8" "$NCCL_TESTS_DIR/all_reduce_perf" \
-    -b "$MIN_BYTES" -e "$MAX_BYTES" -f 2 -g 1 -n "$ITERS" -w "$WARMUP" -c 1
+for op in all_reduce alltoall; do
+  echo
+  echo "==== $op  ranks=8  (intra-node) ===="
+  SLURM_NNODES_OVERRIDE=1 \
+    $MPIRUN -np 8 -H "$(hostname):8" "$NCCL_TESTS_DIR/${op}_perf" \
+      -b "$MIN_BYTES" -e "$MAX_BYTES" -f 2 -g 1 -n "$ITERS" -w "$WARMUP" -c 1
+done
 
 # Inter-node (both nodes, 16 GPUs)
 echo
 echo "######## INTER-NODE (16 GPUs, 2 nodes) ########"
-for op in all_reduce all_gather reduce_scatter; do
+for op in all_reduce all_gather reduce_scatter alltoall; do
   run_collective "$op" 16 "inter-node"
 done
 
 echo
-echo "Sanity check: B200 NVLink5 intra-node all_reduce should show busbw > 350 GB/s at large sizes."
-echo "Inter-node 2-node all_reduce on 8x NDR should show busbw > 60-80 GB/s at large sizes."
+echo "Sanity check:"
+echo "  B200 NVLink5 intra-node all_reduce  busbw > 350 GB/s at large sizes"
+echo "  B200 NVLink5 intra-node alltoall    busbw > 350 GB/s at large sizes"
+echo "  Inter-node 2-node all_reduce on 8x NDR  busbw > 60-80 GB/s at large sizes"
+echo "  Inter-node 2-node alltoall on 8x NDR    busbw scaling-limited; expect ~40-60 GB/s"

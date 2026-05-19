@@ -6,6 +6,18 @@ poc_testing/*/monitor/results/*
 poc_testing/*/analysis/results/*
 !poc_testing/*/analysis/results/.gitkeep
 
+# Raw collected outputs — large, regenerable via collect_results.sh.
+# The curated `results/report/` deliverable IS committed; everything else
+# under results/ is per-cluster and stays out of the repo.
+poc_testing/*/results/phase0/
+poc_testing/*/results/phase1/
+
+# Local scratch — ad-hoc experiments, not part of the POC results
+experiments/
+
+# Per-user editor/agent state
+.claude/
+
 # Slurm
 slurm-*.out
 *.sqsh

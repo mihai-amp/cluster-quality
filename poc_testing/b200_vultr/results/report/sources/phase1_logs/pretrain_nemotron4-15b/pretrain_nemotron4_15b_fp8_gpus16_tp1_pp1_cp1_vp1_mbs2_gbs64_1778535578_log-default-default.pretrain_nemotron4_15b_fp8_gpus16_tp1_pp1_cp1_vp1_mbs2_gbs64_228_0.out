@@ -1,0 +1,405 @@
+# ===== TRIMMED SAMPLE =====
+# Original: pretrain_nemotron4_15b_fp8_gpus16_tp1_pp1_cp1_vp1_mbs2_gbs64_1778535578_log-default-default.pretrain_nemotron4_15b_fp8_gpus16_tp1_pp1_cp1_vp1_mbs2_gbs64_228_0.out
+# Original size: 4,530,472 bytes (41,923 lines)
+# This file: last 400 lines (400 lines).
+# ==========================
+gpu02:141672:143680 [6] NCCL INFO Channel 14/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 106 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b0f0
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 104 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022bb0
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 105 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009818
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 105 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022c28
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 106 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022ca0
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 106 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009890
+gpu02:141672:143680 [6] NCCL INFO Channel 16/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 107 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b168
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 107 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009908
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 107 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022d18
+gpu02:141672:143680 [6] NCCL INFO Channel 17/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 108 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b1e0
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 108 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009980
+gpu02:141672:143680 [6] NCCL INFO Channel 18/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 109 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b258
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 109 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c0099f8
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 108 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022d90
+gpu02:141672:143680 [6] NCCL INFO Channel 19/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 110 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b2d0
+gpu02:141672:143680 [6] NCCL INFO Channel 20/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 111 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b348
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 110 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009a70
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 109 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022e08
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 110 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022e80
+gpu02:141672:143680 [6] NCCL INFO Channel 21/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 112 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b3c0
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 111 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009ae8
+gpu02:141672:143680 [6] NCCL INFO Channel 22/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 113 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b438
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 111 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022ef8
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 112 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009b60
+gpu02:141672:143680 [6] NCCL INFO Channel 24/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 114 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b4b0
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 112 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022f70
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 113 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009bd8
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 113 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860022fe8
+gpu02:141672:143680 [6] NCCL INFO Channel 25/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 115 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b528
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 114 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009c50
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 115 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009cc8
+gpu02:141672:143680 [6] NCCL INFO Channel 26/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 116 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b5a0
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 114 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860023060
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 116 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009d40
+gpu02:141672:143680 [6] NCCL INFO Channel 27/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 117 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b618
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 117 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009db8
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 115 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec8600230d8
+gpu02:141672:143680 [6] NCCL INFO Channel 28/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 118 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b690
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 118 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009e30
+gpu02:141672:143680 [6] NCCL INFO Channel 29/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 119 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b708
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 116 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860023150
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 117 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec8600231c8
+gpu02:141672:143680 [6] NCCL INFO Channel 30/0 : 14[6] -> 13[5] via P2P/CUMEM
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 120 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b780
+gpu02:141579:143659 [5] NCCL INFO New proxy recv connection 119 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009ea8
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 118 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860023240
+gpu02:141579:143659 [5] NCCL INFO New proxy send connection 120 from local rank 6, transport 0
+gpu02:141672:143658 [6] NCCL INFO New proxy send connection 121 from local rank 5, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009f20
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 6 -> connection 0x7c99c402b7f8
+gpu02:141671:143661 [0] NCCL INFO New proxy recv connection 119 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec8600232b8
+gpu02:141596:143679 [3] NCCL INFO Channel 00/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 92 from local rank 3, transport 0
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 93 from local rank 0, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800b9a0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800ba18
+gpu02:141596:143679 [3] NCCL INFO Channel 01/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 94 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800ba90
+gpu02:141596:143679 [3] NCCL INFO Channel 03/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 95 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bb08
+gpu02:141596:143679 [3] NCCL INFO Channel 04/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 96 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bb80
+gpu02:141596:143679 [3] NCCL INFO Channel 05/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 97 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bbf8
+gpu02:141596:143679 [3] NCCL INFO Channel 06/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 98 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bc70
+gpu02:141596:143679 [3] NCCL INFO Channel 07/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 99 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bce8
+gpu02:141596:143679 [3] NCCL INFO Channel 08/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 100 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bd60
+gpu02:141596:143679 [3] NCCL INFO Channel 09/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 101 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bdd8
+gpu02:141596:143679 [3] NCCL INFO Channel 11/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 102 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800be50
+gpu02:141596:143679 [3] NCCL INFO Channel 12/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 103 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bec8
+gpu02:141596:143679 [3] NCCL INFO Channel 13/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 104 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bf40
+gpu02:141596:143679 [3] NCCL INFO Channel 14/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 105 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800bfb8
+gpu02:141596:143679 [3] NCCL INFO Channel 15/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 106 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c030
+gpu02:141596:143679 [3] NCCL INFO Channel 16/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 107 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c0a8
+gpu02:141596:143679 [3] NCCL INFO Channel 17/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 108 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c120
+gpu02:141596:143679 [3] NCCL INFO Channel 19/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 109 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c198
+gpu02:141596:143679 [3] NCCL INFO Channel 20/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 110 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c210
+gpu02:141596:143679 [3] NCCL INFO Channel 21/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 111 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c288
+gpu02:141596:143679 [3] NCCL INFO Channel 22/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 112 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c300
+gpu02:141596:143679 [3] NCCL INFO Channel 23/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 113 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c378
+gpu02:141596:143679 [3] NCCL INFO Channel 24/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 114 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c3f0
+gpu02:141596:143679 [3] NCCL INFO Channel 25/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 115 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c468
+gpu02:141596:143679 [3] NCCL INFO Channel 27/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 116 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c4e0
+gpu02:141596:143679 [3] NCCL INFO Channel 28/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 117 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c558
+gpu02:141596:143679 [3] NCCL INFO Channel 29/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 118 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c5d0
+gpu02:141596:143679 [3] NCCL INFO Channel 30/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 119 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c648
+gpu02:141596:143679 [3] NCCL INFO Channel 31/0 : 11[3] -> 10[2] via P2P/CUMEM
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 120 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c6c0
+gpu02:141698:143660 [2] NCCL INFO New proxy send connection 121 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 2 -> connection 0x7af0e4011338
+gpu02:141596:143662 [3] NCCL INFO New proxy send connection 121 from local rank 2, transport 0
+gpu02:141698:143676 [2] NCCL INFO Connected to proxy localRank 3 -> connection 0x7a0ed800c738
+gpu02:141630:143664 [1] NCCL INFO New proxy send connection 120 from local rank 2, transport 0
+gpu02:141698:143676 [2] NCCL INFO Connected to proxy localRank 1 -> connection 0x7074ec009f80
+gpu02:141630:143664 [1] NCCL INFO New proxy send connection 121 from local rank 7, transport 0
+gpu02:141613:143675 [7] NCCL INFO Connected to proxy localRank 1 -> connection 0x7074ec009ff8
+gpu02:141613:143657 [7] NCCL INFO New proxy send connection 120 from local rank 1, transport 0
+gpu02:141630:143674 [1] NCCL INFO Connected to proxy localRank 7 -> connection 0x760d9001fb90
+gpu02:141613:143657 [7] NCCL INFO New proxy send connection 121 from local rank 4, transport 0
+gpu02:141647:143677 [4] NCCL INFO Connected to proxy localRank 7 -> connection 0x760d9001fc08
+gpu02:141647:143663 [4] NCCL INFO New proxy send connection 121 from local rank 6, transport 0
+gpu02:141672:143680 [6] NCCL INFO Connected to proxy localRank 4 -> connection 0x78ef240169f8
+gpu01:156275:158273 [0] NCCL INFO New proxy send connection 121 from local rank 7, transport 0
+gpu01:156299:158281 [7] NCCL INFO Connected to proxy localRank 0 -> connection 0x6ff3f40087f8
+gpu01:156275:158282 [0] NCCL INFO Connected to proxy localRank 7 -> connection 0x7de88c016558
+gpu01:156299:158268 [7] NCCL INFO New proxy send connection 121 from local rank 0, transport 0
+gpu02:141579:143659 [5] NCCL INFO New proxy send connection 121 from local rank 0, transport 0
+gpu02:141671:143673 [0] NCCL INFO Connected to proxy localRank 5 -> connection 0x7d2c3c009f98
+gpu02:141671:143661 [0] NCCL INFO New proxy send connection 120 from local rank 5, transport 0
+gpu02:141579:143678 [5] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec860023330
+gpu02:141671:143661 [0] NCCL INFO New proxy send connection 121 from local rank 3, transport 0
+gpu02:141596:143679 [3] NCCL INFO Connected to proxy localRank 0 -> connection 0x7ec8600233a8
+gpu01:156199:158263 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 809 mtu 5 LID 40 subnet-prefix 33022  FLID 0 fifoRkey=0x166724 fifoLkey=0x166724
+gpu01:156199:158263 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 810 mtu 5 LID 40 subnet-prefix 33022  FLID 0 fifoRkey=0x12e4a3 fifoLkey=0x12e4a3
+gpu01:156199:158263 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 811 mtu 5 LID 40 subnet-prefix 33022  FLID 0 fifoRkey=0x1328e9 fifoLkey=0x1328e9
+gpu01:156199:158263 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 812 mtu 5 LID 40 subnet-prefix 33022  FLID 0 fifoRkey=0x16c887 fifoLkey=0x16c887
+gpu02:141647:143663 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 866 mtu 5 LID 83 subnet-prefix 33022  FLID 0 fifoRkey=0x16de9e fifoLkey=0x16de9e
+gpu02:141647:143663 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 867 mtu 5 LID 83 subnet-prefix 33022  FLID 0 fifoRkey=0x1804c2 fifoLkey=0x1804c2
+gpu02:141647:143663 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 868 mtu 5 LID 83 subnet-prefix 33022  FLID 0 fifoRkey=0x167e3c fifoLkey=0x167e3c
+gpu02:141647:143663 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 869 mtu 5 LID 83 subnet-prefix 33022  FLID 0 fifoRkey=0x174807 fifoLkey=0x174807
+gpu02:141613:143657 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 861 mtu 5 LID 607 subnet-prefix 33022  FLID 0 fifoRkey=0x160dcc fifoLkey=0x160dcc
+gpu02:141613:143657 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 862 mtu 5 LID 607 subnet-prefix 33022  FLID 0 fifoRkey=0x1f9d5c fifoLkey=0x1f9d5c
+gpu02:141613:143657 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 863 mtu 5 LID 607 subnet-prefix 33022  FLID 0 fifoRkey=0x1f8d4c fifoLkey=0x1f8d4c
+gpu02:141672:143658 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 858 mtu 5 LID 60 subnet-prefix 33022  FLID 0 fifoRkey=0x1f9352 fifoLkey=0x1f9352
+gpu01:156247:158264 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 809 mtu 5 LID 461 subnet-prefix 33022  FLID 0 fifoRkey=0x134d0c fifoLkey=0x134d0c
+gpu02:141613:143657 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 864 mtu 5 LID 607 subnet-prefix 33022  FLID 0 fifoRkey=0x1f8b4a fifoLkey=0x1f8b4a
+gpu01:156247:158264 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 812 mtu 5 LID 461 subnet-prefix 33022  FLID 0 fifoRkey=0x14bb7b fifoLkey=0x14bb7b
+gpu01:156301:158266 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 967 mtu 5 LID 23 subnet-prefix 33022  FLID 0 fifoRkey=0x1ece8d fifoLkey=0x1ece8d
+gpu01:156301:158266 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 968 mtu 5 LID 23 subnet-prefix 33022  FLID 0 fifoRkey=0x1b32f1 fifoLkey=0x1b32f1
+gpu02:141630:143664 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 3055 mtu 5 LID 118 subnet-prefix 33022  FLID 0 fifoRkey=0x16f8b7 fifoLkey=0x16f8b7
+gpu02:141672:143658 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 861 mtu 5 LID 60 subnet-prefix 33022  FLID 0 fifoRkey=0x1f8c4b fifoLkey=0x1f8c4b
+gpu02:141630:143664 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 3056 mtu 5 LID 118 subnet-prefix 33022  FLID 0 fifoRkey=0x1fd08f fifoLkey=0x1fd08f
+gpu02:141630:143664 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 3057 mtu 5 LID 118 subnet-prefix 33022  FLID 0 fifoRkey=0x17b977 fifoLkey=0x17b977
+gpu01:156299:158268 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 812 mtu 5 LID 523 subnet-prefix 33022  FLID 0 fifoRkey=0x11c887 fifoLkey=0x11c887
+gpu01:156299:158268 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 813 mtu 5 LID 523 subnet-prefix 33022  FLID 0 fifoRkey=0x14b372 fifoLkey=0x14b372
+gpu01:156299:158268 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 814 mtu 5 LID 523 subnet-prefix 33022  FLID 0 fifoRkey=0x148443 fifoLkey=0x148443
+gpu01:156299:158268 [7] NCCL INFO NET/IB: NCCL Dev 4 IbDev 4 Port 1 qpn 815 mtu 5 LID 523 subnet-prefix 33022  FLID 0 fifoRkey=0x1f9150 fifoLkey=0x1f9150
+gpu02:141672:143658 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 864 mtu 5 LID 60 subnet-prefix 33022  FLID 0 fifoRkey=0x1f7a39 fifoLkey=0x1f7a39
+gpu02:141672:143658 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 865 mtu 5 LID 60 subnet-prefix 33022  FLID 0 fifoRkey=0x1f7433 fifoLkey=0x1f7433
+gpu01:156247:158264 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 817 mtu 5 LID 461 subnet-prefix 33022  FLID 0 fifoRkey=0x127938 fifoLkey=0x127938
+gpu01:156301:158266 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 969 mtu 5 LID 23 subnet-prefix 33022  FLID 0 fifoRkey=0x14eaa9 fifoLkey=0x14eaa9
+gpu01:156301:158266 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 970 mtu 5 LID 23 subnet-prefix 33022  FLID 0 fifoRkey=0x14af6a fifoLkey=0x14af6a
+gpu01:156247:158264 [6] NCCL INFO NET/IB: NCCL Dev 8 IbDev 8 Port 1 qpn 820 mtu 5 LID 461 subnet-prefix 33022  FLID 0 fifoRkey=0x166423 fifoLkey=0x166423
+gpu01:156275:158273 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 964 mtu 5 LID 393 subnet-prefix 33022  FLID 0 fifoRkey=0x11c483 fifoLkey=0x11c483
+gpu02:141671:143661 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 1013 mtu 5 LID 409 subnet-prefix 33022  FLID 0 fifoRkey=0x179047 fifoLkey=0x179047
+gpu02:141671:143661 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 1016 mtu 5 LID 409 subnet-prefix 33022  FLID 0 fifoRkey=0x1637f6 fifoLkey=0x1637f6
+gpu02:141671:143661 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 1017 mtu 5 LID 409 subnet-prefix 33022  FLID 0 fifoRkey=0x1819d8 fifoLkey=0x1819d8
+gpu02:141671:143661 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 1018 mtu 5 LID 409 subnet-prefix 33022  FLID 0 fifoRkey=0x17fcbb fifoLkey=0x17fcbb
+gpu02:141698:143660 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 3041 mtu 5 LID 72 subnet-prefix 33022  FLID 0 fifoRkey=0x1f9251 fifoLkey=0x1f9251
+gpu01:156254:158265 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 964 mtu 5 LID 131 subnet-prefix 33022  FLID 0 fifoRkey=0x161bda fifoLkey=0x161bda
+gpu01:156254:158265 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 967 mtu 5 LID 131 subnet-prefix 33022  FLID 0 fifoRkey=0x12df9e fifoLkey=0x12df9e
+gpu01:156254:158265 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 968 mtu 5 LID 131 subnet-prefix 33022  FLID 0 fifoRkey=0x152fee fifoLkey=0x152fee
+gpu01:156254:158265 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 969 mtu 5 LID 131 subnet-prefix 33022  FLID 0 fifoRkey=0x146525 fifoLkey=0x146525
+gpu02:141596:143662 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 1016 mtu 5 LID 487 subnet-prefix 33022  FLID 0 fifoRkey=0x168342 fifoLkey=0x168342
+gpu02:141596:143662 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 1017 mtu 5 LID 487 subnet-prefix 33022  FLID 0 fifoRkey=0x167737 fifoLkey=0x167737
+gpu01:156275:158273 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 967 mtu 5 LID 393 subnet-prefix 33022  FLID 0 fifoRkey=0x14ba79 fifoLkey=0x14ba79
+gpu01:156198:158267 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 968 mtu 5 LID 537 subnet-prefix 33022  FLID 0 fifoRkey=0x11e6a5 fifoLkey=0x11e6a5
+gpu01:156198:158267 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 969 mtu 5 LID 537 subnet-prefix 33022  FLID 0 fifoRkey=0x167e3d fifoLkey=0x167e3d
+gpu01:156198:158267 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 970 mtu 5 LID 537 subnet-prefix 33022  FLID 0 fifoRkey=0x13b473 fifoLkey=0x13b473
+gpu01:156275:158273 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 970 mtu 5 LID 393 subnet-prefix 33022  FLID 0 fifoRkey=0x1f8746 fifoLkey=0x1f8746
+gpu01:156198:158267 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 971 mtu 5 LID 537 subnet-prefix 33022  FLID 0 fifoRkey=0x154201 fifoLkey=0x154201
+gpu01:156275:158273 [0] NCCL INFO NET/IB: NCCL Dev 1 IbDev 1 Port 1 qpn 973 mtu 5 LID 393 subnet-prefix 33022  FLID 0 fifoRkey=0x1f7f3e fifoLkey=0x1f7f3e
+gpu02:141698:143660 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 3044 mtu 5 LID 72 subnet-prefix 33022  FLID 0 fifoRkey=0x1f8847 fifoLkey=0x1f8847
+gpu02:141698:143660 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 3047 mtu 5 LID 72 subnet-prefix 33022  FLID 0 fifoRkey=0x17de9e fifoLkey=0x17de9e
+gpu02:141596:143662 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 1018 mtu 5 LID 487 subnet-prefix 33022  FLID 0 fifoRkey=0x1fd998 fifoLkey=0x1fd998
+gpu02:141698:143660 [2] NCCL INFO NET/IB: NCCL Dev 2 IbDev 2 Port 1 qpn 3050 mtu 5 LID 72 subnet-prefix 33022  FLID 0 fifoRkey=0x1731f1 fifoLkey=0x1731f1
+gpu02:141596:143662 [3] NCCL INFO NET/IB: NCCL Dev 0 IbDev 0 Port 1 qpn 1019 mtu 5 LID 487 subnet-prefix 33022  FLID 0 fifoRkey=0x1fe3a2 fifoLkey=0x1fe3a2
+gpu01:156225:158270 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 817 mtu 5 LID 123 subnet-prefix 33022  FLID 0 fifoRkey=0x149453 fifoLkey=0x149453
+gpu01:156225:158270 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 818 mtu 5 LID 123 subnet-prefix 33022  FLID 0 fifoRkey=0x13cb8a fifoLkey=0x13cb8a
+gpu01:156225:158270 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 819 mtu 5 LID 123 subnet-prefix 33022  FLID 0 fifoRkey=0x15d999 fifoLkey=0x15d999
+gpu01:156225:158270 [4] NCCL INFO NET/IB: NCCL Dev 5 IbDev 5 Port 1 qpn 820 mtu 5 LID 123 subnet-prefix 33022  FLID 0 fifoRkey=0x159353 fifoLkey=0x159353
+gpu02:141630:143664 [1] NCCL INFO NET/IB: NCCL Dev 3 IbDev 3 Port 1 qpn 3062 mtu 5 LID 118 subnet-prefix 33022  FLID 0 fifoRkey=0x1f7938 fifoLkey=0x1f7938
+gpu02:141579:143659 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 866 mtu 5 LID 379 subnet-prefix 33022  FLID 0 fifoRkey=0x178e4d fifoLkey=0x178e4d
+gpu02:141579:143659 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 867 mtu 5 LID 379 subnet-prefix 33022  FLID 0 fifoRkey=0x17a665 fifoLkey=0x17a665
+gpu02:141579:143659 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 868 mtu 5 LID 379 subnet-prefix 33022  FLID 0 fifoRkey=0x1f803f fifoLkey=0x1f803f
+gpu02:141579:143659 [5] NCCL INFO NET/IB: NCCL Dev 9 IbDev 9 Port 1 qpn 869 mtu 5 LID 379 subnet-prefix 33022  FLID 0 fifoRkey=0x1f7e3d fifoLkey=0x1f7e3d
+gpu02:141630:143674 [1] NCCL INFO Connected all trees
+gpu01:156301:158283 [3] NCCL INFO Connected all trees
+gpu01:156225:158285 [4] NCCL INFO Connected all trees
+gpu02:141613:143675 [7] NCCL INFO Connected all trees
+gpu01:156199:158286 [5] NCCL INFO Connected all trees
+gpu02:141647:143677 [4] NCCL INFO Connected all trees
+gpu01:156275:158282 [0] NCCL INFO Connected all trees
+gpu01:156198:158284 [1] NCCL INFO Connected all trees
+gpu01:156254:158280 [2] NCCL INFO Connected all trees
+gpu01:156247:158279 [6] NCCL INFO Connected all trees
+gpu01:156299:158281 [7] NCCL INFO Connected all trees
+gpu02:141671:143673 [0] NCCL INFO Connected all trees
+gpu02:141579:143678 [5] NCCL INFO Connected all trees
+gpu02:141672:143680 [6] NCCL INFO Connected all trees
+gpu02:141698:143676 [2] NCCL INFO Connected all trees
+gpu02:141596:143679 [3] NCCL INFO Connected all trees
+Training epoch 0, iteration 0/49 | lr: 8.982e-08 | global_batch_size: 64 | global_step: 0 | max_memory_reserved: 82436947968 | max_memory_allocated: 80506290176 | reduced_train_loss: 6.1 | train_step_timing in s: 39.65 | TFLOPS_per_GPU: 36.84
+Training epoch 0, iteration 1/49 | lr: 1.796e-07 | global_batch_size: 64 | global_step: 1 | max_memory_reserved: 114791809024 | max_memory_allocated: 80506290176 | reduced_train_loss: 6.098 | train_step_timing in s: 0.7861 | TFLOPS_per_GPU: 1.858e+03 | consumed_samples: 128
+Training epoch 0, iteration 2/49 | lr: 2.695e-07 | global_batch_size: 64 | global_step: 2 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 6.092 | train_step_timing in s: 0.7992 | TFLOPS_per_GPU: 1.828e+03 | consumed_samples: 192
+Training epoch 0, iteration 3/49 | lr: 3.593e-07 | global_batch_size: 64 | global_step: 3 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 6.072 | train_step_timing in s: 0.7985 | TFLOPS_per_GPU: 1.829e+03 | consumed_samples: 256
+Training epoch 0, iteration 4/49 | lr: 4.491e-07 | global_batch_size: 64 | global_step: 4 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 6.029 | train_step_timing in s: 0.7932 | TFLOPS_per_GPU: 1.842e+03 | consumed_samples: 320
+Training epoch 0, iteration 5/49 | lr: 5.389e-07 | global_batch_size: 64 | global_step: 5 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.953 | train_step_timing in s: 0.7975 | TFLOPS_per_GPU: 1.832e+03 | consumed_samples: 384
+Training epoch 0, iteration 6/49 | lr: 6.287e-07 | global_batch_size: 64 | global_step: 6 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.909 | train_step_timing in s: 0.7989 | TFLOPS_per_GPU: 1.829e+03 | consumed_samples: 448
+Training epoch 0, iteration 7/49 | lr: 7.186e-07 | global_batch_size: 64 | global_step: 7 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.887 | train_step_timing in s: 0.798 | TFLOPS_per_GPU: 1.831e+03 | consumed_samples: 512
+Training epoch 0, iteration 8/49 | lr: 8.084e-07 | global_batch_size: 64 | global_step: 8 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.92 | train_step_timing in s: 0.7962 | TFLOPS_per_GPU: 1.835e+03 | consumed_samples: 576
+Training epoch 0, iteration 9/49 | lr: 8.982e-07 | global_batch_size: 64 | global_step: 9 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.949 | train_step_timing in s: 0.7914 | TFLOPS_per_GPU: 1.846e+03 | consumed_samples: 640
+Training epoch 0, iteration 10/49 | lr: 9.88e-07 | global_batch_size: 64 | global_step: 10 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.952 | train_step_timing in s: 0.7954 | TFLOPS_per_GPU: 1.837e+03 | consumed_samples: 704
+Training epoch 0, iteration 11/49 | lr: 1.078e-06 | global_batch_size: 64 | global_step: 11 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.944 | train_step_timing in s: 0.7952 | TFLOPS_per_GPU: 1.837e+03 | consumed_samples: 768
+Training epoch 0, iteration 12/49 | lr: 1.168e-06 | global_batch_size: 64 | global_step: 12 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.9 | train_step_timing in s: 0.7957 | TFLOPS_per_GPU: 1.836e+03 | consumed_samples: 832
+Training epoch 0, iteration 13/49 | lr: 1.257e-06 | global_batch_size: 64 | global_step: 13 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.831 | train_step_timing in s: 0.7951 | TFLOPS_per_GPU: 1.837e+03 | consumed_samples: 896
+Training epoch 0, iteration 14/49 | lr: 1.347e-06 | global_batch_size: 64 | global_step: 14 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.762 | train_step_timing in s: 0.7919 | TFLOPS_per_GPU: 1.845e+03 | consumed_samples: 960
+Training epoch 0, iteration 15/49 | lr: 1.437e-06 | global_batch_size: 64 | global_step: 15 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.702 | train_step_timing in s: 0.7954 | TFLOPS_per_GPU: 1.837e+03 | consumed_samples: 1024
+Training epoch 0, iteration 16/49 | lr: 1.527e-06 | global_batch_size: 64 | global_step: 16 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.659 | train_step_timing in s: 0.7953 | TFLOPS_per_GPU: 1.837e+03 | consumed_samples: 1088
+Training epoch 0, iteration 17/49 | lr: 1.617e-06 | global_batch_size: 64 | global_step: 17 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.634 | train_step_timing in s: 0.7961 | TFLOPS_per_GPU: 1.835e+03 | consumed_samples: 1152
+Training epoch 0, iteration 18/49 | lr: 1.707e-06 | global_batch_size: 64 | global_step: 18 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.624 | train_step_timing in s: 0.7935 | TFLOPS_per_GPU: 1.841e+03 | consumed_samples: 1216
+Training epoch 0, iteration 19/49 | lr: 1.796e-06 | global_batch_size: 64 | global_step: 19 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.627 | train_step_timing in s: 0.7864 | TFLOPS_per_GPU: 1.858e+03 | consumed_samples: 1280
+Training epoch 0, iteration 20/49 | lr: 1.886e-06 | global_batch_size: 64 | global_step: 20 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.643 | train_step_timing in s: 0.7951 | TFLOPS_per_GPU: 1.837e+03 | consumed_samples: 1344
+Training epoch 0, iteration 21/49 | lr: 1.976e-06 | global_batch_size: 64 | global_step: 21 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.626 | train_step_timing in s: 0.7874 | TFLOPS_per_GPU: 1.855e+03 | consumed_samples: 1408
+Training epoch 0, iteration 22/49 | lr: 2.066e-06 | global_batch_size: 64 | global_step: 22 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.594 | train_step_timing in s: 0.7905 | TFLOPS_per_GPU: 1.848e+03 | consumed_samples: 1472
+Training epoch 0, iteration 23/49 | lr: 2.156e-06 | global_batch_size: 64 | global_step: 23 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.577 | train_step_timing in s: 0.7854 | TFLOPS_per_GPU: 1.86e+03 | consumed_samples: 1536
+Training epoch 0, iteration 24/49 | lr: 2.246e-06 | global_batch_size: 64 | global_step: 24 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.57 | train_step_timing in s: 0.787 | TFLOPS_per_GPU: 1.856e+03 | consumed_samples: 1600
+Training epoch 0, iteration 25/49 | lr: 2.335e-06 | global_batch_size: 64 | global_step: 25 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.575 | train_step_timing in s: 0.7861 | TFLOPS_per_GPU: 1.858e+03 | consumed_samples: 1664
+Training epoch 0, iteration 26/49 | lr: 2.425e-06 | global_batch_size: 64 | global_step: 26 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.58 | train_step_timing in s: 0.7934 | TFLOPS_per_GPU: 1.841e+03 | consumed_samples: 1728
+Training epoch 0, iteration 27/49 | lr: 2.515e-06 | global_batch_size: 64 | global_step: 27 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.575 | train_step_timing in s: 0.7865 | TFLOPS_per_GPU: 1.857e+03 | consumed_samples: 1792
+Training epoch 0, iteration 28/49 | lr: 2.605e-06 | global_batch_size: 64 | global_step: 28 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.563 | train_step_timing in s: 0.7951 | TFLOPS_per_GPU: 1.837e+03 | consumed_samples: 1856
+Training epoch 0, iteration 29/49 | lr: 2.695e-06 | global_batch_size: 64 | global_step: 29 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.557 | train_step_timing in s: 0.7884 | TFLOPS_per_GPU: 1.853e+03 | consumed_samples: 1920
+Training epoch 0, iteration 30/49 | lr: 2.784e-06 | global_batch_size: 64 | global_step: 30 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.562 | train_step_timing in s: 0.7937 | TFLOPS_per_GPU: 1.841e+03 | consumed_samples: 1984
+Training epoch 0, iteration 31/49 | lr: 2.874e-06 | global_batch_size: 64 | global_step: 31 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.567 | train_step_timing in s: 0.7882 | TFLOPS_per_GPU: 1.853e+03 | consumed_samples: 2048
+Training epoch 0, iteration 32/49 | lr: 2.964e-06 | global_batch_size: 64 | global_step: 32 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.562 | train_step_timing in s: 0.7831 | TFLOPS_per_GPU: 1.865e+03 | consumed_samples: 2112
+Training epoch 0, iteration 33/49 | lr: 3.054e-06 | global_batch_size: 64 | global_step: 33 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.555 | train_step_timing in s: 0.7864 | TFLOPS_per_GPU: 1.858e+03 | consumed_samples: 2176
+Training epoch 0, iteration 34/49 | lr: 3.144e-06 | global_batch_size: 64 | global_step: 34 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.554 | train_step_timing in s: 0.7901 | TFLOPS_per_GPU: 1.849e+03 | consumed_samples: 2240
+Training epoch 0, iteration 35/49 | lr: 3.234e-06 | global_batch_size: 64 | global_step: 35 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.559 | train_step_timing in s: 0.7863 | TFLOPS_per_GPU: 1.858e+03 | consumed_samples: 2304
+Training epoch 0, iteration 36/49 | lr: 3.323e-06 | global_batch_size: 64 | global_step: 36 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.559 | train_step_timing in s: 0.7835 | TFLOPS_per_GPU: 1.864e+03 | consumed_samples: 2368
+Training epoch 0, iteration 37/49 | lr: 3.413e-06 | global_batch_size: 64 | global_step: 37 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.554 | train_step_timing in s: 0.7894 | TFLOPS_per_GPU: 1.851e+03 | consumed_samples: 2432
+Training epoch 0, iteration 38/49 | lr: 3.503e-06 | global_batch_size: 64 | global_step: 38 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.552 | train_step_timing in s: 0.7946 | TFLOPS_per_GPU: 1.838e+03 | consumed_samples: 2496
+Training epoch 0, iteration 39/49 | lr: 3.593e-06 | global_batch_size: 64 | global_step: 39 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.555 | train_step_timing in s: 0.7839 | TFLOPS_per_GPU: 1.863e+03 | consumed_samples: 2560
+Training epoch 0, iteration 40/49 | lr: 3.683e-06 | global_batch_size: 64 | global_step: 40 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.556 | train_step_timing in s: 0.7903 | TFLOPS_per_GPU: 1.848e+03 | consumed_samples: 2624
+Training epoch 0, iteration 41/49 | lr: 3.772e-06 | global_batch_size: 64 | global_step: 41 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.553 | train_step_timing in s: 0.7897 | TFLOPS_per_GPU: 1.85e+03 | consumed_samples: 2688
+Training epoch 0, iteration 42/49 | lr: 3.862e-06 | global_batch_size: 64 | global_step: 42 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.551 | train_step_timing in s: 0.7813 | TFLOPS_per_GPU: 1.87e+03 | consumed_samples: 2752
+Training epoch 0, iteration 43/49 | lr: 3.952e-06 | global_batch_size: 64 | global_step: 43 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.554 | train_step_timing in s: 0.7869 | TFLOPS_per_GPU: 1.856e+03 | consumed_samples: 2816
+Training epoch 0, iteration 44/49 | lr: 4.042e-06 | global_batch_size: 64 | global_step: 44 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.554 | train_step_timing in s: 0.7855 | TFLOPS_per_GPU: 1.86e+03 | consumed_samples: 2880
+Training epoch 0, iteration 45/49 | lr: 4.132e-06 | global_batch_size: 64 | global_step: 45 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.552 | train_step_timing in s: 0.7985 | TFLOPS_per_GPU: 1.83e+03 | consumed_samples: 2944
+Training epoch 0, iteration 46/49 | lr: 4.222e-06 | global_batch_size: 64 | global_step: 46 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.551 | train_step_timing in s: 0.7878 | TFLOPS_per_GPU: 1.854e+03 | consumed_samples: 3008
+Training epoch 0, iteration 47/49 | lr: 4.311e-06 | global_batch_size: 64 | global_step: 47 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.552 | train_step_timing in s: 0.7841 | TFLOPS_per_GPU: 1.863e+03 | consumed_samples: 3072
+Training epoch 0, iteration 48/49 | lr: 4.401e-06 | global_batch_size: 64 | global_step: 48 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.553 | train_step_timing in s: 0.7915 | TFLOPS_per_GPU: 1.846e+03 | consumed_samples: 3136
+Training epoch 0, iteration 49/49 | lr: 4.491e-06 | global_batch_size: 64 | global_step: 49 | max_memory_reserved: 116477919232 | max_memory_allocated: 80506290176 | reduced_train_loss: 5.552 | train_step_timing in s: 0.7939 | TFLOPS_per_GPU: 1.84e+03 | consumed_samples: 3200
+`Trainer.fit` stopped: `max_steps=50` reached.
+gpu01:156247:156247 [6] NCCL INFO comm 0x6a735220 rank 6 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:156199:156199 [5] NCCL INFO comm 0x55c6b900 rank 5 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:156299:156299 [7] NCCL INFO comm 0x57534040 rank 7 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu01:156247:156247 [6] NCCL INFO comm 0x51e7ca50 rank 6 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:156275:156275 [0] NCCL INFO comm 0x7cd76780 rank 0 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:156301:156301 [3] NCCL INFO comm 0x6372c2d0 rank 3 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu01:156254:156254 [2] NCCL INFO comm 0x73ff73c0 rank 2 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:156225:156225 [4] NCCL INFO comm 0x7a03c910 rank 4 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:156198:156198 [1] NCCL INFO comm 0x7566c830 rank 1 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu01:156299:156299 [7] NCCL INFO comm 0x3ec7d9b0 rank 7 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu01:156225:156225 [4] NCCL INFO comm 0x61787c30 rank 4 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:156198:156198 [1] NCCL INFO comm 0x5cdb4300 rank 1 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu01:156275:156275 [0] NCCL INFO comm 0x61460f20 rank 0 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:156199:156199 [5] NCCL INFO comm 0x3d1cefb0 rank 5 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:156301:156301 [3] NCCL INFO comm 0x4ae77c80 rank 3 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu01:156254:156254 [2] NCCL INFO comm 0x5b73f7c0 rank 2 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:156247:156247 [6] NCCL INFO comm 0x3d5b7550 rank 6 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:141613:141613 [7] NCCL INFO comm 0x62fa8300 rank 15 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu01:156199:156199 [5] NCCL INFO comm 0x28905cd0 rank 5 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:141647:141647 [4] NCCL INFO comm 0x4340db60 rank 12 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:156301:156301 [3] NCCL INFO comm 0x3659b390 rank 3 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu01:156299:156299 [7] NCCL INFO comm 0x2a3b04a0 rank 7 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:141671:141671 [0] NCCL INFO comm 0x64cee630 rank 8 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:141579:141579 [5] NCCL INFO comm 0x59b29e90 rank 13 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:156275:156275 [0] NCCL INFO comm 0x4fc1de70 rank 0 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:156254:156254 [2] NCCL INFO comm 0x46e80040 rank 2 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:156225:156225 [4] NCCL INFO comm 0x4cecb8c0 rank 4 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:156198:156198 [1] NCCL INFO comm 0x484f37f0 rank 1 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:141630:141630 [1] NCCL INFO comm 0x6727cb20 rank 9 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:141596:141596 [3] NCCL INFO comm 0x631f8320 rank 11 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:141672:141672 [6] NCCL INFO comm 0x442d0020 rank 14 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:141698:141698 [2] NCCL INFO comm 0x7314c520 rank 10 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:141671:141671 [0] NCCL INFO comm 0x4c433a00 rank 8 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:141647:141647 [4] NCCL INFO comm 0x2ab550b0 rank 12 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu02:141630:141630 [1] NCCL INFO comm 0x4c7a3480 rank 9 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:141613:141613 [7] NCCL INFO comm 0x4a50d9b0 rank 15 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:141596:141596 [3] NCCL INFO comm 0x4a93d9c0 rank 11 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:141672:141672 [6] NCCL INFO comm 0x2b8362b0 rank 14 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:141698:141698 [2] NCCL INFO comm 0x5a8959f0 rank 10 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:141579:141579 [5] NCCL INFO comm 0x41272240 rank 13 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:141647:141647 [4] NCCL INFO comm 0x16293030 rank 12 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu02:141630:141630 [1] NCCL INFO comm 0x3a0ff4a0 rank 9 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:141596:141596 [3] NCCL INFO comm 0x3607cec0 rank 11 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:141698:141698 [2] NCCL INFO comm 0x45fd3e00 rank 10 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:141579:141579 [5] NCCL INFO comm 0x2c9b4d40 rank 13 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:141671:141671 [0] NCCL INFO comm 0x37b66bb0 rank 8 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:141672:141672 [6] NCCL INFO comm 0x16f76170 rank 14 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:141613:141613 [7] NCCL INFO comm 0x35c4dee0 rank 15 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE

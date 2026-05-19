@@ -1,0 +1,850 @@
+Found libnccl.so in: /usr/lib/x86_64-linux-gnu
+Found libcudart.so in ldconfig: libcudart.so.13
+[1/1] Running test 1/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== all_reduce ranks=8 (intra-node) ====
+# Collective test starting: all_reduce_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 316766 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 316793 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 316638 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 316907 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 316851 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 316823 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 316666 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 316879 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           8             2     float     sum      -1    20.25    0.00    0.00       0    19.36    0.00    0.00       0
+          16             4     float     sum      -1    18.89    0.00    0.00       0    19.29    0.00    0.00       0
+          32             8     float     sum      -1    19.34    0.00    0.00       0    19.59    0.00    0.00       0
+          64            16     float     sum      -1    22.61    0.00    0.00       0    22.65    0.00    0.00       0
+         128            32     float     sum      -1    24.64    0.01    0.01       0    24.63    0.01    0.01       0
+         256            64     float     sum      -1    24.73    0.01    0.02       0    24.80    0.01    0.02       0
+         512           128     float     sum      -1    25.22    0.02    0.04       0    24.92    0.02    0.04       0
+        1024           256     float     sum      -1    25.47    0.04    0.07       0    25.33    0.04    0.07       0
+        2048           512     float     sum      -1    25.98    0.08    0.14       0    25.80    0.08    0.14       0
+        4096          1024     float     sum      -1    26.37    0.16    0.27       0    25.88    0.16    0.28       0
+        8192          2048     float     sum      -1    26.44    0.31    0.54       0    26.24    0.31    0.55       0
+       16384          4096     float     sum      -1    26.69    0.61    1.07       0    26.53    0.62    1.08       0
+       32768          8192     float     sum      -1    27.41    1.20    2.09       0    26.94    1.22    2.13       0
+       65536         16384     float     sum      -1    28.39    2.31    4.04       0    27.82    2.36    4.12       0
+      131072         32768     float     sum      -1    28.90    4.54    7.94       0    27.92    4.69    8.21       0
+      262144         65536     float     sum      -1    29.22    8.97   15.70       0    28.93    9.06   15.86       0
+      524288        131072     float     sum      -1    29.63   17.69   30.96       0    29.29   17.90   31.32       0
+     1048576        262144     float     sum      -1    30.10   34.84   60.97       0    30.23   34.68   60.69       0
+     2097152        524288     float     sum      -1    34.29   61.16  107.03       0    32.78   63.98  111.96       0
+     4194304       1048576     float     sum      -1    56.17   74.67  130.67       0    57.27   73.23  128.16       0
+     8388608       2097152     float     sum      -1    76.96  109.00  190.75       0    76.74  109.32  191.31       0
+    16777216       4194304     float     sum      -1   106.99  156.81  274.42       0   105.53  158.99  278.23       0
+    33554432       8388608     float     sum      -1   169.72  197.70  345.98       0   167.45  200.38  350.67       0
+    67108864      16777216     float     sum      -1   277.18  242.12  423.70       0   277.70  241.66  422.91       0
+   134217728      33554432     float     sum      -1   394.59  340.15  595.26       0   394.65  340.09  595.16       0
+   268435456      67108864     float     sum      -1   712.60  376.70  659.23       0   711.14  377.47  660.57       0
+   536870912     134217728     float     sum      -1  1334.60  402.27  703.98       0  1332.33  402.96  705.18       0
+  1073741824     268435456     float     sum      -1  2601.84  412.69  722.20       0  2594.40  413.87  724.27       0
+  2147483648     536870912     float     sum      -1  4605.28  466.31  816.04       0  4603.21  466.52  816.41       0
+  4294967296    1073741824     float     sum      -1  9026.71  475.81  832.66       0  9019.02  476.21  833.37       0
+  8589934592    2147483648     float     sum      -1  17919.9  479.35  838.86       0  17901.4  479.85  839.73       0
+ 17179869184    4294967296     float     sum      -1  35667.8  481.66  842.91       0  35653.4  481.86  843.25       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 238.019 
+#
+# Collective test concluded: all_reduce_perf_mpi
+
+[1/1] Running test 2/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== all_gather ranks=8 (intra-node) ====
+# Collective test starting: all_gather_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 318082 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 317898 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 317926 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 317842 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 317982 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 317870 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 317954 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 317814 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     float    none      -1     0.17    0.00    0.00       0     0.13    0.00    0.00       0
+           0             0     float    none      -1     0.13    0.00    0.00       0     0.14    0.00    0.00       0
+           0             0     float    none      -1     0.13    0.00    0.00       0     0.16    0.00    0.00       0
+           0             0     float    none      -1     0.22    0.00    0.00       0     0.16    0.00    0.00       0
+         128             4     float    none      -1    16.12    0.01    0.01       0    15.86    0.01    0.01       0
+         256             8     float    none      -1    16.05    0.02    0.01       0    16.16    0.02    0.01       0
+         512            16     float    none      -1    16.21    0.03    0.03       0    16.05    0.03    0.03       0
+        1024            32     float    none      -1    16.42    0.06    0.05       0    16.27    0.06    0.06       0
+        2048            64     float    none      -1    16.74    0.12    0.11       0    16.38    0.12    0.11       0
+        4096           128     float    none      -1    16.88    0.24    0.21       0    16.62    0.25    0.22       0
+        8192           256     float    none      -1    17.13    0.48    0.42       0    16.56    0.49    0.43       0
+       16384           512     float    none      -1    17.10    0.96    0.84       0    17.21    0.95    0.83       0
+       32768          1024     float    none      -1    17.93    1.83    1.60       0    17.74    1.85    1.62       0
+       65536          2048     float    none      -1    18.70    3.50    3.07       0    18.50    3.54    3.10       0
+      131072          4096     float    none      -1    18.87    6.95    6.08       0    18.55    7.07    6.18       0
+      262144          8192     float    none      -1    19.21   13.65   11.94       0    18.89   13.88   12.14       0
+      524288         16384     float    none      -1    19.89   26.35   23.06       0    19.57   26.79   23.44       0
+     1048576         32768     float    none      -1    19.69   53.24   46.59       0    20.17   51.99   45.49       0
+     2097152         65536     float    none      -1    22.35   93.81   82.09       0    22.49   93.25   81.59       0
+     4194304        131072     float    none      -1    29.96  139.98  122.48       0    28.68  146.25  127.97       0
+     8388608        262144     float    none      -1    44.92  186.75  163.40       0    43.80  191.50  167.57       0
+    16777216        524288     float    none      -1    49.04  342.15  299.38       0    48.34  347.05  303.67       0
+    33554432       1048576     float    none      -1    76.98  435.87  381.39       0    75.19  446.24  390.46       0
+    67108864       2097152     float    none      -1   139.13  482.36  422.06       0   138.72  483.77  423.30       0
+   134217728       4194304     float    none      -1   207.50  646.84  565.98       0   206.38  650.33  569.04       0
+   268435456       8388608     float    none      -1   393.96  681.38  596.21       0   390.72  687.04  601.16       0
+   536870912      16777216     float    none      -1   762.42  704.16  616.14       0   759.79  706.61  618.28       0
+  1073741824      33554432     float    none      -1  1486.06  722.54  632.22       0  1475.35  727.79  636.82       0
+  2147483648      67108864     float    none      -1  2911.01  737.71  645.50       0  2873.51  747.34  653.92       0
+  4294967296     134217728     float    none      -1  5723.35  750.43  656.62       0  5633.15  762.45  667.14       0
+  8589934592     268435456     float    none      -1  11322.8  758.64  663.81       0  11102.2  773.71  677.00       0
+ 17179869184     536870912     float    none      -1  22357.0  768.43  672.38       0  21964.0  782.18  684.41       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 207.963 
+#
+# Collective test concluded: all_gather_perf_mpi
+
+[1/1] Running test 3/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== reduce_scatter ranks=8 (intra-node) ====
+# Collective test starting: reduce_scatter_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 319074 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 318974 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 319131 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 319243 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 319103 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 319187 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 319159 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 319215 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     float     sum      -1     0.16    0.00    0.00       0     0.13    0.00    0.00       0
+           0             0     float     sum      -1     0.13    0.00    0.00       0     0.13    0.00    0.00       0
+           0             0     float     sum      -1     0.13    0.00    0.00       0     0.23    0.00    0.00       0
+           0             0     float     sum      -1     0.25    0.00    0.00       0     0.17    0.00    0.00       0
+         128             4     float     sum      -1    16.06    0.01    0.01       0    16.03    0.01    0.01       0
+         256             8     float     sum      -1    16.01    0.02    0.01       0    16.16    0.02    0.01       0
+         512            16     float     sum      -1    16.17    0.03    0.03       0    16.26    0.03    0.03       0
+        1024            32     float     sum      -1    16.40    0.06    0.05       0    16.40    0.06    0.05       0
+        2048            64     float     sum      -1    16.66    0.12    0.11       0    16.55    0.12    0.11       0
+        4096           128     float     sum      -1    17.00    0.24    0.21       0    16.69    0.25    0.21       0
+        8192           256     float     sum      -1    16.82    0.49    0.43       0    17.08    0.48    0.42       0
+       16384           512     float     sum      -1    17.42    0.94    0.82       0    17.13    0.96    0.84       0
+       32768          1024     float     sum      -1    17.67    1.85    1.62       0    17.65    1.86    1.62       0
+       65536          2048     float     sum      -1    18.52    3.54    3.10       0    18.48    3.55    3.10       0
+      131072          4096     float     sum      -1    18.50    7.09    6.20       0    18.59    7.05    6.17       0
+      262144          8192     float     sum      -1    19.31   13.58   11.88       0    19.31   13.57   11.88       0
+      524288         16384     float     sum      -1    20.06   26.13   22.87       0    19.65   26.68   23.35       0
+     1048576         32768     float     sum      -1    19.70   53.23   46.57       0    19.13   54.82   47.97       0
+     2097152         65536     float     sum      -1    23.90   87.76   76.79       0    22.95   91.37   79.95       0
+     4194304        131072     float     sum      -1    34.26  122.44  107.13       0    35.06  119.63  104.68       0
+     8388608        262144     float     sum      -1    58.36  143.75  125.78       0    58.52  143.35  125.43       0
+    16777216        524288     float     sum      -1    52.30  320.78  280.68       0    51.31  326.98  286.11       0
+    33554432       1048576     float     sum      -1    80.28  417.95  365.71       0    79.87  420.13  367.61       0
+    67108864       2097152     float     sum      -1   138.64  484.06  423.55       0   141.08  475.68  416.22       0
+   134217728       4194304     float     sum      -1   206.09  651.26  569.85       0   206.21  650.89  569.53       0
+   268435456       8388608     float     sum      -1   388.79  690.45  604.14       0   387.24  693.21  606.56       0
+   536870912      16777216     float     sum      -1   753.29  712.70  623.61       0   752.69  713.27  624.11       0
+  1073741824      33554432     float     sum      -1  1451.69  739.65  647.19       0  1446.80  742.15  649.38       0
+  2147483648      67108864     float     sum      -1  2808.62  764.60  669.03       0  2805.25  765.52  669.83       0
+  4294967296     134217728     float     sum      -1  5552.57  773.51  676.82       0  5544.18  774.68  677.85       0
+  8589934592     268435456     float     sum      -1  10912.1  787.19  688.79       0  10913.5  787.09  688.70       0
+ 17179869184     536870912     float     sum      -1  21629.9  794.27  694.98       0  21647.9  793.61  694.40       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 207.877 
+#
+# Collective test concluded: reduce_scatter_perf_mpi
+
+[1/1] Running test 4/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== alltoall ranks=8 (intra-node) ====
+# Collective test starting: alltoall_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 320265 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 320294 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 320350 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 320322 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 320137 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 320378 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 320406 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 320165 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     uint8    none      -1     0.15    0.00    0.00       0     0.13    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.13    0.00    0.00       0     0.13    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.13    0.00    0.00       0     0.15    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.16    0.00    0.00       0     0.16    0.00    0.00    N/A
+         128            16     uint8    none      -1    11.02    0.01    0.01       0    11.60    0.01    0.01    N/A
+         256            32     uint8    none      -1    10.89    0.02    0.02       0    11.32    0.02    0.02    N/A
+         512            64     uint8    none      -1    11.48    0.04    0.04       0    11.48    0.04    0.04    N/A
+        1024           128     uint8    none      -1    11.11    0.09    0.08       0    11.14    0.09    0.08    N/A
+        2048           256     uint8    none      -1    11.12    0.18    0.16       0    11.31    0.18    0.16    N/A
+        4096           512     uint8    none      -1    11.25    0.36    0.32       0    12.75    0.32    0.28    N/A
+        8192          1024     uint8    none      -1    11.37    0.72    0.63       0    11.53    0.71    0.62    N/A
+       16384          2048     uint8    none      -1    11.97    1.37    1.20       0    11.53    1.42    1.24    N/A
+       32768          4096     uint8    none      -1    11.81    2.78    2.43       0    11.99    2.73    2.39    N/A
+       65536          8192     uint8    none      -1    12.44    5.27    4.61       0    12.53    5.23    4.57    N/A
+      131072         16384     uint8    none      -1    12.92   10.14    8.88       0    13.47    9.73    8.52    N/A
+      262144         32768     uint8    none      -1    13.68   19.17   16.77       0    12.96   20.23   17.70    N/A
+      524288         65536     uint8    none      -1    14.53   36.08   31.57       0    14.19   36.96   32.34    N/A
+     1048576        131072     uint8    none      -1    18.09   57.96   50.71       0    16.81   62.39   54.59    N/A
+     2097152        262144     uint8    none      -1    23.52   89.15   78.01       0    22.99   91.22   79.82    N/A
+     4194304        524288     uint8    none      -1    38.84  107.98   94.49       0    39.21  106.98   93.61    N/A
+     8388608       1048576     uint8    none      -1    34.62  242.29  212.00       0    34.15  245.63  214.93    N/A
+    16777216       2097152     uint8    none      -1    51.30  327.04  286.16       0    51.18  327.83  286.85    N/A
+    33554432       4194304     uint8    none      -1    83.13  403.65  353.19       0    79.35  422.85  369.99    N/A
+    67108864       8388608     uint8    none      -1   135.03  496.98  434.86       0   132.91  504.92  441.80    N/A
+   134217728      16777216     uint8    none      -1   236.72  566.98  496.11       0   235.94  568.87  497.76    N/A
+   268435456      33554432     uint8    none      -1   438.78  611.77  535.30       0   434.76  617.43  540.25    N/A
+   536870912      67108864     uint8    none      -1   840.31  638.89  559.03       0   833.79  643.89  563.41    N/A
+  1073741824     134217728     uint8    none      -1  1553.29  691.27  604.86       0  1563.26  686.86  601.00    N/A
+  2147483648     268435456     uint8    none      -1  3040.54  706.28  618.00       0  3160.06  679.57  594.62    N/A
+  4294967296     536870912     uint8    none      -1  5704.03  752.97  658.85       0  5656.33  759.32  664.41    N/A
+  8589934592    1073741824     uint8    none      -1  11246.2  763.81  668.33       0  11188.2  767.77  671.80    N/A
+ 17179869184    2147483648     uint8    none      -1  22347.5  768.76  672.67       0  22211.3  773.48  676.79    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 200.139 
+#
+# Collective test concluded: alltoall_perf_mpi
+
+[1/1] Running test 5/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== alltoall_v2 ranks=8 (intra-node) ====
+# Collective test starting: alltoall_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 321429 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 321514 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 321486 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 321301 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 321456 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 321329 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 321542 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 321570 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     uint8    none      -1     0.16    0.00    0.00       0     0.13    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.13    0.00    0.00       0     0.13    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.13    0.00    0.00       0     0.16    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.16    0.00    0.00       0     0.17    0.00    0.00    N/A
+         128            16     uint8    none      -1    10.88    0.01    0.01       0    11.35    0.01    0.01    N/A
+         256            32     uint8    none      -1    11.05    0.02    0.02       0    11.34    0.02    0.02    N/A
+         512            64     uint8    none      -1    11.01    0.05    0.04       0    11.12    0.05    0.04    N/A
+        1024           128     uint8    none      -1    11.12    0.09    0.08       0    11.24    0.09    0.08    N/A
+        2048           256     uint8    none      -1    11.25    0.18    0.16       0    11.23    0.18    0.16    N/A
+        4096           512     uint8    none      -1    11.62    0.35    0.31       0    11.43    0.36    0.31    N/A
+        8192          1024     uint8    none      -1    11.25    0.73    0.64       0    11.34    0.72    0.63    N/A
+       16384          2048     uint8    none      -1    11.42    1.43    1.26       0    11.32    1.45    1.27    N/A
+       32768          4096     uint8    none      -1    11.72    2.80    2.45       0    11.98    2.74    2.39    N/A
+       65536          8192     uint8    none      -1    12.63    5.19    4.54       0    12.64    5.18    4.54    N/A
+      131072         16384     uint8    none      -1    13.26    9.89    8.65       0    13.02   10.07    8.81    N/A
+      262144         32768     uint8    none      -1    13.58   19.31   16.90       0    12.77   20.53   17.97    N/A
+      524288         65536     uint8    none      -1    14.44   36.31   31.77       0    13.91   37.69   32.98    N/A
+     1048576        131072     uint8    none      -1    17.73   59.13   51.74       0    16.89   62.08   54.32    N/A
+     2097152        262144     uint8    none      -1    23.48   89.32   78.16       0    24.11   86.98   76.10    N/A
+     4194304        524288     uint8    none      -1    39.13  107.18   93.78       0    38.91  107.80   94.32    N/A
+     8388608       1048576     uint8    none      -1    34.36  244.16  213.64       0    33.84  247.93  216.93    N/A
+    16777216       2097152     uint8    none      -1    51.32  326.89  286.03       0    51.46  326.00  285.25    N/A
+    33554432       4194304     uint8    none      -1    83.11  403.73  353.27       0    78.87  425.45  372.27    N/A
+    67108864       8388608     uint8    none      -1   134.87  497.57  435.37       0   133.03  504.45  441.40    N/A
+   134217728      16777216     uint8    none      -1   236.79  566.83  495.98       0   235.77  569.27  498.11    N/A
+   268435456      33554432     uint8    none      -1   437.63  613.38  536.71       0   434.19  618.25  540.97    N/A
+   536870912      67108864     uint8    none      -1   839.90  639.20  559.30       0   829.49  647.23  566.32    N/A
+  1073741824     134217728     uint8    none      -1  1554.17  690.88  604.52       0  1564.01  686.53  600.72    N/A
+  2147483648     268435456     uint8    none      -1  3041.59  706.04  617.79       0  3164.15  678.69  593.85    N/A
+  4294967296     536870912     uint8    none      -1  5705.08  752.83  658.73       0  5662.31  758.52  663.70    N/A
+  8589934592    1073741824     uint8    none      -1  11249.7  763.57  668.13       0  11179.7  768.35  672.31    N/A
+ 17179869184    2147483648     uint8    none      -1  22351.8  768.61  672.53       0  22227.2  772.92  676.31    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 200.228 
+#
+# Collective test concluded: alltoall_perf_mpi
+
+[1/1] Running test 6/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== sendrecv ranks=8 (intra-node) ====
+# Collective test starting: sendrecv_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 322559 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 322616 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 322728 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 322672 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 322459 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 322700 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 322586 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 322644 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           8             8     uint8     sum      -1     9.82    0.00    0.00       0     9.32    0.00    0.00    N/A
+          16            16     uint8     sum      -1     9.14    0.00    0.00       0     9.33    0.00    0.00    N/A
+          32            32     uint8     sum      -1     9.30    0.00    0.00       0     9.19    0.00    0.00    N/A
+          64            64     uint8     sum      -1     9.05    0.01    0.01       0     9.35    0.01    0.01    N/A
+         128           128     uint8     sum      -1     9.35    0.01    0.01       0     9.20    0.01    0.01    N/A
+         256           256     uint8     sum      -1     9.21    0.03    0.03       0     9.25    0.03    0.03    N/A
+         512           512     uint8     sum      -1     9.40    0.05    0.05       0     9.33    0.05    0.05    N/A
+        1024          1024     uint8     sum      -1     9.45    0.11    0.11       0     9.29    0.11    0.11    N/A
+        2048          2048     uint8     sum      -1     9.56    0.21    0.21       0     9.45    0.22    0.22    N/A
+        4096          4096     uint8     sum      -1     9.74    0.42    0.42       0    10.00    0.41    0.41    N/A
+        8192          8192     uint8     sum      -1    10.78    0.76    0.76       0    10.62    0.77    0.77    N/A
+       16384         16384     uint8     sum      -1    11.67    1.40    1.40       0    11.60    1.41    1.41    N/A
+       32768         32768     uint8     sum      -1    11.76    2.79    2.79       0    11.60    2.82    2.82    N/A
+       65536         65536     uint8     sum      -1    13.13    4.99    4.99       0    12.81    5.12    5.12    N/A
+      131072        131072     uint8     sum      -1    15.93    8.23    8.23       0    15.32    8.56    8.56    N/A
+      262144        262144     uint8     sum      -1    22.26   11.78   11.78       0    20.90   12.54   12.54    N/A
+      524288        524288     uint8     sum      -1    35.14   14.92   14.92       0    32.10   16.33   16.33    N/A
+     1048576       1048576     uint8     sum      -1    27.92   37.56   37.56       0    26.88   39.01   39.01    N/A
+     2097152       2097152     uint8     sum      -1    40.30   52.04   52.04       0    40.25   52.10   52.10    N/A
+     4194304       4194304     uint8     sum      -1    62.37   67.25   67.25       0    62.62   66.98   66.98    N/A
+     8388608       8388608     uint8     sum      -1   118.04   71.07   71.07       0   114.96   72.97   72.97    N/A
+    16777216      16777216     uint8     sum      -1   212.62   78.91   78.91       0   213.57   78.56   78.56    N/A
+    33554432      33554432     uint8     sum      -1   405.69   82.71   82.71       0   405.91   82.67   82.67    N/A
+    67108864      67108864     uint8     sum      -1   793.11   84.61   84.61       0   788.86   85.07   85.07    N/A
+   134217728     134217728     uint8     sum      -1   798.16  168.16  168.16       0   796.21  168.57  168.57    N/A
+   268435456     268435456     uint8     sum      -1   809.77  331.50  331.50       0   805.95  333.07  333.07    N/A
+   536870912     536870912     uint8     sum      -1   859.04  624.97  624.97       0   857.09  626.39  626.39    N/A
+  1073741824    1073741824     uint8     sum      -1  1668.54  643.52  643.52       0  1679.12  639.47  639.47    N/A
+  2147483648    2147483648     uint8     sum      -1  3286.67  653.39  653.39       0  3333.03  644.30  644.30    N/A
+  4294967296    4294967296     uint8     sum      -1  6522.45  658.49  658.49       0  6662.14  644.68  644.68    N/A
+  8589934592    8589934592     uint8     sum      -1  12989.0  661.32  661.32       0  13323.0  644.74  644.74    N/A
+ 17179869184   17179869184     uint8     sum      -1  25904.2  663.21  663.21       0  26662.0  644.36  644.36    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 153.059 
+#
+# Collective test concluded: sendrecv_perf_mpi
+
+[1/1] Running test 7/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== sendrecv_v2 ranks=8 (intra-node) ====
+# Collective test starting: sendrecv_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 323804 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 323620 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 323833 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 323676 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 323861 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 323704 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 323889 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 323648 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           8             8     uint8     sum      -1     9.51    0.00    0.00       0     9.33    0.00    0.00    N/A
+          16            16     uint8     sum      -1     9.08    0.00    0.00       0     9.24    0.00    0.00    N/A
+          32            32     uint8     sum      -1     9.36    0.00    0.00       0     9.24    0.00    0.00    N/A
+          64            64     uint8     sum      -1     9.15    0.01    0.01       0     9.21    0.01    0.01    N/A
+         128           128     uint8     sum      -1     9.32    0.01    0.01       0     9.26    0.01    0.01    N/A
+         256           256     uint8     sum      -1     9.18    0.03    0.03       0     9.19    0.03    0.03    N/A
+         512           512     uint8     sum      -1     9.41    0.05    0.05       0     9.33    0.05    0.05    N/A
+        1024          1024     uint8     sum      -1     9.46    0.11    0.11       0     9.39    0.11    0.11    N/A
+        2048          2048     uint8     sum      -1     9.59    0.21    0.21       0     9.40    0.22    0.22    N/A
+        4096          4096     uint8     sum      -1    10.01    0.41    0.41       0     9.94    0.41    0.41    N/A
+        8192          8192     uint8     sum      -1    10.83    0.76    0.76       0    10.66    0.77    0.77    N/A
+       16384         16384     uint8     sum      -1    11.64    1.41    1.41       0    11.35    1.44    1.44    N/A
+       32768         32768     uint8     sum      -1    11.62    2.82    2.82       0    11.47    2.86    2.86    N/A
+       65536         65536     uint8     sum      -1    13.15    4.98    4.98       0    12.87    5.09    5.09    N/A
+      131072        131072     uint8     sum      -1    16.07    8.16    8.16       0    15.11    8.67    8.67    N/A
+      262144        262144     uint8     sum      -1    22.50   11.65   11.65       0    21.83   12.01   12.01    N/A
+      524288        524288     uint8     sum      -1    35.09   14.94   14.94       0    32.08   16.34   16.34    N/A
+     1048576       1048576     uint8     sum      -1    27.31   38.40   38.40       0    26.66   39.34   39.34    N/A
+     2097152       2097152     uint8     sum      -1    41.05   51.09   51.09       0    38.90   53.92   53.92    N/A
+     4194304       4194304     uint8     sum      -1    62.11   67.53   67.53       0    63.69   65.85   65.85    N/A
+     8388608       8388608     uint8     sum      -1   116.06   72.28   72.28       0   117.95   71.12   71.12    N/A
+    16777216      16777216     uint8     sum      -1   211.28   79.41   79.41       0   214.26   78.30   78.30    N/A
+    33554432      33554432     uint8     sum      -1   405.68   82.71   82.71       0   404.52   82.95   82.95    N/A
+    67108864      67108864     uint8     sum      -1   792.44   84.69   84.69       0   788.58   85.10   85.10    N/A
+   134217728     134217728     uint8     sum      -1   799.03  167.98  167.98       0   795.31  168.76  168.76    N/A
+   268435456     268435456     uint8     sum      -1   808.27  332.11  332.11       0   806.15  332.99  332.99    N/A
+   536870912     536870912     uint8     sum      -1   856.49  626.83  626.83       0   855.62  627.47  627.47    N/A
+  1073741824    1073741824     uint8     sum      -1  1666.97  644.13  644.13       0  1674.19  641.35  641.35    N/A
+  2147483648    2147483648     uint8     sum      -1  3288.39  653.05  653.05       0  3349.48  641.14  641.14    N/A
+  4294967296    4294967296     uint8     sum      -1  6515.48  659.19  659.19       0  6670.90  643.84  643.84    N/A
+  8589934592    8589934592     uint8     sum      -1  12968.4  662.38  662.38       0  13358.9  643.01  643.01    N/A
+ 17179869184   17179869184     uint8     sum      -1  25884.1  663.72  663.72       0  26627.6  645.19  645.19    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 153.116 
+#
+# Collective test concluded: sendrecv_perf_mpi
+
+All tests completed successfully
+Archiving log directory
+All done
+Found libnccl.so in: /usr/lib/x86_64-linux-gnu
+Found libcudart.so in ldconfig: libcudart.so.13
+[1/1] Running test 1/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== all_reduce ranks=16 (inter-node) ====
+# Collective test starting: all_reduce_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 326398 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 326539 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 326511 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 326270 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 326427 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 326483 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 326298 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 326455 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#  Rank  8 Group  0 Pid 227304 on      gpu02 device  0 [0000:03:00] NVIDIA B200
+#  Rank  9 Group  0 Pid 227416 on      gpu02 device  1 [0000:13:00] NVIDIA B200
+#  Rank 10 Group  0 Pid 227444 on      gpu02 device  2 [0000:63:00] NVIDIA B200
+#  Rank 11 Group  0 Pid 227500 on      gpu02 device  3 [0000:73:00] NVIDIA B200
+#  Rank 12 Group  0 Pid 227332 on      gpu02 device  4 [0000:83:00] NVIDIA B200
+#  Rank 13 Group  0 Pid 227360 on      gpu02 device  5 [0000:93:00] NVIDIA B200
+#  Rank 14 Group  0 Pid 227388 on      gpu02 device  6 [0000:e3:00] NVIDIA B200
+#  Rank 15 Group  0 Pid 227472 on      gpu02 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           8             2     float     sum      -1    36.17    0.00    0.00       0    35.19    0.00    0.00       0
+          16             4     float     sum      -1    34.68    0.00    0.00       0    34.74    0.00    0.00       0
+          32             8     float     sum      -1    35.14    0.00    0.00       0    35.03    0.00    0.00       0
+          64            16     float     sum      -1    35.52    0.00    0.00       0    35.51    0.00    0.00       0
+         128            32     float     sum      -1    36.41    0.00    0.01       0    35.97    0.00    0.01       0
+         256            64     float     sum      -1    36.69    0.01    0.01       0    36.51    0.01    0.01       0
+         512           128     float     sum      -1    37.40    0.01    0.03       0    37.06    0.01    0.03       0
+        1024           256     float     sum      -1    37.54    0.03    0.05       0    37.62    0.03    0.05       0
+        2048           512     float     sum      -1    38.87    0.05    0.10       0    38.41    0.05    0.10       0
+        4096          1024     float     sum      -1    39.96    0.10    0.19       0    39.34    0.10    0.20       0
+        8192          2048     float     sum      -1    41.72    0.20    0.37       0    40.79    0.20    0.38       0
+       16384          4096     float     sum      -1    42.31    0.39    0.73       0    41.45    0.40    0.74       0
+       32768          8192     float     sum      -1    43.57    0.75    1.41       0    42.52    0.77    1.44       0
+       65536         16384     float     sum      -1    44.27    1.48    2.78       0    43.10    1.52    2.85       0
+      131072         32768     float     sum      -1    64.46    2.03    3.81       0    61.23    2.14    4.01       0
+      262144         65536     float     sum      -1    65.66    3.99    7.49       0    65.58    4.00    7.50       0
+      524288        131072     float     sum      -1    77.88    6.73   12.62       0    77.29    6.78   12.72       0
+     1048576        262144     float     sum      -1    93.41   11.23   21.05       0    93.02   11.27   21.14       0
+     2097152        524288     float     sum      -1   104.94   19.98   37.47       0   101.33   20.70   38.81       0
+     4194304       1048576     float     sum      -1   111.68   37.56   70.42       0   111.68   37.56   70.42       0
+     8388608       2097152     float     sum      -1   136.20   61.59  115.48       0   133.99   62.61  117.39       0
+    16777216       4194304     float     sum      -1   190.47   88.08  165.16       0   188.98   88.78  166.46       0
+    33554432       8388608     float     sum      -1   249.24  134.63  252.43       0   245.14  136.88  256.65       0
+    67108864      16777216     float     sum      -1   346.14  193.88  363.53       0   343.17  195.56  366.67       0
+   134217728      33554432     float     sum      -1   597.27  224.72  421.35       0   600.90  223.36  418.80       0
+   268435456      67108864     float     sum      -1   927.12  289.54  542.88       0   936.72  286.57  537.32       0
+   536870912     134217728     float     sum      -1  1619.97  331.41  621.39       0  1624.59  330.47  619.62       0
+  1073741824     268435456     float     sum      -1  3016.62  355.94  667.39       0  3019.36  355.62  666.79       0
+  2147483648     536870912     float     sum      -1  5805.86  369.88  693.53       0  5803.56  370.03  693.80       0
+  4294967296    1073741824     float     sum      -1  11382.9  377.32  707.47       0  11383.9  377.29  707.41       0
+  8589934592    2147483648     float     sum      -1  22540.8  381.08  714.53       0  22543.8  381.03  714.44       0
+ 17179869184    4294967296     float     sum      -1  44870.6  382.88  717.89       0  44872.3  382.86  717.87       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 191.956 
+#
+# Collective test concluded: all_reduce_perf_mpi
+
+[1/1] Running test 2/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== all_gather ranks=16 (inter-node) ====
+# Collective test starting: all_gather_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 327592 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 327492 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 327649 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 327436 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 327677 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 327705 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 327619 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 327464 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#  Rank  8 Group  0 Pid 228456 on      gpu02 device  0 [0000:03:00] NVIDIA B200
+#  Rank  9 Group  0 Pid 228428 on      gpu02 device  1 [0000:13:00] NVIDIA B200
+#  Rank 10 Group  0 Pid 228596 on      gpu02 device  2 [0000:63:00] NVIDIA B200
+#  Rank 11 Group  0 Pid 228484 on      gpu02 device  3 [0000:73:00] NVIDIA B200
+#  Rank 12 Group  0 Pid 228400 on      gpu02 device  4 [0000:83:00] NVIDIA B200
+#  Rank 13 Group  0 Pid 228568 on      gpu02 device  5 [0000:93:00] NVIDIA B200
+#  Rank 14 Group  0 Pid 228512 on      gpu02 device  6 [0000:e3:00] NVIDIA B200
+#  Rank 15 Group  0 Pid 228540 on      gpu02 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     float    none      -1     0.16    0.00    0.00       0     0.14    0.00    0.00       0
+           0             0     float    none      -1     0.14    0.00    0.00       0     0.13    0.00    0.00       0
+           0             0     float    none      -1     0.13    0.00    0.00       0     0.14    0.00    0.00       0
+           0             0     float    none      -1     0.14    0.00    0.00       0     0.14    0.00    0.00       0
+           0             0     float    none      -1     0.14    0.00    0.00       0     0.13    0.00    0.00       0
+         256             4     float    none      -1    34.05    0.01    0.01       0    34.39    0.01    0.01       0
+         512             8     float    none      -1    33.86    0.02    0.01       0    34.18    0.01    0.01       0
+        1024            16     float    none      -1    34.44    0.03    0.03       0    34.46    0.03    0.03       0
+        2048            32     float    none      -1    34.36    0.06    0.06       0    35.00    0.06    0.05       0
+        4096            64     float    none      -1    35.00    0.12    0.11       0    34.93    0.12    0.11       0
+        8192           128     float    none      -1    35.93    0.23    0.21       0    35.54    0.23    0.22       0
+       16384           256     float    none      -1    36.25    0.45    0.42       0    35.67    0.46    0.43       0
+       32768           512     float    none      -1    37.08    0.88    0.83       0    38.06    0.86    0.81       0
+       65536          1024     float    none      -1    39.75    1.65    1.55       0    39.52    1.66    1.55       0
+      131072          2048     float    none      -1    42.31    3.10    2.90       0    41.79    3.14    2.94       0
+      262144          4096     float    none      -1    75.85    3.46    3.24       0    74.28    3.53    3.31       0
+      524288          8192     float    none      -1    75.86    6.91    6.48       0    76.20    6.88    6.45       0
+     1048576         16384     float    none      -1    77.59   13.51   12.67       0    77.54   13.52   12.68       0
+     2097152         32768     float    none      -1   128.43   16.33   15.31       0   128.68   16.30   15.28       0
+     4194304         65536     float    none      -1   139.74   30.02   28.14       0   139.42   30.08   28.20       0
+     8388608        131072     float    none      -1   149.62   56.07   52.56       0   149.72   56.03   52.53       0
+    16777216        262144     float    none      -1   202.24   82.96   77.77       0   200.08   83.85   78.61       0
+    33554432        524288     float    none      -1   247.08  135.80  127.31       0   244.29  137.36  128.77       0
+    67108864       1048576     float    none      -1   491.04  136.67  128.12       0   489.60  137.07  128.50       0
+   134217728       2097152     float    none      -1   622.04  215.77  202.28       0   619.92  216.51  202.98       0
+   268435456       4194304     float    none      -1  1018.68  263.51  247.04       0  1012.45  265.13  248.56       0
+   536870912       8388608     float    none      -1  1717.36  312.61  293.08       0  1693.24  317.07  297.25       0
+  1073741824      16777216     float    none      -1  3360.46  319.52  299.55       0  3321.73  323.25  303.04       0
+  2147483648      33554432     float    none      -1  6591.25  325.81  305.45       0  6575.66  326.58  306.17       0
+  4294967296      67108864     float    none      -1  13098.1  327.91  307.41       0  13087.2  328.18  307.67       0
+  8589934592     134217728     float    none      -1  26185.0  328.05  307.54       0  26131.9  328.71  308.17       0
+ 17179869184     268435456     float    none      -1  52287.3  328.57  308.03       0  52294.5  328.52  307.99       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 85.4758 
+#
+# Collective test concluded: all_gather_perf_mpi
+
+[1/1] Running test 3/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== reduce_scatter ranks=16 (inter-node) ====
+# Collective test starting: reduce_scatter_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 328794 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 328694 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 328851 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 328879 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 328610 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 328821 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 328666 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 328638 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#  Rank  8 Group  0 Pid 229647 on      gpu02 device  0 [0000:03:00] NVIDIA B200
+#  Rank  9 Group  0 Pid 229563 on      gpu02 device  1 [0000:13:00] NVIDIA B200
+#  Rank 10 Group  0 Pid 229591 on      gpu02 device  2 [0000:63:00] NVIDIA B200
+#  Rank 11 Group  0 Pid 229507 on      gpu02 device  3 [0000:73:00] NVIDIA B200
+#  Rank 12 Group  0 Pid 229619 on      gpu02 device  4 [0000:83:00] NVIDIA B200
+#  Rank 13 Group  0 Pid 229535 on      gpu02 device  5 [0000:93:00] NVIDIA B200
+#  Rank 14 Group  0 Pid 229479 on      gpu02 device  6 [0000:e3:00] NVIDIA B200
+#  Rank 15 Group  0 Pid 229675 on      gpu02 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     float     sum      -1     0.16    0.00    0.00       0     0.13    0.00    0.00       0
+           0             0     float     sum      -1     0.13    0.00    0.00       0     0.13    0.00    0.00       0
+           0             0     float     sum      -1     0.13    0.00    0.00       0     0.15    0.00    0.00       0
+           0             0     float     sum      -1     0.15    0.00    0.00       0     0.13    0.00    0.00       0
+           0             0     float     sum      -1     0.14    0.00    0.00       0     0.14    0.00    0.00       0
+         256             4     float     sum      -1    33.45    0.01    0.01       0    33.79    0.01    0.01       0
+         512             8     float     sum      -1    34.03    0.02    0.01       0    34.11    0.02    0.01       0
+        1024            16     float     sum      -1    34.78    0.03    0.03       0    34.79    0.03    0.03       0
+        2048            32     float     sum      -1    35.53    0.06    0.05       0    34.97    0.06    0.05       0
+        4096            64     float     sum      -1    35.96    0.11    0.11       0    35.43    0.12    0.11       0
+        8192           128     float     sum      -1    36.06    0.23    0.21       0    35.88    0.23    0.21       0
+       16384           256     float     sum      -1    36.49    0.45    0.42       0    36.46    0.45    0.42       0
+       32768           512     float     sum      -1    37.90    0.86    0.81       0    37.78    0.87    0.81       0
+       65536          1024     float     sum      -1    39.77    1.65    1.54       0    39.49    1.66    1.56       0
+      131072          2048     float     sum      -1    42.08    3.11    2.92       0    42.12    3.11    2.92       0
+      262144          4096     float     sum      -1    79.74    3.29    3.08       0    78.74    3.33    3.12       0
+      524288          8192     float     sum      -1    80.88    6.48    6.08       0    80.76    6.49    6.09       0
+     1048576         16384     float     sum      -1    82.63   12.69   11.90       0    82.84   12.66   11.87       0
+     2097152         32768     float     sum      -1   129.60   16.18   15.17       0   129.45   16.20   15.19       0
+     4194304         65536     float     sum      -1   140.51   29.85   27.99       0   140.56   29.84   27.97       0
+     8388608        131072     float     sum      -1   151.06   55.53   52.06       0   151.27   55.45   51.99       0
+    16777216        262144     float     sum      -1   202.84   82.71   77.54       0   202.30   82.93   77.75       0
+    33554432        524288     float     sum      -1   247.72  135.45  126.99       0   246.92  135.89  127.40       0
+    67108864       1048576     float     sum      -1   490.40  136.85  128.29       0   487.91  137.54  128.95       0
+   134217728       2097152     float     sum      -1   618.72  216.93  203.37       0   619.36  216.71  203.16       0
+   268435456       4194304     float     sum      -1  1013.12  264.96  248.40       0  1014.39  264.63  248.09       0
+   536870912       8388608     float     sum      -1  1705.43  314.80  295.13       0  1703.16  315.22  295.52       0
+  1073741824      16777216     float     sum      -1  3340.30  321.45  301.36       0  3329.39  322.50  302.35       0
+  2147483648      33554432     float     sum      -1  6585.55  326.09  305.71       0  6586.72  326.03  305.66       0
+  4294967296      67108864     float     sum      -1  13200.8  325.36  305.02       0  13094.5  328.00  307.50       0
+  8589934592     134217728     float     sum      -1  26154.2  328.43  307.91       0  26239.1  327.37  306.91       0
+ 17179869184     268435456     float     sum      -1  52956.4  324.42  304.14       0  52932.8  324.56  304.27       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 85.2525 
+#
+# Collective test concluded: reduce_scatter_perf_mpi
+
+[1/1] Running test 4/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== alltoall ranks=16 (inter-node) ====
+# Collective test starting: alltoall_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 329970 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 329870 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 329786 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 329842 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 330027 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 329814 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 329997 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 330055 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#  Rank  8 Group  0 Pid 230555 on      gpu02 device  0 [0000:03:00] NVIDIA B200
+#  Rank  9 Group  0 Pid 230695 on      gpu02 device  1 [0000:13:00] NVIDIA B200
+#  Rank 10 Group  0 Pid 230667 on      gpu02 device  2 [0000:63:00] NVIDIA B200
+#  Rank 11 Group  0 Pid 230639 on      gpu02 device  3 [0000:73:00] NVIDIA B200
+#  Rank 12 Group  0 Pid 230611 on      gpu02 device  4 [0000:83:00] NVIDIA B200
+#  Rank 13 Group  0 Pid 230723 on      gpu02 device  5 [0000:93:00] NVIDIA B200
+#  Rank 14 Group  0 Pid 230751 on      gpu02 device  6 [0000:e3:00] NVIDIA B200
+#  Rank 15 Group  0 Pid 230583 on      gpu02 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     uint8    none      -1     0.21    0.00    0.00       0     0.14    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.16    0.00    0.00       0     0.14    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.14    0.00    0.00       0     0.15    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.14    0.00    0.00       0     0.14    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.14    0.00    0.00       0     0.21    0.00    0.00    N/A
+         256            16     uint8    none      -1    40.53    0.01    0.01       0    37.05    0.01    0.01    N/A
+         512            32     uint8    none      -1    37.45    0.01    0.01       0    37.18    0.01    0.01    N/A
+        1024            64     uint8    none      -1    37.60    0.03    0.03       0    37.42    0.03    0.03    N/A
+        2048           128     uint8    none      -1    37.68    0.05    0.05       0    37.40    0.05    0.05    N/A
+        4096           256     uint8    none      -1    37.77    0.11    0.10       0    38.03    0.11    0.10    N/A
+        8192           512     uint8    none      -1    37.27    0.22    0.21       0    39.84    0.21    0.19    N/A
+       16384          1024     uint8    none      -1    37.86    0.43    0.41       0    38.16    0.43    0.40    N/A
+       32768          2048     uint8    none      -1    40.42    0.81    0.76       0    40.15    0.82    0.77    N/A
+       65536          4096     uint8    none      -1    39.63    1.65    1.55       0    40.36    1.62    1.52    N/A
+      131072          8192     uint8    none      -1    43.00    3.05    2.86       0    42.35    3.09    2.90    N/A
+      262144         16384     uint8    none      -1    49.31    5.32    4.98       0    47.32    5.54    5.19    N/A
+      524288         32768     uint8    none      -1    57.19    9.17    8.59       0    56.58    9.27    8.69    N/A
+     1048576         65536     uint8    none      -1    78.39   13.38   12.54       0    76.93   13.63   12.78    N/A
+     2097152        131072     uint8    none      -1   101.12   20.74   19.44       0   100.72   20.82   19.52    N/A
+     4194304        262144     uint8    none      -1   158.09   26.53   24.87       0   157.72   26.59   24.93    N/A
+     8388608        524288     uint8    none      -1   267.63   31.34   29.39       0   269.05   31.18   29.23    N/A
+    16777216       1048576     uint8    none      -1   445.46   37.66   35.31       0   442.73   37.90   35.53    N/A
+    33554432       2097152     uint8    none      -1   819.17   40.96   38.40       0   817.16   41.06   38.50    N/A
+    67108864       4194304     uint8    none      -1  1566.67   42.84   40.16       0  1568.94   42.77   40.10    N/A
+   134217728       8388608     uint8    none      -1  3050.41   44.00   41.25       0  3063.73   43.81   41.07    N/A
+   268435456      16777216     uint8    none      -1  6021.89   44.58   41.79       0  6032.37   44.50   41.72    N/A
+   536870912      33554432     uint8    none      -1  11939.8   44.96   42.15       0  11978.3   44.82   42.02    N/A
+  1073741824      67108864     uint8    none      -1  23807.2   45.10   42.28       0  23807.6   45.10   42.28    N/A
+  2147483648     134217728     uint8    none      -1  47509.6   45.20   42.38       0  47462.2   45.25   42.42    N/A
+  4294967296     268435456     uint8    none      -1  95002.7   45.21   42.38       0  94737.5   45.34   42.50    N/A
+  8589934592     536870912     uint8    none      -1   189886   45.24   42.41       0   189281   45.38   42.55    N/A
+ 17179869184    1073741824     uint8    none      -1   379707   45.25   42.42       0   378306   45.41   42.57    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 17.411 
+#
+# Collective test concluded: alltoall_perf_mpi
+
+[1/1] Running test 5/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== alltoall_v2 ranks=16 (inter-node) ====
+# Collective test starting: alltoall_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 331143 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 331170 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 331200 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 331043 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 330987 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 331015 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 330959 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 331228 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#  Rank  8 Group  0 Pid 231714 on      gpu02 device  0 [0000:03:00] NVIDIA B200
+#  Rank  9 Group  0 Pid 231770 on      gpu02 device  1 [0000:13:00] NVIDIA B200
+#  Rank 10 Group  0 Pid 231658 on      gpu02 device  2 [0000:63:00] NVIDIA B200
+#  Rank 11 Group  0 Pid 231826 on      gpu02 device  3 [0000:73:00] NVIDIA B200
+#  Rank 12 Group  0 Pid 231630 on      gpu02 device  4 [0000:83:00] NVIDIA B200
+#  Rank 13 Group  0 Pid 231686 on      gpu02 device  5 [0000:93:00] NVIDIA B200
+#  Rank 14 Group  0 Pid 231798 on      gpu02 device  6 [0000:e3:00] NVIDIA B200
+#  Rank 15 Group  0 Pid 231742 on      gpu02 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           0             0     uint8    none      -1     0.20    0.00    0.00       0     0.16    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.15    0.00    0.00       0     0.14    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.13    0.00    0.00       0     0.14    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.14    0.00    0.00       0     0.14    0.00    0.00    N/A
+           0             0     uint8    none      -1     0.14    0.00    0.00       0     0.14    0.00    0.00    N/A
+         256            16     uint8    none      -1    37.46    0.01    0.01       0    37.05    0.01    0.01    N/A
+         512            32     uint8    none      -1    37.11    0.01    0.01       0    36.95    0.01    0.01    N/A
+        1024            64     uint8    none      -1    37.61    0.03    0.03       0    36.38    0.03    0.03    N/A
+        2048           128     uint8    none      -1    37.03    0.06    0.05       0    37.06    0.06    0.05    N/A
+        4096           256     uint8    none      -1    37.19    0.11    0.10       0    37.27    0.11    0.10    N/A
+        8192           512     uint8    none      -1    38.39    0.21    0.20       0    36.96    0.22    0.21    N/A
+       16384          1024     uint8    none      -1    38.01    0.43    0.40       0    37.36    0.44    0.41    N/A
+       32768          2048     uint8    none      -1    39.44    0.83    0.78       0    40.17    0.82    0.76    N/A
+       65536          4096     uint8    none      -1    39.15    1.67    1.57       0    40.34    1.62    1.52    N/A
+      131072          8192     uint8    none      -1    42.80    3.06    2.87       0    42.85    3.06    2.87    N/A
+      262144         16384     uint8    none      -1    48.72    5.38    5.04       0    47.77    5.49    5.15    N/A
+      524288         32768     uint8    none      -1    67.72    7.74    7.26       0    59.65    8.79    8.24    N/A
+     1048576         65536     uint8    none      -1    78.33   13.39   12.55       0    77.14   13.59   12.74    N/A
+     2097152        131072     uint8    none      -1   100.46   20.88   19.57       0   101.09   20.74   19.45    N/A
+     4194304        262144     uint8    none      -1   130.50   32.14   30.13       0   126.07   33.27   31.19    N/A
+     8388608        524288     uint8    none      -1   195.22   42.97   40.28       0   196.61   42.67   40.00    N/A
+    16777216       1048576     uint8    none      -1   307.53   54.55   51.15       0   305.59   54.90   51.47    N/A
+    33554432       2097152     uint8    none      -1   536.99   62.49   58.58       0   536.66   62.52   58.62    N/A
+    67108864       4194304     uint8    none      -1   999.78   67.12   62.93       0  1001.40   67.01   62.83    N/A
+   134217728       8388608     uint8    none      -1  1927.55   69.63   65.28       0  1934.37   69.39   65.05    N/A
+   268435456      16777216     uint8    none      -1  3775.00   71.11   66.66       0  3766.50   71.27   66.81    N/A
+   536870912      33554432     uint8    none      -1  7431.96   72.24   67.72       0  7439.85   72.16   67.65    N/A
+  1073741824      67108864     uint8    none      -1  14720.0   72.94   68.39       0  14782.3   72.64   68.10    N/A
+  2147483648     134217728     uint8    none      -1  29302.7   73.29   68.71       0  29386.2   73.08   68.51    N/A
+  4294967296     268435456     uint8    none      -1  58467.6   73.46   68.87       0  58508.4   73.41   68.82    N/A
+  8589934592     536870912     uint8    none      -1   116419   73.78   69.17       0   116420   73.78   69.17    N/A
+ 17179869184    1073741824     uint8    none      -1   232184   73.99   69.37       0   232773   73.81   69.19    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 26.1976 
+#
+# Collective test concluded: alltoall_perf_mpi
+
+[1/1] Running test 6/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== sendrecv ranks=16 (inter-node) ====
+# Collective test starting: sendrecv_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 332323 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 332352 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 332167 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 332195 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 332408 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 332223 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 332380 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 332139 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#  Rank  8 Group  0 Pid 232760 on      gpu02 device  0 [0000:03:00] NVIDIA B200
+#  Rank  9 Group  0 Pid 232732 on      gpu02 device  1 [0000:13:00] NVIDIA B200
+#  Rank 10 Group  0 Pid 232872 on      gpu02 device  2 [0000:63:00] NVIDIA B200
+#  Rank 11 Group  0 Pid 232900 on      gpu02 device  3 [0000:73:00] NVIDIA B200
+#  Rank 12 Group  0 Pid 232704 on      gpu02 device  4 [0000:83:00] NVIDIA B200
+#  Rank 13 Group  0 Pid 232816 on      gpu02 device  5 [0000:93:00] NVIDIA B200
+#  Rank 14 Group  0 Pid 232844 on      gpu02 device  6 [0000:e3:00] NVIDIA B200
+#  Rank 15 Group  0 Pid 232788 on      gpu02 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           8             8     uint8     sum      -1    15.25    0.00    0.00       0    14.88    0.00    0.00    N/A
+          16            16     uint8     sum      -1    14.55    0.00    0.00       0    14.52    0.00    0.00    N/A
+          32            32     uint8     sum      -1    14.52    0.00    0.00       0    14.42    0.00    0.00    N/A
+          64            64     uint8     sum      -1    14.39    0.00    0.00       0    14.48    0.00    0.00    N/A
+         128           128     uint8     sum      -1    14.56    0.01    0.01       0    14.48    0.01    0.01    N/A
+         256           256     uint8     sum      -1    14.43    0.02    0.02       0    14.62    0.02    0.02    N/A
+         512           512     uint8     sum      -1    14.57    0.04    0.04       0    14.59    0.04    0.04    N/A
+        1024          1024     uint8     sum      -1    15.25    0.07    0.07       0    14.52    0.07    0.07    N/A
+        2048          2048     uint8     sum      -1    14.51    0.14    0.14       0    14.56    0.14    0.14    N/A
+        4096          4096     uint8     sum      -1    14.55    0.28    0.28       0    14.50    0.28    0.28    N/A
+        8192          8192     uint8     sum      -1    15.12    0.54    0.54       0    16.28    0.50    0.50    N/A
+       16384         16384     uint8     sum      -1    19.85    0.83    0.83       0    19.25    0.85    0.85    N/A
+       32768         32768     uint8     sum      -1    20.61    1.59    1.59       0    20.45    1.60    1.60    N/A
+       65536         65536     uint8     sum      -1    29.81    2.20    2.20       0    29.81    2.20    2.20    N/A
+      131072        131072     uint8     sum      -1    32.71    4.01    4.01       0    32.17    4.07    4.07    N/A
+      262144        262144     uint8     sum      -1    35.68    7.35    7.35       0    35.88    7.31    7.31    N/A
+      524288        524288     uint8     sum      -1    51.03   10.27   10.27       0    52.90    9.91    9.91    N/A
+     1048576       1048576     uint8     sum      -1    68.03   15.41   15.41       0    68.06   15.41   15.41    N/A
+     2097152       2097152     uint8     sum      -1   117.41   17.86   17.86       0   120.80   17.36   17.36    N/A
+     4194304       4194304     uint8     sum      -1   221.66   18.92   18.92       0   227.32   18.45   18.45    N/A
+     8388608       8388608     uint8     sum      -1   444.61   18.87   18.87       0   425.14   19.73   19.73    N/A
+    16777216      16777216     uint8     sum      -1   853.00   19.67   19.67       0   895.42   18.74   18.74    N/A
+    33554432      33554432     uint8     sum      -1  1733.72   19.35   19.35       0  1772.50   18.93   18.93    N/A
+    67108864      67108864     uint8     sum      -1  3458.73   19.40   19.40       0  3448.15   19.46   19.46    N/A
+   134217728     134217728     uint8     sum      -1  6925.35   19.38   19.38       0  6796.51   19.75   19.75    N/A
+   268435456     268435456     uint8     sum      -1  13652.3   19.66   19.66       0  13513.1   19.86   19.86    N/A
+   536870912     536870912     uint8     sum      -1  27086.8   19.82   19.82       0  27223.6   19.72   19.72    N/A
+  1073741824    1073741824     uint8     sum      -1  54705.1   19.63   19.63       0  54130.3   19.84   19.84    N/A
+  2147483648    2147483648     uint8     sum      -1   108529   19.79   19.79       0   109242   19.66   19.66    N/A
+  4294967296    4294967296     uint8     sum      -1   218014   19.70   19.70       0   218786   19.63   19.63    N/A
+  8589934592    8589934592     uint8     sum      -1   437674   19.63   19.63       0   437560   19.63   19.63    N/A
+ 17179869184   17179869184     uint8     sum      -1   875218   19.63   19.63       0   874531   19.64   19.64    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 9.79516 
+#
+# Collective test concluded: sendrecv_perf_mpi
+
+[1/1] Running test 7/7
+# nccl-tests version 2.17.6 nccl-headers=22808 nccl-library=22809
+==== sendrecv_v2 ranks=16 (inter-node) ====
+# Collective test starting: sendrecv_perf_mpi
+# nThread 1 nGpus 1 minBytes 8 maxBytes 17179869184 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 333501 on      gpu01 device  0 [0000:03:00] NVIDIA B200
+#  Rank  1 Group  0 Pid 333586 on      gpu01 device  1 [0000:13:00] NVIDIA B200
+#  Rank  2 Group  0 Pid 333401 on      gpu01 device  2 [0000:63:00] NVIDIA B200
+#  Rank  3 Group  0 Pid 333528 on      gpu01 device  3 [0000:73:00] NVIDIA B200
+#  Rank  4 Group  0 Pid 333345 on      gpu01 device  4 [0000:83:00] NVIDIA B200
+#  Rank  5 Group  0 Pid 333373 on      gpu01 device  5 [0000:93:00] NVIDIA B200
+#  Rank  6 Group  0 Pid 333317 on      gpu01 device  6 [0000:e3:00] NVIDIA B200
+#  Rank  7 Group  0 Pid 333558 on      gpu01 device  7 [0000:f3:00] NVIDIA B200
+#  Rank  8 Group  0 Pid 233808 on      gpu02 device  0 [0000:03:00] NVIDIA B200
+#  Rank  9 Group  0 Pid 233892 on      gpu02 device  1 [0000:13:00] NVIDIA B200
+#  Rank 10 Group  0 Pid 233976 on      gpu02 device  2 [0000:63:00] NVIDIA B200
+#  Rank 11 Group  0 Pid 233836 on      gpu02 device  3 [0000:73:00] NVIDIA B200
+#  Rank 12 Group  0 Pid 233920 on      gpu02 device  4 [0000:83:00] NVIDIA B200
+#  Rank 13 Group  0 Pid 233948 on      gpu02 device  5 [0000:93:00] NVIDIA B200
+#  Rank 14 Group  0 Pid 233864 on      gpu02 device  6 [0000:e3:00] NVIDIA B200
+#  Rank 15 Group  0 Pid 233780 on      gpu02 device  7 [0000:f3:00] NVIDIA B200
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+           8             8     uint8     sum      -1    15.08    0.00    0.00       0    14.88    0.00    0.00    N/A
+          16            16     uint8     sum      -1    14.50    0.00    0.00       0    14.62    0.00    0.00    N/A
+          32            32     uint8     sum      -1    14.66    0.00    0.00       0    14.54    0.00    0.00    N/A
+          64            64     uint8     sum      -1    14.58    0.00    0.00       0    14.50    0.00    0.00    N/A
+         128           128     uint8     sum      -1    14.62    0.01    0.01       0    14.53    0.01    0.01    N/A
+         256           256     uint8     sum      -1    14.56    0.02    0.02       0    14.57    0.02    0.02    N/A
+         512           512     uint8     sum      -1    14.68    0.03    0.03       0    14.45    0.04    0.04    N/A
+        1024          1024     uint8     sum      -1    14.57    0.07    0.07       0    14.58    0.07    0.07    N/A
+        2048          2048     uint8     sum      -1    14.69    0.14    0.14       0    14.59    0.14    0.14    N/A
+        4096          4096     uint8     sum      -1    14.66    0.28    0.28       0    14.65    0.28    0.28    N/A
+        8192          8192     uint8     sum      -1    15.17    0.54    0.54       0    14.78    0.55    0.55    N/A
+       16384         16384     uint8     sum      -1    19.39    0.85    0.85       0    19.13    0.86    0.86    N/A
+       32768         32768     uint8     sum      -1    20.70    1.58    1.58       0    20.27    1.62    1.62    N/A
+       65536         65536     uint8     sum      -1    30.49    2.15    2.15       0    30.24    2.17    2.17    N/A
+      131072        131072     uint8     sum      -1    32.78    4.00    4.00       0    32.20    4.07    4.07    N/A
+      262144        262144     uint8     sum      -1    35.97    7.29    7.29       0    35.53    7.38    7.38    N/A
+      524288        524288     uint8     sum      -1    50.71   10.34   10.34       0    37.78   13.88   13.88    N/A
+     1048576       1048576     uint8     sum      -1    48.39   21.67   21.67       0    47.55   22.05   22.05    N/A
+     2097152       2097152     uint8     sum      -1    75.87   27.64   27.64       0    75.60   27.74   27.74    N/A
+     4194304       4194304     uint8     sum      -1   129.77   32.32   32.32       0   130.23   32.21   32.21    N/A
+     8388608       8388608     uint8     sum      -1   249.84   33.58   33.58       0   250.01   33.55   33.55    N/A
+    16777216      16777216     uint8     sum      -1   484.38   34.64   34.64       0   485.17   34.58   34.58    N/A
+    33554432      33554432     uint8     sum      -1   946.98   35.43   35.43       0   955.92   35.10   35.10    N/A
+    67108864      67108864     uint8     sum      -1  1892.57   35.46   35.46       0  1889.62   35.51   35.51    N/A
+   134217728     134217728     uint8     sum      -1  3762.77   35.67   35.67       0  3755.86   35.74   35.74    N/A
+   268435456     268435456     uint8     sum      -1  7498.88   35.80   35.80       0  7519.08   35.70   35.70    N/A
+   536870912     536870912     uint8     sum      -1  14992.0   35.81   35.81       0  15015.0   35.76   35.76    N/A
+  1073741824    1073741824     uint8     sum      -1  29980.6   35.81   35.81       0  29999.1   35.79   35.79    N/A
+  2147483648    2147483648     uint8     sum      -1  59940.3   35.83   35.83       0  59970.3   35.81   35.81    N/A
+  4294967296    4294967296     uint8     sum      -1   119811   35.85   35.85       0   119894   35.82   35.82    N/A
+  8589934592    8589934592     uint8     sum      -1   239699   35.84   35.84       0   239719   35.83   35.83    N/A
+ 17179869184   17179869184     uint8     sum      -1   479242   35.85   35.85       0   479300   35.84   35.84    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 16.7596 
+#
+# Collective test concluded: sendrecv_perf_mpi
+
+All tests completed successfully
+Archiving log directory
+All done

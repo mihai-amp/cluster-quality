@@ -1,0 +1,794 @@
+==== pairwise IB tests at Thu May 14 05:44:10 PM UTC 2026 ====
+NODE_A=gpu01  NODE_B=gpu02
+HCAs: mlx5_0 mlx5_1 mlx5_2 mlx5_3 mlx5_4 mlx5_9 mlx5_12 mlx5_13
+Port base: 18515   duration: 15s
+
+==== ib_write_bw on mlx5_0 (server=gpu01, client=gpu02), port 18515 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x17 QPN 0x358b PSN 0xb1dab3 RKey 0x1a1e00 VAddr 0x0075093cb6d000
+ remote address: LID 0x1e7 QPN 0x21fc PSN 0xe76d65 RKey 0x1fff00 VAddr 0x007bfbb762b000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645548          0.00               46150.13		     0.738402
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x1e7 QPN 0x21fc PSN 0xe76d65 RKey 0x1fff00 VAddr 0x007bfbb762b000
+ remote address: LID 0x17 QPN 0x358b PSN 0xb1dab3 RKey 0x1a1e00 VAddr 0x0075093cb6d000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645548          0.00               46150.13		     0.738402
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_0 (server=gpu01, client=gpu02), port 18515 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x17 QPN 0x3590 PSN 0x58ef6e RKey 0x1fcd8c VAddr 0x005897ddb8b000
+ remote address: LID 0x1e7 QPN 0x21fd PSN 0x7b426e RKey 0x1fc281 VAddr 0x005e4752ca0000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1676290            2.68           186254.04
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x1e7 QPN 0x21fd PSN 0x7b426e RKey 0x1fc281 VAddr 0x005e4752ca0000
+ remote address: LID 0x17 QPN 0x3590 PSN 0x58ef6e RKey 0x1fcd8c VAddr 0x005897ddb8b000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1676288            2.68           186255.77
+---------------------------------------------------------------------------------------
+
+==== ib_write_bw on mlx5_1 (server=gpu01, client=gpu02), port 18516 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_1
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x189 QPN 0x35c4 PSN 0xcc6cae RKey 0x1a1e00 VAddr 0x00788e313ef000
+ remote address: LID 0x199 QPN 0x220b PSN 0x731c24 RKey 0x1fff00 VAddr 0x0074df5cfad000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645321          0.00               46148.58		     0.738377
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_1
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x199 QPN 0x220b PSN 0x731c24 RKey 0x1fff00 VAddr 0x0074df5cfad000
+ remote address: LID 0x189 QPN 0x35c4 PSN 0xcc6cae RKey 0x1a1e00 VAddr 0x00788e313ef000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645321          0.00               46148.58		     0.738377
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_1 (server=gpu01, client=gpu02), port 18516 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_1
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x189 QPN 0x35c5 PSN 0xd52921 RKey 0x1ff1b0 VAddr 0x00596a1d498000
+ remote address: LID 0x199 QPN 0x220c PSN 0x9a9da6 RKey 0x1fa968 VAddr 0x006131499c0000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1680955            2.68           186771.79
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_1
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x199 QPN 0x220c PSN 0x9a9da6 RKey 0x1fa968 VAddr 0x006131499c0000
+ remote address: LID 0x189 QPN 0x35c5 PSN 0xd52921 RKey 0x1ff1b0 VAddr 0x00596a1d498000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1680952            2.68           186773.76
+---------------------------------------------------------------------------------------
+
+==== ib_write_bw on mlx5_2 (server=gpu01, client=gpu02), port 18517 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_2
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x83 QPN 0x338a PSN 0xba6b16 RKey 0x1a2100 VAddr 0x007305c59aa000
+ remote address: LID 0x48 QPN 0x2a93 PSN 0x76f8e2 RKey 0x1fff00 VAddr 0x00782306e3b000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645579          0.00               46149.78		     0.738396
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_2
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x48 QPN 0x2a93 PSN 0x76f8e2 RKey 0x1fff00 VAddr 0x00782306e3b000
+ remote address: LID 0x83 QPN 0x338a PSN 0xba6b16 RKey 0x1a2100 VAddr 0x007305c59aa000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645579          0.00               46149.78		     0.738396
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_2 (server=gpu01, client=gpu02), port 18517 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_2
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x83 QPN 0x338b PSN 0xf730c4 RKey 0x1feead VAddr 0x005b4ee76e0000
+ remote address: LID 0x48 QPN 0x2a94 PSN 0x75fe2e RKey 0x1ff2b1 VAddr 0x0057bb83b32000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1679749            2.68           186639.86
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_2
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x48 QPN 0x2a94 PSN 0x75fe2e RKey 0x1ff2b1 VAddr 0x0057bb83b32000
+ remote address: LID 0x83 QPN 0x338b PSN 0xf730c4 RKey 0x1feead VAddr 0x005b4ee76e0000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1679750            2.68           186640.12
+---------------------------------------------------------------------------------------
+
+==== ib_write_bw on mlx5_3 (server=gpu01, client=gpu02), port 18518 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_3
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x219 QPN 0x3371 PSN 0x226b8e RKey 0x1a2000 VAddr 0x0075c3a231e000
+ remote address: LID 0x76 QPN 0x2a96 PSN 0x2edce RKey 0x1fff00 VAddr 0x007f6e7b22f000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645770          0.00               46151.62		     0.738426
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_3
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x76 QPN 0x2a96 PSN 0x2edce RKey 0x1fff00 VAddr 0x007f6e7b22f000
+ remote address: LID 0x219 QPN 0x3371 PSN 0x226b8e RKey 0x1a2000 VAddr 0x0075c3a231e000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      6645770          0.00               46151.62		     0.738426
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_3 (server=gpu01, client=gpu02), port 18518 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_3
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x219 QPN 0x3376 PSN 0x649788 RKey 0x1fcd8c VAddr 0x006364d00e7000
+ remote address: LID 0x76 QPN 0x2a97 PSN 0x39647c RKey 0x1fcb8a VAddr 0x00583268f20000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1676654            2.68           186294.89
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_3
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x76 QPN 0x2a97 PSN 0x39647c RKey 0x1fcb8a VAddr 0x00583268f20000
+ remote address: LID 0x219 QPN 0x3376 PSN 0x649788 RKey 0x1fcd8c VAddr 0x006364d00e7000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1676653            2.68           186295.30
+---------------------------------------------------------------------------------------
+
+==== ib_write_bw on mlx5_4 (server=gpu01, client=gpu02), port 18519 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_4
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x20b QPN 0x34e9 PSN 0x4d4113 RKey 0x1a2600 VAddr 0x007755ffeeb000
+ remote address: LID 0x25f QPN 0x2124 PSN 0x2f5eae RKey 0x1fff00 VAddr 0x00753346491000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5829823          0.00               40485.05		     0.647761
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_4
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x25f QPN 0x2124 PSN 0x2f5eae RKey 0x1fff00 VAddr 0x00753346491000
+ remote address: LID 0x20b QPN 0x34e9 PSN 0x4d4113 RKey 0x1a2600 VAddr 0x007755ffeeb000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5829823          0.00               40485.05		     0.647761
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_4 (server=gpu01, client=gpu02), port 18519 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_4
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x20b QPN 0x34ea PSN 0x320eb2 RKey 0x1f9b5a VAddr 0x0057908001f000
+ remote address: LID 0x25f QPN 0x2125 PSN 0x81bd62 RKey 0x1e8342 VAddr 0x0060d571237000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1600253            2.81           177807.29
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_4
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x25f QPN 0x2125 PSN 0x81bd62 RKey 0x1e8342 VAddr 0x0060d571237000
+ remote address: LID 0x20b QPN 0x34ea PSN 0x320eb2 RKey 0x1f9b5a VAddr 0x0057908001f000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1600252            2.81           177805.71
+---------------------------------------------------------------------------------------
+
+==== ib_write_bw on mlx5_9 (server=gpu01, client=gpu02), port 18520 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_9
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x7b QPN 0x34c4 PSN 0xedc3d8 RKey 0x1a2100 VAddr 0x007ae208eeb000
+ remote address: LID 0x53 QPN 0x212e PSN 0xfc4b82 RKey 0x1fff00 VAddr 0x007b06adfef000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5899565          0.00               40969.68		     0.655515
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_9
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x53 QPN 0x212e PSN 0xfc4b82 RKey 0x1fff00 VAddr 0x007b06adfef000
+ remote address: LID 0x7b QPN 0x34c4 PSN 0xedc3d8 RKey 0x1a2100 VAddr 0x007ae208eeb000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5899565          0.00               40969.68		     0.655515
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_9 (server=gpu01, client=gpu02), port 18520 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_9
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x7b QPN 0x34c5 PSN 0x71809b RKey 0x1f04c3 VAddr 0x005d0552f43000
+ remote address: LID 0x53 QPN 0x212f PSN 0x405e0e RKey 0x1fbd7c VAddr 0x00616e64397000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1602382            2.81           178043.43
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_9
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x53 QPN 0x212f PSN 0x405e0e RKey 0x1fbd7c VAddr 0x00616e64397000
+ remote address: LID 0x7b QPN 0x34c5 PSN 0x71809b RKey 0x1f04c3 VAddr 0x005d0552f43000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1602379            2.81           178042.04
+---------------------------------------------------------------------------------------
+
+==== ib_write_bw on mlx5_12 (server=gpu01, client=gpu02), port 18521 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_12
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x1cd QPN 0x3272 PSN 0x503af7 RKey 0x1a1d00 VAddr 0x007a3525f59000
+ remote address: LID 0x3c QPN 0x1f7f PSN 0x4cfbb4 RKey 0x1fff00 VAddr 0x007d971b42e000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5904807          0.00               41005.59		     0.656089
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_12
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x3c QPN 0x1f7f PSN 0x4cfbb4 RKey 0x1fff00 VAddr 0x007d971b42e000
+ remote address: LID 0x1cd QPN 0x3272 PSN 0x503af7 RKey 0x1a1d00 VAddr 0x007a3525f59000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5904807          0.00               41005.59		     0.656089
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_12 (server=gpu01, client=gpu02), port 18521 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_12
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x1cd QPN 0x3276 PSN 0xa6959c RKey 0x1fce8d VAddr 0x0061b8c84aa000
+ remote address: LID 0x3c QPN 0x1f80 PSN 0xd1fa32 RKey 0x1fe1a0 VAddr 0x005c0b31f42000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1586615            2.84           176291.98
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_12
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x3c QPN 0x1f80 PSN 0xd1fa32 RKey 0x1fe1a0 VAddr 0x005c0b31f42000
+ remote address: LID 0x1cd QPN 0x3276 PSN 0xa6959c RKey 0x1fce8d VAddr 0x0061b8c84aa000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1586615            2.84           176291.23
+---------------------------------------------------------------------------------------
+
+==== ib_write_bw on mlx5_13 (server=gpu01, client=gpu02), port 18522 ====
+--- server log ---
+ WARNING: BW peak won't be measured in this run.
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_13
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x28 QPN 0x3273 PSN 0xd84bca RKey 0x1a2000 VAddr 0x007ff2b0c45000
+ remote address: LID 0x17b QPN 0x1f97 PSN 0x85149e RKey 0x1fff00 VAddr 0x0072b59bc29000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5855679          0.00               40664.46		     0.650631
+---------------------------------------------------------------------------------------
+--- client log ---
+ WARNING: BW peak won't be measured in this run.
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_13
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 128
+ CQ Moderation   : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x17b QPN 0x1f97 PSN 0x85149e RKey 0x1fff00 VAddr 0x0072b59bc29000
+ remote address: LID 0x28 QPN 0x3273 PSN 0xd84bca RKey 0x1a2000 VAddr 0x007ff2b0c45000
+---------------------------------------------------------------------------------------
+ #bytes     #iterations    BW peak[MiB/sec]    BW average[MiB/sec]   MsgRate[Mpps]
+ 65536      5855679          0.00               40664.46		     0.650631
+---------------------------------------------------------------------------------------
+
+==== ib_write_lat on mlx5_13 (server=gpu01, client=gpu02), port 18522 ====
+--- server log ---
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_13
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x28 QPN 0x3275 PSN 0xb1939c RKey 0x1ff1b0 VAddr 0x005ad2cb00e000
+ remote address: LID 0x17b QPN 0x1f98 PSN 0x8bd53c RKey 0x1fc07f VAddr 0x0062db6e679000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1583372            2.84           175931.25
+---------------------------------------------------------------------------------------
+--- client log ---
+---------------------------------------------------------------------------------------
+                    RDMA_Write Latency Test
+ Dual-port       : OFF		Device         : mlx5_13
+ Number of qps   : 1		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: OFF		Lock-free      : OFF
+ ibv_wr* API     : ON		Using DDP      : OFF
+ TX depth        : 1
+ Mtu             : 4096[B]
+ Link type       : IB
+ Max inline data : 220[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+ local address: LID 0x17b QPN 0x1f98 PSN 0x8bd53c RKey 0x1fc07f VAddr 0x0062db6e679000
+ remote address: LID 0x28 QPN 0x3275 PSN 0xb1939c RKey 0x1ff1b0 VAddr 0x005ad2cb00e000
+---------------------------------------------------------------------------------------
+ #bytes        #iterations       t_avg[usec]    tps average
+ 2             1583371            2.84           175931.30
+---------------------------------------------------------------------------------------
+
+Wrote /var/spool/slurmd/job00336/results/pairwise_ib_20260514T174410Z.log
+
+Sanity check: each ib_write_bw on NDR (400 Gb/s) should show ~46-49 GB/s sustained
+ib_write_lat p50 should be < 2 microseconds for ConnectX-7 NDR within rack
+slurmstepd-gpu01: error: rmdir(/var/spool/slurmd/job00336): Directory not empty

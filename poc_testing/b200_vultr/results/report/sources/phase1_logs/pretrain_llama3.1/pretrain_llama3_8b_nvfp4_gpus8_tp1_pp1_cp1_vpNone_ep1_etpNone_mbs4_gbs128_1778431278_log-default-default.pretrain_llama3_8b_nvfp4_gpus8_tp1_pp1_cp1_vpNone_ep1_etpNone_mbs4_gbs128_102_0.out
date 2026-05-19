@@ -1,0 +1,1310 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:64: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import diffusers plugin due to: ImportError('peft>=0.17.0 is required for a normal functioning of this module, but found peft==0.13.2.'). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+/opt/venv/lib/python3.12/site-packages/modelopt/torch/utils/logging.py:115: UserWarning: Failed to import peft plugin due to: ImportError("cannot import name 'ParamWrapper' from 'peft.tuners.lora.layer' (/opt/venv/lib/python3.12/site-packages/peft/tuners/lora/layer.py)"). You may ignore this warning if you do not need this plugin.
+  warnings.warn(message, *args, **kwargs)
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/mnt/vfs/mihai/llmb-install/workloads/pretrain_llama3.1/Megatron-Bridge/scripts/performance/run_script.py:67: UserWarning: Function 'pretrain' is experimental. APIs in this module are subject to change without notice.
+  pretrain(config=recipe, forward_step_func=forward_step_func)
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+INFO:megatron.core.num_microbatches_calculator:setting number of microbatches to constant 4
+> initializing torch distributed ...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Config variant 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V2' not found; falling back to 'LLAMA3_8B_PRETRAIN_CONFIG_B200_NVFP4_V1'.
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/transformer/transformer_config.py:1705: UserWarning: full scope is deprecated. Use empty cuda_graph_scope to capture the whole layer.
+  warnings.warn(
+[W510 16:47:43.270724783 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W510 16:47:43.278854735 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W510 16:47:43.288686630 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W510 16:47:43.601941999 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W510 16:47:43.635912622 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W510 16:47:43.821681436 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W510 16:47:43.886346115 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[W510 16:47:43.890146768 ProcessGroupNCCL.cpp:936] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+NCCL version 2.28.9+cuda13.0
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+> initialized tensor model parallel with size 1[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+
+> initialized pipeline model parallel with size 1
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+
+> setting random seeds to 1234 ...
+> compiling dataset index builder ...
+make: Entering directory '/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/datasets'
+make: Nothing to be done for 'default'.
+make: Leaving directory '/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/datasets'
+>>> done with dataset index builder. Compilation time: 0.021 seconds
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4879: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+time to initialize megatron (seconds): 9.847
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4879: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[after megatron is initialized] datetime: 2026-05-10 16:47:47 
+> building NullTokenizer tokenizer ...
+[after tokenizer is built] datetime: 2026-05-10 16:47:47 
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+/opt/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/models/gpt/gpt_layer_specs.py:205: UserWarning: The fp8 argument in "get_gpt_layer_with_transformer_engine_spec" has been deprecated and will be removed soon. Please update your code accordingly.
+  warnings.warn(
+ > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 8030261248
+INFO:megatron.core.distributed.distributed_data_parallel:Setting up DistributedDataParallel with config DistributedDataParallelConfig(grad_reduce_in_fp32=False, overlap_grad_reduce=True, overlap_param_gather=True, align_param_gather=False, use_distributed_optimizer=True, num_distributed_optimizer_instances=1, check_for_nan_in_grad=False, check_for_large_grads=False, bucket_size=134217728, pad_buckets_for_high_nccl_busbw=False, reduce_scatter_with_fp32_accumulation=False, average_in_collective=True, fp8_param_gather=False, reuse_grad_buf_for_mxfp8_param_ag=False, use_megatron_fsdp=False, use_custom_fsdp=False, data_parallel_sharding_strategy='no_shard', gradient_reduce_div_fusion=True, suggested_communication_unit_size=None, preserve_fp32_weights=True, keep_fp8_transpose_cache=False, nccl_ub=False, fsdp_double_buffer=False, outer_dp_sharding_strategy='no_shard', disable_symmetric_registration=False, fsdp_manual_registration=False, delay_wgrad_compute=None)
+INFO:megatron.core.distributed.param_and_grad_buffer:Number of buckets for gradient all-reduce / reduce-scatter: 34
+Params for bucket 1 (525336576 elements, 525336576 padded size):
+	module.output_layer.weight
+Params for bucket 2 (176164864 elements, 176164864 padded size):
+	module.decoder.final_layernorm.weight
+	module.decoder.layers.31.mlp.linear_fc1.weight
+	module.decoder.layers.31.mlp.linear_fc2.weight
+Params for bucket 3 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.31.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.30.mlp.linear_fc1.weight
+	module.decoder.layers.31.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.31.self_attention.linear_qkv.weight
+	module.decoder.layers.31.self_attention.linear_proj.weight
+	module.decoder.layers.30.mlp.linear_fc2.weight
+Params for bucket 4 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.30.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.29.mlp.linear_fc1.weight
+	module.decoder.layers.30.self_attention.linear_qkv.weight
+	module.decoder.layers.30.self_attention.linear_proj.weight
+	module.decoder.layers.29.mlp.linear_fc2.weight
+	module.decoder.layers.30.self_attention.linear_qkv.layer_norm_weight
+Params for bucket 5 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.29.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.28.mlp.linear_fc1.weight
+	module.decoder.layers.28.mlp.linear_fc2.weight
+	module.decoder.layers.29.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.29.self_attention.linear_proj.weight
+	module.decoder.layers.29.self_attention.linear_qkv.weight
+Params for bucket 6 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.28.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.27.mlp.linear_fc1.weight
+	module.decoder.layers.28.self_attention.linear_qkv.weight
+	module.decoder.layers.28.self_attention.linear_proj.weight
+	module.decoder.layers.27.mlp.linear_fc2.weight
+	module.decoder.layers.28.self_attention.linear_qkv.layer_norm_weight
+Params for bucket 7 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.27.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.26.mlp.linear_fc1.weight
+	module.decoder.layers.27.self_attention.linear_qkv.weight
+	module.decoder.layers.27.self_attention.linear_proj.weight
+	module.decoder.layers.27.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.26.mlp.linear_fc2.weight
+Params for bucket 8 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.26.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.25.mlp.linear_fc1.weight
+	module.decoder.layers.26.self_attention.linear_qkv.weight
+	module.decoder.layers.26.self_attention.linear_proj.weight
+	module.decoder.layers.25.mlp.linear_fc2.weight
+	module.decoder.layers.26.self_attention.linear_qkv.layer_norm_weight
+Params for bucket 9 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.25.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.24.mlp.linear_fc1.weight
+	module.decoder.layers.25.self_attention.linear_qkv.weight
+	module.decoder.layers.25.self_attention.linear_proj.weight
+	module.decoder.layers.24.mlp.linear_fc2.weight
+	module.decoder.layers.25.self_attention.linear_qkv.layer_norm_weight
+Params for bucket 10 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.24.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.23.mlp.linear_fc1.weight
+	module.decoder.layers.24.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.23.mlp.linear_fc2.weight
+	module.decoder.layers.24.self_attention.linear_qkv.weight
+	module.decoder.layers.24.self_attention.linear_proj.weight
+Params for bucket 11 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.23.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.22.mlp.linear_fc1.weight
+	module.decoder.layers.23.self_attention.linear_qkv.weight
+	module.decoder.layers.23.self_attention.linear_proj.weight
+	module.decoder.layers.22.mlp.linear_fc2.weight
+	module.decoder.layers.23.self_attention.linear_qkv.layer_norm_weight
+Params for bucket 12 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.22.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.21.mlp.linear_fc1.weight
+	module.decoder.layers.22.self_attention.linear_proj.weight
+	module.decoder.layers.21.mlp.linear_fc2.weight
+	module.decoder.layers.22.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.22.self_attention.linear_qkv.weight
+Params for bucket 13 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.21.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.20.mlp.linear_fc2.weight
+	module.decoder.layers.21.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.21.self_attention.linear_qkv.weight
+	module.decoder.layers.21.self_attention.linear_proj.weight
+	module.decoder.layers.20.mlp.linear_fc1.weight
+Params for bucket 14 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.20.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.20.self_attention.linear_qkv.weight
+	module.decoder.layers.20.self_attention.linear_proj.weight
+	module.decoder.layers.19.mlp.linear_fc1.weight
+	module.decoder.layers.20.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.19.mlp.linear_fc2.weight
+Params for bucket 15 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.19.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.18.mlp.linear_fc2.weight
+	module.decoder.layers.19.self_attention.linear_qkv.weight
+	module.decoder.layers.19.self_attention.linear_proj.weight
+	module.decoder.layers.19.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.18.mlp.linear_fc1.weight
+Params for bucket 16 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.18.self_attention.linear_qkv.weight
+	module.decoder.layers.18.self_attention.linear_proj.weight
+	module.decoder.layers.17.mlp.linear_fc2.weight
+	module.decoder.layers.18.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.18.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.17.mlp.linear_fc1.weight
+Params for bucket 17 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.16.mlp.linear_fc2.weight
+	module.decoder.layers.17.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.17.self_attention.linear_proj.weight
+	module.decoder.layers.17.self_attention.linear_qkv.weight
+	module.decoder.layers.17.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.16.mlp.linear_fc1.weight
+Params for bucket 18 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.16.self_attention.linear_qkv.weight
+	module.decoder.layers.16.self_attention.linear_proj.weight
+	module.decoder.layers.15.mlp.linear_fc2.weight
+	module.decoder.layers.16.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.16.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.15.mlp.linear_fc1.weight
+Params for bucket 19 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.15.self_attention.linear_qkv.weight
+	module.decoder.layers.15.self_attention.linear_proj.weight
+	module.decoder.layers.14.mlp.linear_fc2.weight
+	module.decoder.layers.15.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.15.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.14.mlp.linear_fc1.weight
+Params for bucket 20 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.14.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.13.mlp.linear_fc2.weight
+	module.decoder.layers.14.self_attention.linear_qkv.weight
+	module.decoder.layers.14.self_attention.linear_proj.weight
+	module.decoder.layers.14.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.13.mlp.linear_fc1.weight
+Params for bucket 21 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.13.self_attention.linear_proj.weight
+	module.decoder.layers.12.mlp.linear_fc2.weight
+	module.decoder.layers.13.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.13.self_attention.linear_qkv.weight
+	module.decoder.layers.13.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.12.mlp.linear_fc1.weight
+Params for bucket 22 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.12.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.11.mlp.linear_fc2.weight
+	module.decoder.layers.12.self_attention.linear_qkv.weight
+	module.decoder.layers.12.self_attention.linear_proj.weight
+	module.decoder.layers.12.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.11.mlp.linear_fc1.weight
+Params for bucket 23 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.11.self_attention.linear_qkv.weight
+	module.decoder.layers.11.self_attention.linear_proj.weight
+	module.decoder.layers.10.mlp.linear_fc2.weight
+	module.decoder.layers.11.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.11.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.10.mlp.linear_fc1.weight
+Params for bucket 24 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.10.self_attention.linear_proj.weight
+	module.decoder.layers.10.self_attention.linear_qkv.weight
+	module.decoder.layers.10.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.9.mlp.linear_fc2.weight
+	module.decoder.layers.10.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.9.mlp.linear_fc1.weight
+Params for bucket 25 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.8.mlp.linear_fc2.weight
+	module.decoder.layers.9.self_attention.linear_qkv.weight
+	module.decoder.layers.9.self_attention.linear_proj.weight
+	module.decoder.layers.9.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.9.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.8.mlp.linear_fc1.weight
+Params for bucket 26 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.8.self_attention.linear_qkv.weight
+	module.decoder.layers.8.self_attention.linear_proj.weight
+	module.decoder.layers.7.mlp.linear_fc2.weight
+	module.decoder.layers.8.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.8.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.7.mlp.linear_fc1.weight
+Params for bucket 27 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.7.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.6.mlp.linear_fc2.weight
+	module.decoder.layers.7.self_attention.linear_proj.weight
+	module.decoder.layers.7.self_attention.linear_qkv.weight
+	module.decoder.layers.6.mlp.linear_fc1.weight
+	module.decoder.layers.7.mlp.linear_fc1.layer_norm_weight
+Params for bucket 28 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.6.self_attention.linear_qkv.weight
+	module.decoder.layers.6.self_attention.linear_proj.weight
+	module.decoder.layers.6.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.6.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.5.mlp.linear_fc2.weight
+	module.decoder.layers.5.mlp.linear_fc1.weight
+Params for bucket 29 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.5.self_attention.linear_proj.weight
+	module.decoder.layers.4.mlp.linear_fc1.weight
+	module.decoder.layers.5.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.5.self_attention.linear_qkv.weight
+	module.decoder.layers.4.mlp.linear_fc2.weight
+	module.decoder.layers.5.self_attention.linear_qkv.layer_norm_weight
+Params for bucket 30 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.4.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.3.mlp.linear_fc1.weight
+	module.decoder.layers.4.self_attention.linear_qkv.weight
+	module.decoder.layers.4.self_attention.linear_proj.weight
+	module.decoder.layers.4.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.3.mlp.linear_fc2.weight
+Params for bucket 31 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.3.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.2.mlp.linear_fc2.weight
+	module.decoder.layers.3.self_attention.linear_qkv.weight
+	module.decoder.layers.3.self_attention.linear_proj.weight
+	module.decoder.layers.3.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.2.mlp.linear_fc1.weight
+Params for bucket 32 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.2.self_attention.linear_qkv.weight
+	module.decoder.layers.2.self_attention.linear_proj.weight
+	module.decoder.layers.1.mlp.linear_fc2.weight
+	module.decoder.layers.2.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.2.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.1.mlp.linear_fc1.weight
+Params for bucket 33 (218112000 elements, 218112000 padded size):
+	module.decoder.layers.1.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.1.self_attention.linear_qkv.weight
+	module.decoder.layers.0.mlp.linear_fc1.weight
+	module.decoder.layers.1.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.1.self_attention.linear_proj.weight
+	module.decoder.layers.0.mlp.linear_fc2.weight
+Params for bucket 34 (567287808 elements, 567287808 padded size):
+	module.decoder.layers.0.mlp.linear_fc1.layer_norm_weight
+	module.decoder.layers.0.self_attention.linear_qkv.layer_norm_weight
+	module.decoder.layers.0.self_attention.linear_proj.weight
+	module.embedding.word_embeddings.weight
+	module.decoder.layers.0.self_attention.linear_qkv.weight
+INFO:megatron.core.optimizer:Setting up optimizer with config OptimizerConfig(lr=0.0003, min_lr=3e-05, decoupled_lr=None, decoupled_min_lr=None, weight_decay=0.1, apply_wd_to_qk_layernorm=False, fp8_recipe='tensorwise', fp16=False, bf16=True, reuse_grad_buf_for_mxfp8_param_ag=False, params_dtype=torch.bfloat16, use_precision_aware_optimizer=False, store_param_remainders=True, main_grads_dtype=torch.float32, main_params_dtype=torch.float32, exp_avg_dtype=torch.float32, exp_avg_sq_dtype=torch.float32, optimizer='adam', loss_scale=None, initial_loss_scale=4294967296, min_loss_scale=1.0, loss_scale_window=1000, hysteresis=2, adam_beta1=0.9, adam_beta2=0.95, adam_eps=1e-05, decoupled_weight_decay=True, sgd_momentum=0.9, muon_momentum=0.95, muon_split_qkv=True, muon_use_nesterov=False, muon_scale_mode='spectral', muon_fp32_matmul_prec='medium', muon_num_ns_steps=5, muon_tp_mode='blockwise', muon_extra_scale_factor=1.0, use_distributed_optimizer=True, overlap_param_gather=True, overlap_param_gather_with_optimizer_step=False, optimizer_cpu_offload=False, optimizer_offload_fraction=0.0, use_torch_optimizer_for_cpu_offload=False, overlap_cpu_optimizer_d2h_h2d=False, pin_cpu_grads=True, pin_cpu_params=True, clip_grad=1.0, log_num_zeros_in_grad=False, barrier_with_L1_time=False, timers=<megatron.core.timers.Timers object at 0x74fccb469160>, config_logger_dir='')
+INFO:megatron.core.optimizer_param_scheduler:> learning rate decay style: cosine
+[after model, optimizer, and learning rate scheduler are built] datetime: 2026-05-10 16:47:47 
+> building train, validation, and test datasets ...
+ > datasets target sizes (minimum size):
+    train:      6400
+    validation: 0
+    test:       0
+> building train, validation, and test datasets for GPT ...
+INFO:megatron.core.datasets.blended_megatron_dataset_builder:Building MockGPTDataset splits with sizes=(6400, 0, 0) and config=MockGPTDatasetConfig(dataloader_type='single', num_workers=8, data_sharding=True, pin_memory=True, persistent_workers=False, trust_remote_code=None, random_seed=1234, sequence_length=8192, blend=None, blend_per_split=None, multiple_validation_sets=None, full_validation=None, split='1,1,1', split_matrix=[(0, 0.3333333333333333), (0.3333333333333333, 0.6666666666666666), (0.6666666666666666, 1.0)], num_dataset_builder_threads=1, path_to_cache=None, mmap_bin_files=True, mock=True, tokenizer=<megatron.core.tokenizers.text.models.default_tokenizer.DefaultTokenizerText object at 0x74fc94399f70>, mid_level_dataset_surplus=0.005, allow_ambiguous_pad_tokens=False, fast_cache_load=False, defer_npy_index_mmap=False, reset_position_ids=False, reset_attention_mask=False, eod_mask_loss=False, create_attention_mask=True, drop_last_partial_validation_sequence=True, add_extra_token_to_sequence=True, object_storage_cache_path=None, context_parallel_size=None, data_parallel_size=1, sequence_parallel_size=0, hybrid_context_parallel=False, sequences_per_dataset=None, token_dtype_code=None)
+INFO:megatron.core.datasets.gpt_dataset:Build and save the MockGPTDataset train indices
+INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8324
+INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1
+INFO:megatron.core.datasets.gpt_dataset:Build and save the MockGPTDataset valid indices
+INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8320
+INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1
+INFO:megatron.core.datasets.gpt_dataset:Build and save the MockGPTDataset test indices
+INFO:megatron.core.datasets.gpt_dataset:> total number of samples: 8335
+INFO:megatron.core.datasets.gpt_dataset:> total number of epochs: 1
+> finished creating GPT datasets ...
+[after dataloaders are built] datetime: 2026-05-10 16:47:48 
+done with setup ...
+INFO:megatron.core.timers:(min, max) time across ranks (ms):
+    model-and-optimizer-setup ......................: (194.16, 194.30)
+    train/valid/test-data-iterators-setup ..........: (169.06, 219.17)
+------- Task Configuration -------
+_target_: megatron.bridge.training.config.ConfigContainer
+checkpoint:
+  _target_: megatron.bridge.training.config.CheckpointConfig
+  async_save: false
+  ckpt_assume_constant_structure: false
+  ckpt_convert_format: null
+  ckpt_convert_save: null
+  ckpt_format: torch_dist
+  ckpt_step: null
+  dist_ckpt_optim_fully_reshardable: false
+  dist_ckpt_strictness: assume_ok_unexpected
+  distrib_optim_fully_reshardable_mem_efficient: false
+  exit_on_missing_checkpoint: false
+  finetune: false
+  fully_parallel_load: false
+  fully_parallel_save: true
+  load: /nemo_run/code/nemo_experiments/default/checkpoints
+  load_main_params_from_ckpt: false
+  load_optim: true
+  load_rng: true
+  most_recent_k: -1
+  non_persistent_ckpt_type: null
+  non_persistent_global_ckpt_dir: null
+  non_persistent_local_ckpt_algo: fully_parallel
+  non_persistent_local_ckpt_dir: null
+  non_persistent_save_interval: null
+  pretrained_checkpoint: null
+  replication: false
+  replication_factor: 2
+  replication_jump: null
+  save: null
+  save_interval: 500
+  save_optim: true
+  save_rng: true
+  save_tokenizer_assets: true
+  strict_fsdp_dtensor_load: false
+  use_checkpoint_args: false
+  use_persistent_ckpt_worker: true
+comm_overlap:
+  _target_: megatron.bridge.training.comm_overlap.CommOverlapConfig
+  align_param_gather: null
+  batch_p2p_comm: null
+  bucket_size: null
+  data_parallel_size: 8
+  defer_embedding_wgrad_compute: null
+  delay_wgrad_compute: null
+  overlap_grad_reduce: null
+  overlap_moe_expert_parallel_comm: null
+  overlap_p2p_comm: null
+  overlap_param_gather: null
+  overlap_param_gather_with_optimizer_step: null
+  tp_comm_bootstrap_backend: nccl
+  tp_comm_overlap: false
+  tp_comm_overlap_cfg: null
+  wgrad_deferral_limit: null
+dataset:
+  _target_: megatron.bridge.training.config.MockGPTDatasetConfig
+  add_extra_token_to_sequence: true
+  allow_ambiguous_pad_tokens: false
+  blend: null
+  blend_per_split: null
+  context_parallel_size: null
+  create_attention_mask: true
+  data_parallel_size: 1
+  data_sharding: true
+  dataloader_type: single
+  defer_npy_index_mmap: false
+  drop_last_partial_validation_sequence: true
+  eod_mask_loss: false
+  fast_cache_load: false
+  full_validation: null
+  hybrid_context_parallel: false
+  mid_level_dataset_surplus: 0.005
+  mmap_bin_files: true
+  mock: true
+  multiple_validation_sets: null
+  num_dataset_builder_threads: 1
+  num_workers: 8
+  object_storage_cache_path: null
+  path_to_cache: null
+  persistent_workers: false
+  pin_memory: true
+  random_seed: 1234
+  reset_attention_mask: false
+  reset_position_ids: false
+  sequence_length: 8192
+  sequence_parallel_size: 0
+  sequences_per_dataset: null
+  split: 1,1,1
+  split_matrix:
+  - - 0
+    - 0.3333333333333333
+  - - 0.3333333333333333
+    - 0.6666666666666666
+  - - 0.6666666666666666
+    - 1.0
+  token_dtype_code: null
+  tokenizer:
+    _call_: true
+    _target_: megatron.core.tokenizers.text.models.default_tokenizer.DefaultTokenizerText
+  trust_remote_code: null
+ddp:
+  _target_: megatron.bridge.training.config.DistributedDataParallelConfig
+  align_param_gather: false
+  average_in_collective: true
+  bucket_size: 134217728
+  check_for_large_grads: false
+  check_for_nan_in_grad: false
+  data_parallel_sharding_strategy: no_shard
+  delay_wgrad_compute: null
+  disable_symmetric_registration: false
+  fp8_param_gather: false
+  fsdp_double_buffer: false
+  fsdp_manual_registration: false
+  grad_reduce_in_fp32: false
+  gradient_reduce_div_fusion: true
+  keep_fp8_transpose_cache: false
+  nccl_ub: false
+  num_distributed_optimizer_instances: 1
+  outer_dp_sharding_strategy: no_shard
+  overlap_grad_reduce: true
+  overlap_param_gather: true
+  pad_buckets_for_high_nccl_busbw: false
+  preserve_fp32_weights: true
+  reduce_scatter_with_fp32_accumulation: false
+  reuse_grad_buf_for_mxfp8_param_ag: false
+  suggested_communication_unit_size: null
+  use_custom_fsdp: false
+  use_distributed_optimizer: true
+  use_megatron_fsdp: false
+dist:
+  _target_: megatron.bridge.training.config.DistributedInitConfig
+  align_grad_reduce: true
+  disable_jit_fuser: false
+  distributed_backend: nccl
+  distributed_timeout_minutes: 10
+  distributed_timeout_seconds_after_init: null
+  enable_megatron_core_experimental: false
+  external_gpu_device_mapping: false
+  high_priority_stream_groups: null
+  lazy_init: false
+  local_rank: 0
+  nccl_communicator_config_path: null
+  sharp_enabled_group: null
+  use_decentralized_pg: false
+  use_gloo_process_groups: true
+  use_megatron_fsdp: false
+  use_sharp: false
+  use_torch_fsdp2: false
+  use_tp_pp_dp_mapping: false
+ft: null
+inprocess_restart: null
+logger:
+  _target_: megatron.bridge.training.config.LoggerConfig
+  filter_warnings: true
+  log_energy: false
+  log_interval: 1
+  log_l2_norm_grad_to_tensorboard: false
+  log_loss_scale_to_tensorboard: true
+  log_memory_to_tensorboard: false
+  log_params_norm: false
+  log_progress: false
+  log_runtime_to_tensorboard: false
+  log_throughput: false
+  log_throughput_to_tensorboard: false
+  log_timers_to_tensorboard: true
+  log_validation_ppl_to_tensorboard: false
+  log_world_size_to_tensorboard: false
+  logging_level: 20
+  memory_keys: null
+  mlflow_experiment: null
+  mlflow_run_name: null
+  mlflow_tags: null
+  mlflow_tracking_uri: null
+  modules_to_filter: null
+  runtime_time_unit: hours
+  save_config_filepath: /nemo_run/configs/ConfigContainer.yaml
+  set_level_for_all_loggers: false
+  tensorboard_dir: null
+  tensorboard_log_interval: 1
+  tensorboard_queue_size: 1000
+  throughput_window_size: 100
+  timing_log_level: 0
+  timing_log_option: minmax
+  wandb_entity: null
+  wandb_exp_name: null
+  wandb_project: null
+  wandb_save_dir: null
+mixed_precision:
+  _target_: megatron.bridge.training.mixed_precision.MixedPrecisionConfig
+  autocast_dtype: null
+  autocast_enabled: false
+  bf16: true
+  first_last_layers_bf16: false
+  fp16: false
+  fp32: false
+  fp4: e2m1
+  fp4_recipe: nvfp4
+  fp8: null
+  fp8_amax_compute_algo: most_recent
+  fp8_amax_history_len: 1
+  fp8_dot_product_attention: false
+  fp8_margin: 0
+  fp8_multi_head_attention: false
+  fp8_param: false
+  fp8_param_gather: false
+  fp8_recipe: tensorwise
+  fp8_wgrad: true
+  grad_reduce_in_fp32: false
+  hysteresis: 2
+  initial_loss_scale: 4294967296
+  loss_scale: null
+  loss_scale_window: 1000
+  min_loss_scale: 1.0
+  num_layers_at_end_in_bf16: 0
+  num_layers_at_start_in_bf16: 0
+  params_dtype:
+    _call_: false
+    _target_: torch.bfloat16
+  pipeline_dtype:
+    _call_: false
+    _target_: torch.bfloat16
+  reuse_grad_buf_for_mxfp8_param_ag: false
+model:
+  _target_: megatron.bridge.models.llama.llama_provider.LlamaModelProvider
+  account_for_embedding_in_pipeline_split: false
+  account_for_loss_in_pipeline_split: false
+  activation_func:
+    _call_: false
+    _target_: torch.nn.functional.silu
+  activation_func_clamp_value: null
+  activation_func_fp8_input_store: false
+  add_bias_linear: false
+  add_qkv_bias: false
+  apply_query_key_layer_scaling: false
+  apply_residual_connection_post_layernorm: false
+  apply_rope_fusion: true
+  async_tensor_model_parallel_allreduce: true
+  attention_backend:
+    _args_:
+    - 5
+    _call_: true
+    _target_: megatron.core.transformer.enums.AttnBackend
+  attention_dropout: 0.0
+  attention_output_gate: false
+  attention_softmax_in_fp32: false
+  autocast_dtype:
+    _call_: false
+    _target_: torch.bfloat16
+  barrier_with_L1_time: true
+  batch_invariant_mode: false
+  batch_p2p_comm: false
+  batch_p2p_sync: true
+  bf16: true
+  bias_activation_fusion: true
+  bias_dropout_fusion: true
+  calculate_per_token_loss: false
+  clone_scatter_output_in_embedding: true
+  config_logger_dir: ''
+  context_parallel_size: 1
+  cp_comm_type: null
+  cpu_offloading: false
+  cpu_offloading_activations: true
+  cpu_offloading_double_buffering: false
+  cpu_offloading_num_layers: 0
+  cpu_offloading_weights: false
+  cross_entropy_fusion_impl: te
+  cross_entropy_loss_fusion: true
+  cuda_graph_impl: none
+  cuda_graph_retain_backward_graph: false
+  cuda_graph_scope: []
+  cuda_graph_use_single_mempool: false
+  cuda_graph_warmup_steps: 3
+  deallocate_pipeline_outputs: true
+  defer_embedding_wgrad_compute: false
+  delay_wgrad_compute: false
+  deterministic_mode: false
+  disable_bf16_reduced_precision_matmul: false
+  disable_parameter_transpose_cache: false
+  distribute_saved_activations: false
+  dsa_indexer_head_dim: null
+  dsa_indexer_loss_coeff: null
+  dsa_indexer_n_heads: null
+  dsa_indexer_topk: null
+  dsa_indexer_use_sparse_loss: false
+  embedding_init_method:
+    _args_: []
+    _partial_: true
+    _target_: torch.nn.init.normal_
+    mean: 0.0
+    std: 0.02
+  embedding_init_method_std: 0.02
+  enable_autocast: false
+  enable_cuda_graph: false
+  ep_overlap_early_attn_memory_release: false
+  experimental_attention_variant: null
+  expert_model_parallel_size: 1
+  expert_tensor_parallel_size: 1
+  external_cuda_graph: false
+  ffn_hidden_size: 14336
+  finalize_model_grads_func:
+    _args_: []
+    _partial_: true
+    _target_: megatron.core.distributed.finalize_model_grads.finalize_model_grads
+    pg_collection:
+      _call_: true
+      _target_: megatron.core.process_groups_config.ProcessGroupCollection
+  fine_grained_activation_offloading: false
+  first_last_layers_bf16: false
+  flash_decode: false
+  fp16: false
+  fp16_lm_cross_entropy: false
+  fp32_residual_connection: false
+  fp4: e2m1
+  fp4_param: false
+  fp4_quantizer_factory: null
+  fp4_recipe: nvfp4
+  fp8: null
+  fp8_amax_compute_algo: most_recent
+  fp8_amax_history_len: 1
+  fp8_dot_product_attention: false
+  fp8_interval: 1
+  fp8_margin: 0
+  fp8_multi_head_attention: false
+  fp8_param: false
+  fp8_quantizer_factory: null
+  fp8_recipe: tensorwise
+  fp8_wgrad: true
+  fused_single_qkv_rope: false
+  gated_linear_unit: true
+  generation_config:
+    _call_: true
+    _target_: transformers.generation.configuration_utils.GenerationConfig.from_dict
+    config_dict:
+      _from_model_config: false
+      assistant_confidence_threshold: 0.4
+      assistant_early_exit: null
+      assistant_lookbehind: 10
+      bad_words_ids: null
+      begin_suppress_tokens: null
+      bos_token_id: 128000
+      cache_config: null
+      cache_implementation: null
+      constraints: null
+      decoder_start_token_id: null
+      disable_compile: false
+      diversity_penalty: 0.0
+      do_sample: true
+      dola_layers: null
+      early_stopping: false
+      encoder_no_repeat_ngram_size: 0
+      encoder_repetition_penalty: 1.0
+      eos_token_id: 128001
+      epsilon_cutoff: 0.0
+      eta_cutoff: 0.0
+      exponential_decay_length_penalty: null
+      force_words_ids: null
+      forced_bos_token_id: null
+      forced_eos_token_id: null
+      guidance_scale: null
+      is_assistant: false
+      length_penalty: 1.0
+      low_memory: null
+      max_length: 4096
+      max_matching_ngram_size: null
+      max_new_tokens: null
+      max_time: null
+      min_length: 0
+      min_new_tokens: null
+      min_p: null
+      no_repeat_ngram_size: 0
+      num_assistant_tokens: 20
+      num_assistant_tokens_schedule: constant
+      num_beam_groups: 1
+      num_beams: 1
+      num_return_sequences: 1
+      output_attentions: false
+      output_hidden_states: false
+      output_logits: null
+      output_scores: false
+      pad_token_id: null
+      penalty_alpha: null
+      prefill_chunk_size: null
+      prompt_lookup_num_tokens: null
+      remove_invalid_values: false
+      renormalize_logits: false
+      repetition_penalty: 1.0
+      return_dict_in_generate: false
+      return_legacy_cache: null
+      sequence_bias: null
+      stop_strings: null
+      suppress_tokens: null
+      target_lookbehind: 10
+      temperature: 0.6
+      token_healing: false
+      top_k: 50
+      top_p: 0.9
+      transformers_version: 4.57.6
+      trust_remote_code: false
+      typical_p: 1.0
+      use_cache: true
+      watermarking_config: null
+  glu_linear_offset: 0.0
+  grad_scale_func:
+    _call_: false
+    _target_: megatron.core.optimizer.optimizer.MegatronOptimizer.scale_loss
+  grad_sync_func:
+    _call_: false
+    _target_: megatron.core.distributed.distributed_data_parallel.DistributedDataParallel.start_grad_sync
+  gradient_accumulation_fusion: true
+  hetereogenous_dist_checkpoint: false
+  heterogeneous_block_specs: false
+  hf_model_id: meta-llama/Meta-Llama-3-8B
+  hidden_dropout: 0.0
+  hidden_size: 4096
+  hierarchical_context_parallel_sizes: null
+  hybrid_context_parallel: false
+  inference_fuse_tp_communication: false
+  inference_rng_tracker: false
+  inference_sampling_seed: 42
+  init_method:
+    _args_: []
+    _partial_: true
+    _target_: torch.nn.init.normal_
+    mean: 0.0
+    std: 0.02
+  init_method_std: 0.02
+  init_model_with_meta_device: false
+  is_hybrid_model: false
+  kitchen_attention_backend: sdpa
+  kv_channels: 128
+  layernorm_epsilon: 1.0e-05
+  layernorm_zero_centered_gamma: false
+  linear_attention_freq: null
+  linear_conv_kernel_dim: 4
+  linear_key_head_dim: 128
+  linear_num_key_heads: 16
+  linear_num_value_heads: 32
+  linear_value_head_dim: 128
+  log_max_attention_logit: false
+  make_vocab_size_divisible_by: 128
+  mamba_head_dim: 64
+  mamba_num_groups: 8
+  mamba_num_heads: null
+  mamba_state_dim: 128
+  masked_softmax_fusion: true
+  max_seqlen_per_dp_cp_rank: null
+  memory_efficient_layer_norm: false
+  microbatch_group_size_per_vp_stage: 1
+  min_offloaded_tensor_size: 1048576
+  mlp_chunks_for_prefill: 1
+  moe_apply_probs_on_input: false
+  moe_aux_loss_coeff: 0.0
+  moe_deepep_num_sms: 20
+  moe_enable_deepep: false
+  moe_enable_routing_replay: false
+  moe_expert_capacity_factor: null
+  moe_extended_tp: false
+  moe_ffn_hidden_size: null
+  moe_flex_dispatcher_backend: deepep
+  moe_grouped_gemm: false
+  moe_hybridep_num_sms: 16
+  moe_input_jitter_eps: null
+  moe_latent_size: null
+  moe_layer_freq: 1
+  moe_layer_recompute: false
+  moe_pad_expert_input_to_capacity: false
+  moe_per_layer_logging: false
+  moe_permute_fusion: false
+  moe_router_bias_update_rate: 0.001
+  moe_router_dtype: null
+  moe_router_enable_expert_bias: false
+  moe_router_force_load_balancing: false
+  moe_router_fusion: false
+  moe_router_group_topk: null
+  moe_router_load_balancing_type: aux_loss
+  moe_router_num_groups: null
+  moe_router_padding_for_fp8: false
+  moe_router_padding_for_quantization: false
+  moe_router_pre_softmax: false
+  moe_router_score_function: softmax
+  moe_router_topk: 2
+  moe_router_topk_limited_devices: null
+  moe_router_topk_scaling_factor: null
+  moe_shared_expert_gate: false
+  moe_shared_expert_intermediate_size: null
+  moe_shared_expert_overlap: false
+  moe_token_dispatcher_type: allgather
+  moe_token_drop_policy: probs
+  moe_token_dropping: false
+  moe_use_legacy_grouped_gemm: false
+  moe_z_loss_coeff: null
+  mrope_section: null
+  mtp_enabled: false
+  mtp_loss_scaling_factor: 0.1
+  mtp_num_layers: null
+  mtp_standalone: false
+  multi_latent_attention: false
+  no_rope_freq: null
+  no_sync_func:
+    _call_: false
+    _target_: megatron.core.distributed.distributed_data_parallel.DistributedDataParallel.no_sync
+  normalization: RMSNorm
+  num_attention_heads: 32
+  num_layers: 32
+  num_layers_at_end_in_bf16: 0
+  num_layers_at_start_in_bf16: 0
+  num_layers_in_first_pipeline_stage: null
+  num_layers_in_last_pipeline_stage: null
+  num_microbatches_with_partial_activation_checkpoints: null
+  num_moe_experts: null
+  num_query_groups: 8
+  offload_modules: []
+  output_layer_init_method:
+    _args_: []
+    _partial_: true
+    _target_: torch.nn.init.normal_
+    mean: 0.0
+    std: 0.0025
+  overlap_moe_expert_parallel_comm: false
+  overlap_p2p_comm: false
+  overlap_p2p_comm_warmup_flush: false
+  parallel_output: true
+  param_sync_func: null
+  params_dtype:
+    _call_: false
+    _target_: torch.bfloat16
+  perform_initialization: true
+  persist_layer_norm: true
+  pipeline_dtype:
+    _call_: false
+    _target_: torch.bfloat16
+  pipeline_model_parallel_comm_backend: null
+  pipeline_model_parallel_layout: null
+  pipeline_model_parallel_size: 1
+  position_embedding_type: rope
+  qk_clip: false
+  qk_clip_alpha: 0.5
+  qk_clip_threshold: 100
+  qk_l2_norm: false
+  qk_layernorm: false
+  quant_recipe: null
+  recompute_granularity: null
+  recompute_method: null
+  recompute_modules:
+  - core_attn
+  recompute_num_layers: null
+  restore_modelopt_state: false
+  rotary_base: 500000.0
+  rotary_interleaved: false
+  rotary_percent: 1.0
+  scatter_embedding_sequence_parallel: true
+  seq_len_interpolation_factor: null
+  seq_length: 8192
+  sequence_parallel: false
+  share_embeddings_and_output_weights: false
+  should_pad_vocab: false
+  softmax_scale: null
+  softmax_type: vanilla
+  symmetric_ar_type: null
+  tensor_model_parallel_size: 1
+  test_mode: false
+  timers:
+    _call_: true
+    _target_: megatron.core.timers.Timers
+  tp_comm_atomic_ag: false
+  tp_comm_atomic_rs: false
+  tp_comm_bootstrap_backend: nccl
+  tp_comm_bulk_dgrad: true
+  tp_comm_bulk_wgrad: true
+  tp_comm_overlap: false
+  tp_comm_overlap_ag: true
+  tp_comm_overlap_cfg: null
+  tp_comm_overlap_disable_fc1: false
+  tp_comm_overlap_disable_qkv: false
+  tp_comm_overlap_rs: true
+  tp_comm_overlap_rs_dgrad: false
+  tp_comm_split_ag: true
+  tp_comm_split_rs: true
+  tp_only_amax_red: false
+  transformer_impl: transformer_engine
+  transformer_layer_spec:
+    _call_: false
+    _target_: megatron.bridge.models.gpt_provider.default_layer_spec
+  use_arbitrary_attention_mask: null
+  use_cpu_initialization: false
+  use_fused_weighted_squared_relu: false
+  use_inference_optimized_layers: false
+  use_kitchen: false
+  use_kitchen_attention: false
+  use_mamba_mem_eff_path: true
+  use_ring_exchange_p2p: false
+  use_te_activation_func: false
+  use_te_rng_tracker: false
+  use_transformer_engine_full_layer_spec: false
+  use_transformer_engine_op_fuser: null
+  variable_seq_lengths: false
+  virtual_pipeline_model_parallel_size: null
+  vocab_size: 128256
+  wgrad_deferral_limit: -1
+  window_attn_skip_freq: null
+  window_size: null
+nvrx_straggler: null
+optimizer:
+  _target_: megatron.bridge.training.config.OptimizerConfig
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  adam_eps: 1.0e-05
+  apply_wd_to_qk_layernorm: false
+  barrier_with_L1_time: false
+  bf16: true
+  clip_grad: 1.0
+  config_logger_dir: ''
+  decoupled_lr: null
+  decoupled_min_lr: null
+  decoupled_weight_decay: true
+  exp_avg_dtype:
+    _call_: false
+    _target_: torch.float32
+  exp_avg_sq_dtype:
+    _call_: false
+    _target_: torch.float32
+  fp16: false
+  fp8_recipe: tensorwise
+  hysteresis: 2
+  initial_loss_scale: 4294967296
+  log_num_zeros_in_grad: false
+  loss_scale: null
+  loss_scale_window: 1000
+  lr: 0.0003
+  main_grads_dtype:
+    _call_: false
+    _target_: torch.float32
+  main_params_dtype:
+    _call_: false
+    _target_: torch.float32
+  min_loss_scale: 1.0
+  min_lr: 3.0e-05
+  muon_extra_scale_factor: 1.0
+  muon_fp32_matmul_prec: medium
+  muon_momentum: 0.95
+  muon_num_ns_steps: 5
+  muon_scale_mode: spectral
+  muon_split_qkv: true
+  muon_tp_mode: blockwise
+  muon_use_nesterov: false
+  optimizer: adam
+  optimizer_cpu_offload: false
+  optimizer_offload_fraction: 0.0
+  overlap_cpu_optimizer_d2h_h2d: false
+  overlap_param_gather: true
+  overlap_param_gather_with_optimizer_step: false
+  params_dtype:
+    _call_: false
+    _target_: torch.bfloat16
+  pin_cpu_grads: true
+  pin_cpu_params: true
+  reuse_grad_buf_for_mxfp8_param_ag: false
+  sgd_momentum: 0.9
+  store_param_remainders: true
+  timers:
+    _call_: true
+    _target_: megatron.core.timers.Timers
+  use_distributed_optimizer: true
+  use_precision_aware_optimizer: false
+  use_torch_optimizer_for_cpu_offload: false
+  weight_decay: 0.1
+optimizer_config_override_provider:
+  _target_: megatron.bridge.training.config.OptimizerConfigOverrideProvider
+peft: null
+profiling:
+  _target_: megatron.bridge.training.config.ProfilingConfig
+  memory_snapshot_path: snapshot.pickle
+  nvtx_ranges: false
+  profile_ranks:
+  - 0
+  profile_step_end: 12
+  profile_step_start: 10
+  record_memory_history: false
+  record_shapes: false
+  use_nsys_profiler: false
+  use_pytorch_profiler: false
+rerun_state_machine:
+  _target_: megatron.bridge.training.config.RerunStateMachineConfig
+  check_for_nan_in_loss: false
+  check_for_spiky_loss: false
+  error_injection_rate: 0
+  error_injection_type: transient_error
+  rerun_mode: disabled
+  spiky_loss_factor: 10.0
+rng:
+  _target_: megatron.bridge.training.config.RNGConfig
+  data_parallel_random_init: false
+  inference_rng_tracker: false
+  seed: 1234
+  te_rng_tracker: false
+scheduler:
+  _target_: megatron.bridge.training.config.SchedulerConfig
+  end_weight_decay: 0.033
+  lr_decay_iters: 50
+  lr_decay_samples: null
+  lr_decay_steps: 6400
+  lr_decay_style: cosine
+  lr_warmup_fraction: null
+  lr_warmup_init: 0.0
+  lr_warmup_iters: 10
+  lr_warmup_samples: 0
+  lr_warmup_steps: 1280
+  lr_wsd_decay_iters: null
+  lr_wsd_decay_samples: null
+  lr_wsd_decay_style: exponential
+  no_weight_decay_cond_type: null
+  override_opt_param_scheduler: true
+  start_weight_decay: 0.033
+  use_checkpoint_opt_param_scheduler: false
+  wd_incr_steps: 6400
+  weight_decay_incr_style: constant
+  wsd_decay_steps: null
+straggler: null
+tensor_inspect: null
+tokenizer:
+  _target_: megatron.bridge.training.tokenizers.config.TokenizerConfig
+  chat_template: null
+  hf_tokenizer_kwargs: {}
+  image_tag_type: null
+  legacy_tokenizer: false
+  merge_file: null
+  metadata_path: null
+  sp_tokenizer_kwargs: {}
+  special_tokens: null
+  tiktoken_num_special_tokens: 1000
+  tiktoken_pattern: null
+  tiktoken_special_tokens: null
+  tokenizer_model: null
+  tokenizer_prompt_format: null
+  tokenizer_type: NullTokenizer
+  vocab_extra_ids: 0
+  vocab_file: null
+  vocab_size: 128256
+train:
+  _target_: megatron.bridge.training.config.TrainingConfig
+  check_weight_hash_across_dp_replicas_interval: null
+  decrease_batch_size_if_needed: false
+  empty_unused_memory_level: 0
+  eval_interval: 2000
+  eval_iters: 0
+  exit_duration_in_mins: null
+  exit_interval: null
+  exit_signal:
+    _args_:
+    - 15
+    _call_: true
+    _target_: signal.Signals
+  exit_signal_handler: false
+  exit_signal_handler_for_dataloader: false
+  global_batch_size: 128
+  iterations_to_skip: []
+  manual_gc: true
+  manual_gc_eval: 100
+  manual_gc_interval: 100
+  micro_batch_size: 4
+  rampup_batch_size: null
+  skip_train: false
+  train_iters: 50
+  train_samples: null
+  train_sync_interval: null
+
+----------------------------------
+Setting rerun_state_machine.current_iteration to 0...
+Starting training loop at iteration 0
+NCCL version 2.28.9+cuda13.0
+NCCL version 2.28.9+cuda13.0
+NCCL version 2.28.9+cuda13.0
+NCCL version 2.28.9+cuda13.0
+NCCL version 2.28.9+cuda13.0
+NCCL version 2.28.9+cuda13.0
+NCCL version 2.28.9+cuda13.0
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4879: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+Step Time : 20.96s GPU utilization: 321.9MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:09] iteration        1/      50 | consumed samples:          128 | elapsed time per iteration (ms): 20961.0 | learning rate: 3.000000E-05 | global batch size:   128 | lm loss: 1.258515E+01 | loss scale: 1.0 | grad norm: 8.896 | number of skipped iterations:   0 | number of nan iterations:   0 |Number of parameters in transformer layers in billions:  6.98
+
+Number of parameters in embedding layers in billions: 1.05
+Total number of parameters in billions: 8.03
+Number of parameters in most loaded shard in billions: 8.0305
+Theoretical memory footprints: weight and optimizer=57438.81 MB
+[Rank 0] (after 1 iterations) memory (GB) | mem-allocated-gigabytes: 57.639 | mem-active-gigabytes: 57.639 | mem-inactive-gigabytes: 17.88 | mem-reserved-gigabytes: 175.85 | mem-max-allocated-gigabytes: 167.02 | mem-max-active-gigabytes: 167.02 | mem-max-inactive-gigabytes: 22.947 | mem-max-reserved-gigabytes: 175.85 | mem-alloc-retires: 0 | mem-allocated-count: 1315
+Step Time : 3.40s GPU utilization: 1982.8MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:12] iteration        2/      50 | consumed samples:          256 | elapsed time per iteration (ms): 3402.5 | learning rate: 6.000000E-05 | global batch size:   128 | lm loss: 1.258412E+01 | loss scale: 1.0 | grad norm: 8.874 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.43s GPU utilization: 1967.1MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:15] iteration        3/      50 | consumed samples:          384 | elapsed time per iteration (ms): 3429.6 | learning rate: 9.000000E-05 | global batch size:   128 | lm loss: 9.574962E+00 | loss scale: 1.0 | grad norm: 8.934 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.44s GPU utilization: 1961.4MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:19] iteration        4/      50 | consumed samples:          512 | elapsed time per iteration (ms): 3439.5 | learning rate: 1.200000E-04 | global batch size:   128 | lm loss: 4.354987E+00 | loss scale: 1.0 | grad norm: 11.658 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.50s GPU utilization: 1927.6MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:22] iteration        5/      50 | consumed samples:          640 | elapsed time per iteration (ms): 3499.9 | learning rate: 1.500000E-04 | global batch size:   128 | lm loss: 1.371928E+00 | loss scale: 1.0 | grad norm: 3.603 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.44s GPU utilization: 1962.3MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:26] iteration        6/      50 | consumed samples:          768 | elapsed time per iteration (ms): 3438.0 | learning rate: 1.800000E-04 | global batch size:   128 | lm loss: 6.116266E-01 | loss scale: 1.0 | grad norm: 1.628 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.42s GPU utilization: 1973.5MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:29] iteration        7/      50 | consumed samples:          896 | elapsed time per iteration (ms): 3418.5 | learning rate: 2.100000E-04 | global batch size:   128 | lm loss: 3.229493E-01 | loss scale: 1.0 | grad norm: 1.028 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.43s GPU utilization: 1965.5MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:33] iteration        8/      50 | consumed samples:         1024 | elapsed time per iteration (ms): 3432.4 | learning rate: 2.400000E-04 | global batch size:   128 | lm loss: 1.874112E-01 | loss scale: 1.0 | grad norm: 0.793 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.42s GPU utilization: 1975.3MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:36] iteration        9/      50 | consumed samples:         1152 | elapsed time per iteration (ms): 3415.4 | learning rate: 2.700000E-04 | global batch size:   128 | lm loss: 1.244592E-01 | loss scale: 1.0 | grad norm: 1.399 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.44s GPU utilization: 1958.3MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:40] iteration       10/      50 | consumed samples:         1280 | elapsed time per iteration (ms): 3444.9 | learning rate: 3.000000E-04 | global batch size:   128 | lm loss: 8.539318E-02 | loss scale: 1.0 | grad norm: 0.458 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1957.0MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:43] iteration       11/      50 | consumed samples:         1408 | elapsed time per iteration (ms): 3447.3 | learning rate: 2.995838E-04 | global batch size:   128 | lm loss: 7.058455E-02 | loss scale: 1.0 | grad norm: 0.386 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1955.1MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:46] iteration       12/      50 | consumed samples:         1536 | elapsed time per iteration (ms): 3450.7 | learning rate: 2.983379E-04 | global batch size:   128 | lm loss: 6.339477E-02 | loss scale: 1.0 | grad norm: 0.994 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.44s GPU utilization: 1963.6MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:50] iteration       13/      50 | consumed samples:         1664 | elapsed time per iteration (ms): 3435.7 | learning rate: 2.962700E-04 | global batch size:   128 | lm loss: 5.337811E-02 | loss scale: 1.0 | grad norm: 0.288 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.42s GPU utilization: 1973.4MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:53] iteration       14/      50 | consumed samples:         1792 | elapsed time per iteration (ms): 3418.7 | learning rate: 2.933926E-04 | global batch size:   128 | lm loss: 4.388288E-02 | loss scale: 1.0 | grad norm: 0.235 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1958.2MODEL_TFLOP/s/GPU
+ [2026-05-10 16:48:57] iteration       15/      50 | consumed samples:         1920 | elapsed time per iteration (ms): 3445.2 | learning rate: 2.897237E-04 | global batch size:   128 | lm loss: 4.136560E-02 | loss scale: 1.0 | grad norm: 0.222 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.43s GPU utilization: 1965.9MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:00] iteration       16/      50 | consumed samples:         2048 | elapsed time per iteration (ms): 3431.7 | learning rate: 2.852859E-04 | global batch size:   128 | lm loss: 3.364043E-02 | loss scale: 1.0 | grad norm: 0.218 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1954.7MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:04] iteration       17/      50 | consumed samples:         2176 | elapsed time per iteration (ms): 3451.3 | learning rate: 2.801064E-04 | global batch size:   128 | lm loss: 3.121612E-02 | loss scale: 1.0 | grad norm: 0.353 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1952.1MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:07] iteration       18/      50 | consumed samples:         2304 | elapsed time per iteration (ms): 3455.9 | learning rate: 2.742173E-04 | global batch size:   128 | lm loss: 3.200390E-02 | loss scale: 1.0 | grad norm: 0.158 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1949.0MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:11] iteration       19/      50 | consumed samples:         2432 | elapsed time per iteration (ms): 3461.5 | learning rate: 2.676548E-04 | global batch size:   128 | lm loss: 2.685063E-02 | loss scale: 1.0 | grad norm: 0.138 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1947.0MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:14] iteration       20/      50 | consumed samples:         2560 | elapsed time per iteration (ms): 3464.9 | learning rate: 2.604594E-04 | global batch size:   128 | lm loss: 2.350647E-02 | loss scale: 1.0 | grad norm: 0.175 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.50s GPU utilization: 1928.9MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:18] iteration       21/      50 | consumed samples:         2688 | elapsed time per iteration (ms): 3497.5 | learning rate: 2.526755E-04 | global batch size:   128 | lm loss: 2.757940E-01 | loss scale: 1.0 | grad norm: 27.802 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.42s GPU utilization: 1970.7MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:21] iteration       22/      50 | consumed samples:         2816 | elapsed time per iteration (ms): 3423.4 | learning rate: 2.443510E-04 | global batch size:   128 | lm loss: 2.762720E-02 | loss scale: 1.0 | grad norm: 0.112 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.42s GPU utilization: 1971.8MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:24] iteration       23/      50 | consumed samples:         2944 | elapsed time per iteration (ms): 3421.5 | learning rate: 2.355373E-04 | global batch size:   128 | lm loss: 2.540977E-02 | loss scale: 1.0 | grad norm: 0.106 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.43s GPU utilization: 1966.9MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:28] iteration       24/      50 | consumed samples:         3072 | elapsed time per iteration (ms): 3429.8 | learning rate: 2.262887E-04 | global batch size:   128 | lm loss: 2.198633E-02 | loss scale: 1.0 | grad norm: 0.117 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.48s GPU utilization: 1939.0MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:31] iteration       25/      50 | consumed samples:         3200 | elapsed time per iteration (ms): 3479.2 | learning rate: 2.166623E-04 | global batch size:   128 | lm loss: 2.651867E-01 | loss scale: 1.0 | grad norm: 23.235 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.44s GPU utilization: 1963.4MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:35] iteration       26/      50 | consumed samples:         3328 | elapsed time per iteration (ms): 3436.0 | learning rate: 2.067173E-04 | global batch size:   128 | lm loss: 2.454958E-02 | loss scale: 1.0 | grad norm: 0.096 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.47s GPU utilization: 1946.9MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:38] iteration       27/      50 | consumed samples:         3456 | elapsed time per iteration (ms): 3465.2 | learning rate: 1.965151E-04 | global batch size:   128 | lm loss: 2.513867E-02 | loss scale: 1.0 | grad norm: 0.106 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.44s GPU utilization: 1959.5MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:42] iteration       28/      50 | consumed samples:         3584 | elapsed time per iteration (ms): 3442.9 | learning rate: 1.861186E-04 | global batch size:   128 | lm loss: 2.444609E-02 | loss scale: 1.0 | grad norm: 0.127 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1952.2MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:45] iteration       29/      50 | consumed samples:         3712 | elapsed time per iteration (ms): 3455.7 | learning rate: 1.755920E-04 | global batch size:   128 | lm loss: 2.224611E-02 | loss scale: 1.0 | grad norm: 0.115 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.47s GPU utilization: 1945.4MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:49] iteration       30/      50 | consumed samples:         3840 | elapsed time per iteration (ms): 3467.8 | learning rate: 1.650000E-04 | global batch size:   128 | lm loss: 2.056033E-02 | loss scale: 1.0 | grad norm: 0.098 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1952.6MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:52] iteration       31/      50 | consumed samples:         3968 | elapsed time per iteration (ms): 3455.1 | learning rate: 1.544080E-04 | global batch size:   128 | lm loss: 1.989522E-02 | loss scale: 1.0 | grad norm: 0.114 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.49s GPU utilization: 1932.1MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:55] iteration       32/      50 | consumed samples:         4096 | elapsed time per iteration (ms): 3491.7 | learning rate: 1.438813E-04 | global batch size:   128 | lm loss: 1.816755E-02 | loss scale: 1.0 | grad norm: 0.158 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1958.1MODEL_TFLOP/s/GPU
+ [2026-05-10 16:49:59] iteration       33/      50 | consumed samples:         4224 | elapsed time per iteration (ms): 3445.4 | learning rate: 1.334849E-04 | global batch size:   128 | lm loss: 1.581715E-02 | loss scale: 1.0 | grad norm: 0.081 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1952.8MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:02] iteration       34/      50 | consumed samples:         4352 | elapsed time per iteration (ms): 3454.7 | learning rate: 1.232827E-04 | global batch size:   128 | lm loss: 1.616284E-02 | loss scale: 1.0 | grad norm: 0.120 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.43s GPU utilization: 1967.2MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:06] iteration       35/      50 | consumed samples:         4480 | elapsed time per iteration (ms): 3429.4 | learning rate: 1.133377E-04 | global batch size:   128 | lm loss: 1.426181E-02 | loss scale: 1.0 | grad norm: 0.084 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.47s GPU utilization: 1943.8MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:09] iteration       36/      50 | consumed samples:         4608 | elapsed time per iteration (ms): 3470.6 | learning rate: 1.037113E-04 | global batch size:   128 | lm loss: 1.418190E-02 | loss scale: 1.0 | grad norm: 0.212 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.47s GPU utilization: 1943.3MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:13] iteration       37/      50 | consumed samples:         4736 | elapsed time per iteration (ms): 3471.5 | learning rate: 9.446270E-05 | global batch size:   128 | lm loss: 1.711444E-02 | loss scale: 1.0 | grad norm: 0.106 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1955.3MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:16] iteration       38/      50 | consumed samples:         4864 | elapsed time per iteration (ms): 3450.4 | learning rate: 8.564899E-05 | global batch size:   128 | lm loss: 1.596644E-02 | loss scale: 1.0 | grad norm: 0.081 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.47s GPU utilization: 1945.9MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:20] iteration       39/      50 | consumed samples:         4992 | elapsed time per iteration (ms): 3466.9 | learning rate: 7.732451E-05 | global batch size:   128 | lm loss: 1.491988E-02 | loss scale: 1.0 | grad norm: 0.080 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.48s GPU utilization: 1939.4MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:23] iteration       40/      50 | consumed samples:         5120 | elapsed time per iteration (ms): 3478.6 | learning rate: 6.954058E-05 | global batch size:   128 | lm loss: 1.517593E-02 | loss scale: 1.0 | grad norm: 0.079 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.47s GPU utilization: 1944.8MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:27] iteration       41/      50 | consumed samples:         5248 | elapsed time per iteration (ms): 3468.9 | learning rate: 6.234519E-05 | global batch size:   128 | lm loss: 1.939063E-02 | loss scale: 1.0 | grad norm: 0.827 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.43s GPU utilization: 1967.9MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:30] iteration       42/      50 | consumed samples:         5376 | elapsed time per iteration (ms): 3428.1 | learning rate: 5.578270E-05 | global batch size:   128 | lm loss: 1.602694E-02 | loss scale: 1.0 | grad norm: 0.068 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1951.3MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:34] iteration       43/      50 | consumed samples:         5504 | elapsed time per iteration (ms): 3457.3 | learning rate: 4.989358E-05 | global batch size:   128 | lm loss: 1.674564E-02 | loss scale: 1.0 | grad norm: 0.066 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1957.6MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:37] iteration       44/      50 | consumed samples:         5632 | elapsed time per iteration (ms): 3446.3 | learning rate: 4.471412E-05 | global batch size:   128 | lm loss: 1.644218E-02 | loss scale: 1.0 | grad norm: 0.064 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1957.5MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:40] iteration       45/      50 | consumed samples:         5760 | elapsed time per iteration (ms): 3446.4 | learning rate: 4.027626E-05 | global batch size:   128 | lm loss: 1.667087E-02 | loss scale: 1.0 | grad norm: 0.066 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.43s GPU utilization: 1964.2MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:44] iteration       46/      50 | consumed samples:         5888 | elapsed time per iteration (ms): 3434.6 | learning rate: 3.660737E-05 | global batch size:   128 | lm loss: 1.677220E-02 | loss scale: 1.0 | grad norm: 0.068 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.44s GPU utilization: 1962.7MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:47] iteration       47/      50 | consumed samples:         6016 | elapsed time per iteration (ms): 3437.3 | learning rate: 3.373006E-05 | global batch size:   128 | lm loss: 1.649836E-02 | loss scale: 1.0 | grad norm: 0.071 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1952.2MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:51] iteration       48/      50 | consumed samples:         6144 | elapsed time per iteration (ms): 3455.7 | learning rate: 3.166208E-05 | global batch size:   128 | lm loss: 1.545253E-02 | loss scale: 1.0 | grad norm: 0.068 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.46s GPU utilization: 1950.0MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:54] iteration       49/      50 | consumed samples:         6272 | elapsed time per iteration (ms): 3459.7 | learning rate: 3.041616E-05 | global batch size:   128 | lm loss: 1.413042E-02 | loss scale: 1.0 | grad norm: 0.100 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.45s GPU utilization: 1956.7MODEL_TFLOP/s/GPU
+ [2026-05-10 16:50:58] iteration       50/      50 | consumed samples:         6400 | elapsed time per iteration (ms): 3447.8 | learning rate: 3.000000E-05 | global batch size:   128 | lm loss: 1.510534E-02 | loss scale: 1.0 | grad norm: 0.074 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Deleting CUDA graphs
+[after training is done] datetime: 2026-05-10 16:50:58 

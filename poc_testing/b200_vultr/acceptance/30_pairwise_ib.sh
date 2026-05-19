@@ -51,14 +51,14 @@ for hca in $HCAS_LIST; do
 
     # Server on NODE_A, background.
     srun --nodelist="$NODE_A" -N1 -n1 \
-      "$tool" -d "$hca" -p "$port" -D "$DURATION" -F >"$SERVER_LOG" 2>&1 &
+      "/usr/bin/$tool" -d "$hca" -p "$port" -D "$DURATION" -F >"$SERVER_LOG" 2>&1 &
     server_pid=$!
 
     sleep 3   # let server bind
 
     # Client on NODE_B, foreground.
     srun --nodelist="$NODE_B" -N1 -n1 \
-      "$tool" -d "$hca" -p "$port" -D "$DURATION" -F "$NODE_A" >"$CLIENT_LOG" 2>&1 || true
+      "/usr/bin/$tool" -d "$hca" -p "$port" -D "$DURATION" -F "$NODE_A" >"$CLIENT_LOG" 2>&1 || true
 
     wait "$server_pid" 2>/dev/null || true
 

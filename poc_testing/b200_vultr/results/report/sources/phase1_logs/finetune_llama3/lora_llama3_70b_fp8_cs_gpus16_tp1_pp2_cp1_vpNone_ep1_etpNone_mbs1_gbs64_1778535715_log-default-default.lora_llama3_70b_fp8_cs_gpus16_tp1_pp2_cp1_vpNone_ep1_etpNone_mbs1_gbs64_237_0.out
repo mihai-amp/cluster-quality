@@ -1,0 +1,237 @@
+# ===== TRIMMED SAMPLE =====
+# Original: lora_llama3_70b_fp8_cs_gpus16_tp1_pp2_cp1_vpNone_ep1_etpNone_mbs1_gbs64_1778535715_log-default-default.lora_llama3_70b_fp8_cs_gpus16_tp1_pp2_cp1_vpNone_ep1_etpNone_mbs1_gbs64_237_0.out
+# Original size: 4,655,557 bytes (42,055 lines)
+# This file: training step section (232 lines).
+# ==========================
+Step Time : 25.92s GPU utilization: 176.0MODEL_TFLOP/s/GPU
+Number of parameters in transformer layers in billions:  68.45
+Number of parameters in embedding layers in billions: 2.10
+Total number of parameters in billions: 70.56
+Number of parameters in most loaded shard in billions: 35.2775
+Number of parameters in other shards in billions: 34.2268
+Theoretical memory footprints: weight and optimizer=252324.43 MB
+ [2026-05-11 22:49:25] iteration        1/      50 | consumed samples:           64 | elapsed time per iteration (ms): 25924.3 | learning rate: 1.000000E-05 | global batch size:    64 | lm loss: 2.191952E+00 | loss scale: 1.0 | grad norm: 3.096 | number of skipped iterations:   0 | number of nan iterations:   0 |
+[Rank 0] (after 1 iterations) memory (GB) | mem-allocated-gigabytes: 36.468 | mem-active-gigabytes: 36.468 | mem-inactive-gigabytes: 2.3943 | mem-reserved-gigabytes: 142.82 | mem-max-allocated-gigabytes: 142.36 | mem-max-active-gigabytes: 142.36 | mem-max-inactive-gigabytes: 21.217 | mem-max-reserved-gigabytes: 142.82 | mem-alloc-retires: 0 | mem-allocated-count: 3260
+[Rank 8] (after 1 iterations) memory (GB) | mem-allocated-gigabytes: 36.602 | mem-active-gigabytes: 36.602 | mem-inactive-gigabytes: 2.3943 | mem-reserved-gigabytes: 145.92 | mem-max-allocated-gigabytes: 142.36 | mem-max-active-gigabytes: 142.36 | mem-max-inactive-gigabytes: 3.5061 | mem-max-reserved-gigabytes: 145.92 | mem-alloc-retires: 0 | mem-allocated-count: 3265
+Step Time : 2.99s GPU utilization: 1527.2MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:28] iteration        2/      50 | consumed samples:          128 | elapsed time per iteration (ms): 2988.1 | learning rate: 2.000000E-05 | global batch size:    64 | lm loss: 2.194224E+00 | loss scale: 1.0 | grad norm: 3.045 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.03s GPU utilization: 1506.8MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:31] iteration        3/      50 | consumed samples:          192 | elapsed time per iteration (ms): 3028.6 | learning rate: 3.000000E-05 | global batch size:    64 | lm loss: 2.227792E+00 | loss scale: 1.0 | grad norm: 3.095 | number of skipped iterations:   0 | number of nan iterations:   0 |
+INFO:megatron.core.transformer.cuda_graphs:Start CUDA Graphs capture...
+INFO:megatron.core.transformer.cuda_graphs:Time spent in CUDA Graphs capture on rank 0: 1.771955966949463s
+Step Time : 6.70s GPU utilization: 681.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:37] iteration        4/      50 | consumed samples:          256 | elapsed time per iteration (ms): 6699.6 | learning rate: 4.000000E-05 | global batch size:    64 | lm loss: 2.121480E+00 | loss scale: 1.0 | grad norm: 3.073 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.01s GPU utilization: 1515.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:41] iteration        5/      50 | consumed samples:          320 | elapsed time per iteration (ms): 3011.9 | learning rate: 5.000000E-05 | global batch size:    64 | lm loss: 2.095019E+00 | loss scale: 1.0 | grad norm: 3.178 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.03s GPU utilization: 1504.4MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:44] iteration        6/      50 | consumed samples:          384 | elapsed time per iteration (ms): 3033.4 | learning rate: 6.000000E-05 | global batch size:    64 | lm loss: 2.055570E+00 | loss scale: 1.0 | grad norm: 3.315 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.03s GPU utilization: 1508.5MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:47] iteration        7/      50 | consumed samples:          448 | elapsed time per iteration (ms): 3025.1 | learning rate: 7.000000E-05 | global batch size:    64 | lm loss: 1.916988E+00 | loss scale: 1.0 | grad norm: 3.310 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.04s GPU utilization: 1501.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:50] iteration        8/      50 | consumed samples:          512 | elapsed time per iteration (ms): 3040.1 | learning rate: 8.000000E-05 | global batch size:    64 | lm loss: 1.717702E+00 | loss scale: 1.0 | grad norm: 3.261 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.05s GPU utilization: 1496.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:53] iteration        9/      50 | consumed samples:          576 | elapsed time per iteration (ms): 3050.3 | learning rate: 9.000000E-05 | global batch size:    64 | lm loss: 1.528314E+00 | loss scale: 1.0 | grad norm: 3.477 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.05s GPU utilization: 1497.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:56] iteration       10/      50 | consumed samples:          640 | elapsed time per iteration (ms): 3048.3 | learning rate: 1.000000E-04 | global batch size:    64 | lm loss: 1.263308E+00 | loss scale: 1.0 | grad norm: 3.900 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.02s GPU utilization: 1509.4MODEL_TFLOP/s/GPU
+ [2026-05-11 22:49:59] iteration       11/      50 | consumed samples:          704 | elapsed time per iteration (ms): 3023.3 | learning rate: 9.984586E-05 | global batch size:    64 | lm loss: 9.324431E-01 | loss scale: 1.0 | grad norm: 4.172 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.02s GPU utilization: 1508.9MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:02] iteration       12/      50 | consumed samples:          768 | elapsed time per iteration (ms): 3024.3 | learning rate: 9.938442E-05 | global batch size:    64 | lm loss: 6.807122E-01 | loss scale: 1.0 | grad norm: 2.603 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.04s GPU utilization: 1499.8MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:05] iteration       13/      50 | consumed samples:          832 | elapsed time per iteration (ms): 3042.8 | learning rate: 9.861850E-05 | global batch size:    64 | lm loss: 5.818914E-01 | loss scale: 1.0 | grad norm: 2.640 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1485.5MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:08] iteration       14/      50 | consumed samples:          896 | elapsed time per iteration (ms): 3072.1 | learning rate: 9.755282E-05 | global batch size:    64 | lm loss: 3.842209E-01 | loss scale: 1.0 | grad norm: 2.281 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.06s GPU utilization: 1493.6MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:11] iteration       15/      50 | consumed samples:          960 | elapsed time per iteration (ms): 3055.4 | learning rate: 9.619397E-05 | global batch size:    64 | lm loss: 3.019535E-01 | loss scale: 1.0 | grad norm: 1.338 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1483.9MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:14] iteration       16/      50 | consumed samples:         1024 | elapsed time per iteration (ms): 3075.4 | learning rate: 9.455033E-05 | global batch size:    64 | lm loss: 2.772638E-01 | loss scale: 1.0 | grad norm: 0.511 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.06s GPU utilization: 1493.7MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:17] iteration       17/      50 | consumed samples:         1088 | elapsed time per iteration (ms): 3055.2 | learning rate: 9.263201E-05 | global batch size:    64 | lm loss: 2.464999E-01 | loss scale: 1.0 | grad norm: 0.314 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1484.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:20] iteration       18/      50 | consumed samples:         1152 | elapsed time per iteration (ms): 3075.0 | learning rate: 9.045085E-05 | global batch size:    64 | lm loss: 2.553109E-01 | loss scale: 1.0 | grad norm: 0.394 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1487.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:23] iteration       19/      50 | consumed samples:         1216 | elapsed time per iteration (ms): 3068.7 | learning rate: 8.802030E-05 | global batch size:    64 | lm loss: 2.506052E-01 | loss scale: 1.0 | grad norm: 0.493 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1484.3MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:26] iteration       20/      50 | consumed samples:         1280 | elapsed time per iteration (ms): 3074.5 | learning rate: 8.535534E-05 | global batch size:    64 | lm loss: 2.386529E-01 | loss scale: 1.0 | grad norm: 0.441 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1487.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:29] iteration       21/      50 | consumed samples:         1344 | elapsed time per iteration (ms): 3068.7 | learning rate: 8.247240E-05 | global batch size:    64 | lm loss: 2.537635E-01 | loss scale: 1.0 | grad norm: 0.443 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.09s GPU utilization: 1478.2MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:32] iteration       22/      50 | consumed samples:         1408 | elapsed time per iteration (ms): 3087.1 | learning rate: 7.938926E-05 | global batch size:    64 | lm loss: 2.404875E-01 | loss scale: 1.0 | grad norm: 0.408 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-05-11 22:50:36] iteration       23/      50 | consumed samples:         1472 | elapsed time per iteration (ms): 3071.4 | learning rate: 7.612492E-05 | global batch size:    64 | lm loss: 2.443089E-01 | loss scale: 1.0 | grad norm: 0.343 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1485.8MODEL_TFLOP/s/GPU
+Step Time : 3.06s GPU utilization: 1491.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:39] iteration       24/      50 | consumed samples:         1536 | elapsed time per iteration (ms): 3060.5 | learning rate: 7.269953E-05 | global batch size:    64 | lm loss: 2.276266E-01 | loss scale: 1.0 | grad norm: 0.274 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1485.5MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:42] iteration       25/      50 | consumed samples:         1600 | elapsed time per iteration (ms): 3072.1 | learning rate: 6.913417E-05 | global batch size:    64 | lm loss: 2.403154E-01 | loss scale: 1.0 | grad norm: 0.236 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1484.2MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:45] iteration       26/      50 | consumed samples:         1664 | elapsed time per iteration (ms): 3074.7 | learning rate: 6.545085E-05 | global batch size:    64 | lm loss: 2.255546E-01 | loss scale: 1.0 | grad norm: 0.205 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1483.9MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:48] iteration       27/      50 | consumed samples:         1728 | elapsed time per iteration (ms): 3075.3 | learning rate: 6.167227E-05 | global batch size:    64 | lm loss: 2.269507E-01 | loss scale: 1.0 | grad norm: 0.212 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.10s GPU utilization: 1471.4MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:51] iteration       28/      50 | consumed samples:         1792 | elapsed time per iteration (ms): 3101.5 | learning rate: 5.782172E-05 | global batch size:    64 | lm loss: 2.140287E-01 | loss scale: 1.0 | grad norm: 0.225 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1482.2MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:54] iteration       29/      50 | consumed samples:         1856 | elapsed time per iteration (ms): 3079.0 | learning rate: 5.392295E-05 | global batch size:    64 | lm loss: 2.164529E-01 | loss scale: 1.0 | grad norm: 0.227 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1481.6MODEL_TFLOP/s/GPU
+ [2026-05-11 22:50:57] iteration       30/      50 | consumed samples:         1920 | elapsed time per iteration (ms): 3080.2 | learning rate: 5.000000E-05 | global batch size:    64 | lm loss: 2.251287E-01 | loss scale: 1.0 | grad norm: 0.215 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.06s GPU utilization: 1490.4MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:00] iteration       31/      50 | consumed samples:         1984 | elapsed time per iteration (ms): 3061.9 | learning rate: 4.607705E-05 | global batch size:    64 | lm loss: 2.143825E-01 | loss scale: 1.0 | grad norm: 0.589 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1483.3MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:03] iteration       32/      50 | consumed samples:         2048 | elapsed time per iteration (ms): 3076.7 | learning rate: 4.217828E-05 | global batch size:    64 | lm loss: 2.192158E-01 | loss scale: 1.0 | grad norm: 0.204 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1485.8MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:06] iteration       33/      50 | consumed samples:         2112 | elapsed time per iteration (ms): 3071.4 | learning rate: 3.832773E-05 | global batch size:    64 | lm loss: 2.219170E-01 | loss scale: 1.0 | grad norm: 0.219 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.10s GPU utilization: 1471.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:09] iteration       34/      50 | consumed samples:         2176 | elapsed time per iteration (ms): 3102.1 | learning rate: 3.454915E-05 | global batch size:    64 | lm loss: 2.176978E-01 | loss scale: 1.0 | grad norm: 0.220 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.09s GPU utilization: 1475.6MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:12] iteration       35/      50 | consumed samples:         2240 | elapsed time per iteration (ms): 3092.6 | learning rate: 3.086583E-05 | global batch size:    64 | lm loss: 2.084105E-01 | loss scale: 1.0 | grad norm: 0.194 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.06s GPU utilization: 1489.9MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:16] iteration       36/      50 | consumed samples:         2304 | elapsed time per iteration (ms): 3063.0 | learning rate: 2.730048E-05 | global batch size:    64 | lm loss: 2.150723E-01 | loss scale: 1.0 | grad norm: 0.176 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1480.3MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:19] iteration       37/      50 | consumed samples:         2368 | elapsed time per iteration (ms): 3082.9 | learning rate: 2.387507E-05 | global batch size:    64 | lm loss: 2.163908E-01 | loss scale: 1.0 | grad norm: 0.199 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.10s GPU utilization: 1472.3MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:22] iteration       38/      50 | consumed samples:         2432 | elapsed time per iteration (ms): 3099.7 | learning rate: 2.061074E-05 | global batch size:    64 | lm loss: 2.207807E-01 | loss scale: 1.0 | grad norm: 0.206 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.10s GPU utilization: 1469.9MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:25] iteration       39/      50 | consumed samples:         2496 | elapsed time per iteration (ms): 3104.7 | learning rate: 1.752760E-05 | global batch size:    64 | lm loss: 2.045586E-01 | loss scale: 1.0 | grad norm: 0.225 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1487.6MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:28] iteration       40/      50 | consumed samples:         2560 | elapsed time per iteration (ms): 3067.7 | learning rate: 1.464466E-05 | global batch size:    64 | lm loss: 2.196029E-01 | loss scale: 1.0 | grad norm: 0.195 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-05-11 22:51:31] iteration       41/      50 | consumed samples:         2624 | elapsed time per iteration (ms): 3074.8 | learning rate: 1.197970E-05 | global batch size:    64 | lm loss: 2.183347E-01 | loss scale: 1.0 | grad norm: 0.304 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1484.2MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:34] iteration       42/      50 | consumed samples:         2688 | elapsed time per iteration (ms): 3089.7 | learning rate: 9.549150E-06 | global batch size:    64 | lm loss: 2.055173E-01 | loss scale: 1.0 | grad norm: 0.185 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.09s GPU utilization: 1477.0MODEL_TFLOP/s/GPU
+Step Time : 3.06s GPU utilization: 1491.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:37] iteration       43/      50 | consumed samples:         2752 | elapsed time per iteration (ms): 3060.5 | learning rate: 7.367992E-06 | global batch size:    64 | lm loss: 2.089411E-01 | loss scale: 1.0 | grad norm: 0.172 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-05-11 22:51:40] iteration       44/      50 | consumed samples:         2816 | elapsed time per iteration (ms): 3079.2 | learning rate: 5.449674E-06 | global batch size:    64 | lm loss: 2.192816E-01 | loss scale: 1.0 | grad norm: 0.197 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1482.1MODEL_TFLOP/s/GPU
+Step Time : 3.08s GPU utilization: 1483.8MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:43] iteration       45/      50 | consumed samples:         2880 | elapsed time per iteration (ms): 3075.6 | learning rate: 3.806023E-06 | global batch size:    64 | lm loss: 2.044932E-01 | loss scale: 1.0 | grad norm: 0.179 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-05-11 22:51:46] iteration       46/      50 | consumed samples:         2944 | elapsed time per iteration (ms): 3074.3 | learning rate: 2.447174E-06 | global batch size:    64 | lm loss: 2.125616E-01 | loss scale: 1.0 | grad norm: 0.194 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.07s GPU utilization: 1484.4MODEL_TFLOP/s/GPU
+Step Time : 3.08s GPU utilization: 1481.1MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:49] iteration       47/      50 | consumed samples:         3008 | elapsed time per iteration (ms): 3081.1 | learning rate: 1.381504E-06 | global batch size:    64 | lm loss: 2.126990E-01 | loss scale: 1.0 | grad norm: 0.228 | number of skipped iterations:   0 | number of nan iterations:   0 |
+ [2026-05-11 22:51:52] iteration       48/      50 | consumed samples:         3072 | elapsed time per iteration (ms): 3079.0 | learning rate: 6.155830E-07 | global batch size:    64 | lm loss: 2.198056E-01 | loss scale: 1.0 | grad norm: 0.188 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1482.2MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:56] iteration       49/      50 | consumed samples:         3136 | elapsed time per iteration (ms): 3063.3 | learning rate: 1.541333E-07 | global batch size:    64 | lm loss: 2.046382E-01 | loss scale: 1.0 | grad norm: 0.191 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.06s GPU utilization: 1489.7MODEL_TFLOP/s/GPU
+ [2026-05-11 22:51:59] iteration       50/      50 | consumed samples:         3200 | elapsed time per iteration (ms): 3076.5 | learning rate: 0.000000E+00 | global batch size:    64 | lm loss: 2.170215E-01 | loss scale: 1.0 | grad norm: 0.210 | number of skipped iterations:   0 | number of nan iterations:   0 |
+Step Time : 3.08s GPU utilization: 1483.3MODEL_TFLOP/s/GPU
+Deleting CUDA graphs
+[after training is done] datetime: 2026-05-11 22:51:59 
+gpu01:179401:179401 [1] NCCL INFO comm 0x5b5c2870 rank 0 nranks 2 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:164228:164228 [2] NCCL INFO comm 0x67c135f0 rank 1 nranks 2 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:164312:164312 [1] NCCL INFO comm 0x72256bf0 rank 1 nranks 2 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu01:179340:179340 [6] NCCL INFO comm 0x93cf89b0 rank 0 nranks 2 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:164194:164194 [6] NCCL INFO comm 0x609586b0 rank 1 nranks 2 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:179340:179340 [6] NCCL INFO comm 0x983d83a0 rank 0 nranks 2 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:164252:164252 [3] NCCL INFO comm 0x58caff00 rank 1 nranks 2 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu01:179367:179367 [3] NCCL INFO comm 0x85722ab0 rank 0 nranks 2 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:164228:164228 [2] NCCL INFO comm 0x796d3570 rank 0 nranks 1 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:164298:164298 [4] NCCL INFO comm 0x5ccfd130 rank 1 nranks 2 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:179401:179401 [1] NCCL INFO comm 0x5fc57c70 rank 0 nranks 2 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu01:179367:179367 [3] NCCL INFO comm 0x89dc8bc0 rank 0 nranks 2 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu01:179435:179435 [4] NCCL INFO comm 0x9110fff0 rank 0 nranks 2 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:179383:179383 [5] NCCL INFO comm 0x69266d90 rank 0 nranks 2 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:164279:164279 [5] NCCL INFO comm 0x515c6540 rank 1 nranks 2 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:179341:179341 [7] NCCL INFO comm 0x6a0274d0 rank 0 nranks 2 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:164253:164253 [7] NCCL INFO comm 0x6d150130 rank 1 nranks 2 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:164252:164252 [3] NCCL INFO comm 0x6a769e00 rank 0 nranks 1 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:164253:164253 [7] NCCL INFO comm 0x7de22e30 rank 0 nranks 1 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:164211:164211 [0] NCCL INFO comm 0x5b84c780 rank 1 nranks 2 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:179452:179452 [0] NCCL INFO comm 0x78c515c0 rank 0 nranks 2 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:179383:179383 [5] NCCL INFO comm 0x6df8d1a0 rank 0 nranks 2 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:164312:164312 [1] NCCL INFO comm 0x82f6e7a0 rank 0 nranks 1 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:164228:164228 [2] NCCL INFO comm 0x89e88e70 rank 2 nranks 8 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:179418:179418 [2] NCCL INFO comm 0x68dc43b0 rank 0 nranks 2 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:164194:164194 [6] NCCL INFO comm 0x7242e880 rank 0 nranks 1 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:179435:179435 [4] NCCL INFO comm 0x953a9410 rank 0 nranks 2 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu02:164194:164194 [6] NCCL INFO comm 0x875f7380 rank 1 nranks 2 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:179341:179341 [7] NCCL INFO comm 0x6e47f5e0 rank 0 nranks 2 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:164253:164253 [7] NCCL INFO comm 0x93fed040 rank 1 nranks 2 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu01:179340:179340 [6] NCCL INFO comm 0x96762c60 rank 6 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:164298:164298 [4] NCCL INFO comm 0x6e7b72e0 rank 0 nranks 1 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu02:164279:164279 [5] NCCL INFO comm 0x630752d0 rank 0 nranks 1 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:179418:179418 [2] NCCL INFO comm 0x6d4c89c0 rank 0 nranks 2 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:164253:164253 [7] NCCL INFO comm 0x8f5bfdd0 rank 7 nranks 8 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu01:179452:179452 [0] NCCL INFO comm 0x7d290a80 rank 0 nranks 2 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:164228:164228 [2] NCCL INFO comm 0x8e8b2880 rank 1 nranks 2 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:179418:179418 [2] NCCL INFO comm 0x6b853280 rank 2 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:179435:179435 [4] NCCL INFO comm 0x93733cd0 rank 4 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:179367:179367 [3] NCCL INFO comm 0x88153480 rank 3 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:164211:164211 [0] NCCL INFO comm 0x6d305870 rank 0 nranks 1 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:179383:179383 [5] NCCL INFO comm 0x6c317a60 rank 5 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:179341:179341 [7] NCCL INFO comm 0x6c809ea0 rank 7 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu01:179401:179401 [1] NCCL INFO comm 0x5dfe2530 rank 1 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:164252:164252 [3] NCCL INFO comm 0x7af11ad0 rank 3 nranks 8 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:164279:164279 [5] NCCL INFO comm 0x7823e1f0 rank 1 nranks 2 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:164312:164312 [1] NCCL INFO comm 0x94561c40 rank 1 nranks 8 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:164194:164194 [6] NCCL INFO comm 0x82bcbac0 rank 6 nranks 8 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:179435:179435 [4] NCCL INFO comm 0x91e1ad10 rank 4 nranks 8 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:179367:179367 [3] NCCL INFO comm 0x86835c30 rank 3 nranks 8 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu01:179418:179418 [2] NCCL INFO comm 0x69f2f510 rank 2 nranks 8 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:179383:179383 [5] NCCL INFO comm 0x6a9fb180 rank 5 nranks 8 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:179340:179340 [6] NCCL INFO comm 0x94e472b0 rank 6 nranks 8 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:164211:164211 [0] NCCL INFO comm 0x7daa2c50 rank 0 nranks 8 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:164298:164298 [4] NCCL INFO comm 0x7ef6c660 rank 4 nranks 8 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:179452:179452 [0] NCCL INFO comm 0x7b61b340 rank 0 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:164211:164211 [0] NCCL INFO comm 0x824ce510 rank 1 nranks 2 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:179401:179401 [1] NCCL INFO comm 0x5c6d6510 rank 1 nranks 8 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu01:179341:179341 [7] NCCL INFO comm 0x6af4f200 rank 7 nranks 8 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:164312:164312 [1] NCCL INFO comm 0x98f8d500 rank 1 nranks 2 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:164252:164252 [3] NCCL INFO comm 0x7f93b4e0 rank 1 nranks 2 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:164228:164228 [2] NCCL INFO comm 0x8c1ca760 rank 10 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:164279:164279 [5] NCCL INFO comm 0x738147e0 rank 5 nranks 8 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:179452:179452 [0] NCCL INFO comm 0x79d70120 rank 0 nranks 8 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:164298:164298 [4] NCCL INFO comm 0x83997f20 rank 1 nranks 2 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu02:164253:164253 [7] NCCL INFO comm 0x91903570 rank 15 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:164194:164194 [6] NCCL INFO comm 0x84f0f260 rank 14 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:179341:179341 [7] NCCL INFO comm 0x2b5a2660 rank 7 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu01:179341:179341 [7] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179383:179383 [5] NCCL INFO comm 0x2b245520 rank 5 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu01:179383:179383 [5] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179418:179418 [2] NCCL INFO comm 0x2a781440 rank 2 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu01:179418:179418 [2] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179401:179401 [1] NCCL INFO comm 0x1cf32ac0 rank 1 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu01:179401:179401 [1] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179340:179340 [6] NCCL INFO comm 0x55695350 rank 6 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu01:179340:179340 [6] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179435:179435 [4] NCCL INFO comm 0x5247f3e0 rank 4 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu01:179435:179435 [4] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179367:179367 [3] NCCL INFO comm 0x470fed90 rank 3 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu01:179367:179367 [3] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164211:164211 [0] NCCL INFO comm 0x7fde63f0 rank 8 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:164298:164298 [4] NCCL INFO comm 0x812afe00 rank 12 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu02:164279:164279 [5] NCCL INFO comm 0x75b560d0 rank 13 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:164312:164312 [1] NCCL INFO comm 0x968a53e0 rank 9 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:164252:164252 [3] NCCL INFO comm 0x7d2533c0 rank 11 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:164253:164253 [7] NCCL INFO comm 0x3d3b01d0 rank 15 nranks 16 cudaDev 7 busId f3000 - Destroy COMPLETE
+gpu02:164253:164253 [7] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164228:164228 [2] NCCL INFO comm 0x37e88450 rank 10 nranks 16 cudaDev 2 busId 63000 - Destroy COMPLETE
+gpu02:164228:164228 [2] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164279:164279 [5] NCCL INFO comm 0x21847460 rank 13 nranks 16 cudaDev 5 busId 93000 - Destroy COMPLETE
+gpu02:164279:164279 [5] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164211:164211 [0] NCCL INFO comm 0x2bacf970 rank 8 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu02:164211:164211 [0] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164312:164312 [1] NCCL INFO comm 0x424f7940 rank 9 nranks 16 cudaDev 1 busId 13000 - Destroy COMPLETE
+gpu02:164312:164312 [1] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164252:164252 [3] NCCL INFO comm 0x28f49600 rank 11 nranks 16 cudaDev 3 busId 73000 - Destroy COMPLETE
+gpu02:164252:164252 [3] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164298:164298 [4] NCCL INFO comm 0x2cf6b590 rank 12 nranks 16 cudaDev 4 busId 83000 - Destroy COMPLETE
+gpu02:164298:164298 [4] NCCL INFO Unloading plugin libnccl-net.so
+gpu02:164194:164194 [6] NCCL INFO comm 0x30bef780 rank 14 nranks 16 cudaDev 6 busId e3000 - Destroy COMPLETE
+gpu02:164194:164194 [6] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179452:179452 [0] NCCL INFO comm 0x3bdcabf0 rank 0 nranks 16 cudaDev 0 busId 3000 - Destroy COMPLETE
+gpu01:179452:179452 [0] NCCL INFO Unloading plugin libnccl-net.so
+gpu01:179367:179367 [3] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu01:179435:179435 [4] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu01:179340:179340 [6] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu01:179341:179341 [7] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164228:164228 [2] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu01:179452:179452 [0] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu01:179418:179418 [2] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu01:179383:179383 [5] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu01:179401:179401 [1] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164279:164279 [5] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164312:164312 [1] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164194:164194 [6] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164252:164252 [3] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164298:164298 [4] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164211:164211 [0] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault
+gpu02:164253:164253 [7] NCCL INFO ENV/Plugin: Closing env plugin ncclEnvDefault

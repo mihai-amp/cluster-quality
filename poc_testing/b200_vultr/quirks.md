@@ -122,7 +122,7 @@ Critical: **slurm-<jobid>.out is NOT where the metrics live for Dynamo**. AI Per
 
 - `microbenchmark_system_info`: `experiments/<CONFIG>/<run-id>/slurm-<JOBID>.out` — simple per-job stdout.
 - `microbenchmark_cpu_overhead`: `experiments/cpu_overhead_tests/` with `kernel_launch_overhead_<JOBID>.out` and `tokenization_overhead_<JOBID>.out` per submitted job.
-- `microbenchmark_nccl`: `experiments/microbenchmark_nccl_<CONFIG>_<JOBID>/` (empty in our case — no completed runs).
+- `microbenchmark_nccl`: `experiments/microbenchmark_nccl_<CONFIG>_<JOBID>/`. Per-iter logs live under `LOG_<TS>_<JOBID>_<gpu>_sweep_N<nodes>/<step>_LOG_<op>_*/rank<N>_<host>/`. The collected per-collective bus-bandwidth table is summarised in `results/phase1/summary.md` §5; raw slurm output is at `results/phase1/microbenchmark_nccl/logs/slurm-<jobid>.out`. Jobs 326 (scale=8 / N=1) and 327 (scale=16 / N=2) completed 2026-05-13.
 
 ### Empty workload dirs
 
@@ -144,9 +144,33 @@ Use this section to flag deltas from `plan.md` §4 expectations and your hypothe
 
 Capture useful one-shot diagnostics here for the deliverable.
 
+### Acceptance script (`acceptance/40_nccl_tests.sh`) gotchas
+
+The hand-rolled Phase 0 script was iterated through several failure modes before we pivoted to the dgxc `microbenchmark_nccl` workload (which is what the §5 numbers come from). Things to know if you ever come back to the acceptance script on this cluster:
+
+- **Stock pytorch:24.10-py3 image ships `nccl-tests` built *without* MPI** (`/usr/local/bin/all_reduce_perf` has no `libmpi` linkage). Multi-process runs collapse to N solo communicators-of-1 → `busbw = 0.00`. Rebuild with `MPI=1 MPI_HOME=/usr/local/mpi CUDA_HOME=/usr/local/cuda` inside the container; the build artifacts persist on shared FS at `/mnt/vfs/mihai/nccl-tests-build/build/`.
+- **GRES isolation is not enforced** on this Slurm config. `srun --gpus-per-node=1` still exposes all 8 GPUs inside the container. With an MPI-aware nccl-tests binary that's fine (it picks devices by local rank). With a non-MPI binary and no `CUDA_VISIBLE_DEVICES` wrapper, every rank picks device 0 → CUDA OOM.
+- **Slurm MPI plugins available:** `pmix` (`pmix_v5`), `pmi2`, `cray_shasta`. `--mpi=pmix` works once the binary actually links MPI.
+- **Pre-imported pyxis container `281.0`** (left from a prior NeMo run) is stripped — no `/bin/sh`. Don't try to reuse it as a base; pull `nvcr.io#nvidia/pytorch:24.10-py3` fresh.
+
+### Intra-node IB loopback rejects QP setup (`ibv_modify_qp` EINVAL)
+
+Setting both `NCCL_P2P_DISABLE=1` and `NCCL_SHM_DISABLE=1` (intent: force all NCCL traffic — even intra-node — over IB so the busbw figure is "pure IB") fails with:
+
 ```
-# Add output of: nccl-tests all_reduce_perf, nvidia-smi nvlink, mlnx_perf snapshots
+ibvwrap.c:174 NCCL WARN Call to ibv_modify_qp failed with error Invalid argument errno 22
+transport/net.cc:850 -> 2   (initialization error)
 ```
+
+NCCL is trying to set up an IB queue pair between two ranks on the *same* node and the local QP attributes are rejected. The IB stack on these B200 boxes apparently doesn't accept loopback-style QP transitions (or the GID resolution path returns something invalid for local-to-local). Test fails before any data is moved.
+
+Setting just `NCCL_P2P_DISABLE=1` (intent: leave SHM enabled so intra-node falls back to host memory) **also** fails the same way: NCCL's proxy still sets up IB QPs for the intra-node legs (proxy mediation routes them through the network stack regardless of SHM availability) and runs into the same loopback rejection. Conclusion: **on this cluster you cannot disable NVLink and keep the test running.** The IB driver does not accept local-loopback QPs from any code path.
+
+**That's OK for the report.** The natural scale=16 alltoall figure is already IB-bound — see the 14× drop from scale=8 (NVLink only, ~672 GB/s) to scale=16 (~48 GB/s). Inter-node legs dominate the timing; whatever NVLink contributes to the intra-node legs is masked.
+
+### `microbenchmark_nccl` run-to-run variance worth investigating
+
+In job 327 (scale=16, inter-node), `sendrecv_perf_mpi` ran twice with identical parameters and produced peak busbw of 19.82 GB/s vs 35.85 GB/s (avg 9.80 vs 16.76 GB/s) — almost 2× spread. Two adjacent invocations of the same op in the same job step shouldn't differ that much; candidate causes: rail/HCA pick on cold vs warm path, or pmix-set affinity flipping mid-run. Worth re-running with `NCCL_IB_HCA` pinned and adaptive routing logged.
 
 ---
 

@@ -145,21 +145,49 @@ if compgen -G "$NCCL_SRC/nccl_tests_*.log" >/dev/null 2>&1; then
     echo "  copied NCCL bus BW log: $(basename "$latest")"
 fi
 
-# ---- Generate summary.md and summary.html ----
+# ---- Generate self-contained report/ folder (summary + referenced raw logs) ----
 AGG="$(dirname "$0")/aggregate_results.py"
 HTML="$(dirname "$0")/summary_to_html.py"
+RESULTS_ROOT="$MY/results"
+REPORT_DIR="$RESULTS_ROOT/report"
+mkdir -p "$REPORT_DIR/sources"
+
+# Copy directly-referenced raw sources into report/sources/ so the folder is portable.
+nccl_src=$(ls -t "$RESULTS_ROOT/phase1/nccl_bus_bw/nccl_tests_"*.log 2>/dev/null | head -1)
+[[ -n "$nccl_src" ]] && cp -f "$nccl_src" "$REPORT_DIR/sources/$(basename "$nccl_src")"
+
+ib_src=$(ls -t "$RESULTS_ROOT/phase0/ib_perftest/pairwise_"*.log 2>/dev/null | head -1)
+[[ -n "$ib_src" ]] && cp -f "$ib_src" "$REPORT_DIR/sources/pairwise_ib_$(basename "$ib_src" | sed -E 's/^pairwise_//')"
+
+[[ -f "$RESULTS_ROOT/nvidia_reference/b200_training.md" ]] && \
+    cp -f "$RESULTS_ROOT/nvidia_reference/b200_training.md" "$REPORT_DIR/sources/nvidia_reference_b200_training.md"
+
+# Inference reference CSVs (per-model)
+for ref in "$RESULTS_ROOT"/nvidia_reference/nvidia_reference_inference_*.csv; do
+    [[ -f "$ref" ]] && cp -f "$ref" "$REPORT_DIR/sources/$(basename "$ref")"
+done
+
+# Sample one representative log per (workload, config) combination from phase1/
+# into report/sources/phase1_logs/ — trims large files to the per-step section.
+SAMPLER="$(dirname "$0")/copy_phase1_sample_logs.py"
+if [[ -f "$SAMPLER" ]]; then
+    echo
+    echo "==== Sampling phase1 logs into report/sources/phase1_logs/ ===="
+    python3 "$SAMPLER" "$RESULTS_ROOT" || echo "  (phase1 log sampler failed — non-fatal)"
+fi
+
 if [[ -x "$AGG" || -f "$AGG" ]]; then
     echo
-    echo "==== Generating summary.md ===="
-    if python3 "$AGG" "$OUT_DIR" >"$OUT_DIR/summary.md" 2>"$OUT_DIR/summary.log"; then
-        cat "$OUT_DIR/summary.md"
+    echo "==== Generating $REPORT_DIR/summary.{md,html} ===="
+    if python3 "$AGG" "$RESULTS_ROOT" >"$REPORT_DIR/summary.md" 2>"$REPORT_DIR/summary.log"; then
+        cat "$REPORT_DIR/summary.md"
         if [[ -f "$HTML" ]]; then
-            python3 "$HTML" "$OUT_DIR/summary.md" "$OUT_DIR/summary.html" \
-                && echo "  also wrote $OUT_DIR/summary.html"
+            python3 "$HTML" "$REPORT_DIR/summary.md" "$REPORT_DIR/summary.html" \
+                && echo "  also wrote $REPORT_DIR/summary.html"
         fi
     else
-        echo "  aggregator failed — see $OUT_DIR/summary.log"
-        cat "$OUT_DIR/summary.log"
+        echo "  aggregator failed — see $REPORT_DIR/summary.log"
+        cat "$REPORT_DIR/summary.log"
     fi
 fi
 
